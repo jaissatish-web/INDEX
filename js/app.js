@@ -147,7 +147,7 @@ renderCandles(document.getElementById('fig-proof'), [
   {o:111.4,h:113.2,l:110.8,c:111},           /* second rejection — line respected */
   {o:111,h:111.6,l:108.4,c:108.8},           /* breakdown begins */
   {o:108.8,h:109.4,l:106,c:106.4},{o:106.4,h:107,l:103.6,c:104}
-], { width: 400, height: 190, level: 113, levelLabel: 'Close-zone resistance', delayStep: 55 });
+], { width: 400, height: 190, level: 113, levelLabel: 'Close-zone resistance', line: false, delayStep: 55 });
 
 /* ============================================================
    QUIZ (article page)

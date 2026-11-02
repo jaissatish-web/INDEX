@@ -224,7 +224,7 @@ section.block.soft{background:var(--bg-soft)}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 
 .matrix-note{font-size:13px;color:var(--muted);margin-top:10px}
-table.matrix{width:100%;border-collapse:collapse;margin:26px 0;font-size:14.5px}
+table.matrix{width:100%;border-collapse:collapse;margin:26px 0;font-size:14.5px;min-width:560px}
 table.matrix th{background:var(--ink);color:#fff;text-align:left;padding:13px 16px;font-size:13px;
   letter-spacing:.03em;font-weight:700}
 table.matrix td{border-bottom:1px solid var(--line);padding:13px 16px;vertical-align:top}
@@ -264,6 +264,7 @@ table.matrix td:first-child{font-weight:700;white-space:nowrap}
 
 /* ---------- tools ---------- */
 .tool-section{display:grid;grid-template-columns:320px 1fr;gap:48px;padding:60px 0;border-top:1px solid var(--line)}
+.tool-section > *{min-width:0}
 .tool-section:first-of-type{border-top:none}
 .ts-info h2{font-family:var(--font-display);font-weight:520;font-size:28px;letter-spacing:-.01em;
   line-height:1.15;text-wrap:balance}
