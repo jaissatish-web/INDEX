@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
 <title>F&amp;O Position Size Calculator — Lots by Risk | Dalal Desk</title>
-<meta name="description" content="Free F&amp;O position size calculator for Indian traders. Enter capital, risk %, entry and stop premium — get max lots, per-lot risk and worst-case loss instantly.">
+<meta name="description" content="Free F&amp;O position size calculator for Indian traders. Enter capital, risk %, entry and stop premium — get max lots, per-lot risk and worst-case loss.">
 <meta name="keywords" content="f&amp;o position size calculator, options position size calculator, lot size calculator nifty banknifty, per lot risk calculator, options risk management india">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://jaissatish-web.github.io/INDEX/tools/fo-position-size.html">
@@ -102,16 +102,16 @@
       <div class="field">
         <label for="fo-lot">Lot size</label>
         <select id="fo-lot">
-          <option value="75" selected>NIFTY — 75</option>
+          <option value="65" selected>NIFTY — 65</option>
           <option value="30">BANKNIFTY — 30</option>
-          <option value="25">FINNIFTY — 25</option>
+          <option value="60">FINNIFTY — 60</option>
           <option value="120">MIDCPNIFTY — 120</option>
           <option value="20">SENSEX — 20</option>
           <option value="30">BANKEX — 30</option>
           <option value="custom">Custom… (lot sizes change — verify with your broker)</option>
         </select>
         <input id="fo-lot-custom" type="number" min="1" step="1" placeholder="Custom lot size (e.g. 40)" aria-label="Custom lot size">
-        <div class="field-hint">Lot sizes change — verify with your broker.</div>
+        <div class="field-hint">Lot sizes as of Nov 2026 — verify with your broker.</div>
       </div>
     </form>
     <div class="result-grid">
@@ -209,7 +209,7 @@
     '<text x="336" y="204" font-size="12" fill="#6d7a72">Risk budget = Capital &#215; Risk %</text>' +
     '<text x="336" y="226" font-size="12" fill="#101b16" font-weight="700">Per-lot risk = (Entry &#8722; Stop) &#215; Lot size</text>' +
     '<text x="336" y="248" font-size="12" font-weight="700" fill="#0a7c42">Max lots = floor(Risk &#247; Per-lot risk)</text>' +
-    '<text x="40" y="292" font-size="11" fill="#6d7a72">NIFTY 75 &#183; BANKNIFTY 30 &#183; FINNIFTY 25 &#183; MIDCPNIFTY 120 &#183; SENSEX 20 &#183; BANKEX 30</text>' +
+    '<text x="40" y="292" font-size="11" fill="#6d7a72">NIFTY 65 &#183; BANKNIFTY 30 &#183; FINNIFTY 60 &#183; MIDCPNIFTY 120 &#183; SENSEX 20 &#183; BANKEX 30 &#183; Nov 2026</text>' +
   '</svg>';
 })();
 </script>
