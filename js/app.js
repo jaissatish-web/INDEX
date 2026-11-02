@@ -7,7 +7,19 @@
 /* ---------- nav ---------- */
 const menuBtn = document.querySelector('.menu-btn');
 if (menuBtn) {
-  menuBtn.addEventListener('click', () => document.querySelector('.nav').classList.toggle('open'));
+  const nav = document.querySelector('.nav');
+  menuBtn.setAttribute('aria-controls', 'site-nav');
+  nav.id = 'site-nav';
+  const setMenu = open => {
+    nav.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+  };
+  menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  document.addEventListener('click', e => {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && e.target !== menuBtn) setMenu(false);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 }
 
 /* ---------- reveal on scroll ---------- */
@@ -38,7 +50,9 @@ function updateMarketStatus() {
       el.className = 'chip closed';
       el.innerHTML = '<span class="dot"></span> Market Closed · weekend';
     } else {
-      const nextOpen = mins < 555 ? 'opens 9:15 AM IST' : 'opens tomorrow 9:15 AM IST';
+      const nextOpen = mins < 555 ? 'opens 9:15 AM IST'
+        : weekday === 'Fri' ? 'opens Monday 9:15 AM IST'
+        : 'opens tomorrow 9:15 AM IST';
       el.className = 'chip closed';
       el.innerHTML = `<span class="dot"></span> Market Closed · ${nextOpen}`;
     }
@@ -228,9 +242,9 @@ const num = (id) => parseFloat(document.getElementById(id)?.value) || 0;
     set('ps-qty', qty.toLocaleString('en-IN'), 'hero-cell');
     set('ps-value', inr(qty * entry));
     set('ps-loss', inr(qty * perShare));
-    const wrongSide = (entry > 0 && stop > 0) && ((entry > stop && false) || (stop > entry));
+    const wrongSide = (entry > 0 && stop > 0) && stop > entry;
     document.getElementById('ps-note').textContent = wrongSide
-      ? 'Check your inputs — stop-loss should usually be below entry for a long trade.'
+      ? 'Check your inputs — for a long trade the stop-loss sits below the entry. (For a short, entry is below the stop and the same math applies.)'
       : (qty > 0 ? `Risking ${riskPct}% of capital → max ${qty.toLocaleString('en-IN')} shares. If stopped out, you lose ${inr(qty * perShare)} — never more.` : 'Enter valid inputs to see your position size.');
   };
   form.addEventListener('input', run);
@@ -267,6 +281,9 @@ const num = (id) => parseFloat(document.getElementById(id)?.value) || 0;
   if (!form) return;
   let holdings = [];
   try { holdings = JSON.parse(localStorage.getItem(KEY)) || []; } catch { holdings = []; }
+  if (!Array.isArray(holdings)) holdings = [];
+  holdings = holdings.filter(h => h && typeof h.symbol === 'string' && h.symbol.trim()
+    && Number.isFinite(h.qty) && h.qty > 0 && Number.isFinite(h.avg) && h.avg > 0 && Number.isFinite(h.mkt) && h.mkt > 0);
   const save = () => localStorage.setItem(KEY, JSON.stringify(holdings));
 
   const tbody = document.getElementById('pf-body');

@@ -7,7 +7,7 @@
   --bg-soft:#f6f7f4;
   --ink:#101b16;
   --muted:#57665e;
-  --faint:#8b988f;
+  --faint:#6d7a72;
   --line:#e7eae4;
   --line-strong:#d5dacf;
   --accent:#0a7c42;
@@ -48,6 +48,7 @@ input,select{font-family:inherit;font-size:15px}
   position:sticky;top:0;z-index:50;
   background:rgba(255,255,255,.85);
   backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
 }
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
@@ -220,8 +221,6 @@ section.block.soft{background:var(--bg-soft)}
 .figure .fig-title{font-weight:800;font-size:13.5px;margin-bottom:14px;letter-spacing:.02em}
 .fig-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .fig-pair .figure{margin:0;background:#fff}
-.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-top:10px;flex-wrap:wrap}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 
 .matrix-note{font-size:13px;color:var(--muted);margin-top:10px}
 table.matrix{width:100%;border-collapse:collapse;margin:26px 0;font-size:14.5px;min-width:560px}
@@ -310,8 +309,8 @@ table.matrix td:first-child{font-weight:700;white-space:nowrap}
 .empty-state .es-ico{font-family:var(--font-display);font-size:34px;color:var(--line-strong);margin-bottom:8px}
 
 /* reveal animation */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
-.reveal.in{opacity:1;transform:none}
+html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+html.js .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
   .candle-svg .candle,.pulse-line{animation:none;stroke-dashoffset:0}
