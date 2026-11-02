@@ -91,6 +91,97 @@
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <a class="tcard reveal" href="tools/fo-position-size.html" id="fo-position-size">
+        <div class="cover" data-cover="fo-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 04 · F&amp;O Risk</span>
+          <h3>F&amp;O Position Size Calculator</h3>
+          <p>Size your option trades in lots, not shares — capital, risk %, premium entry and stop decide how many lots you may take.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+      <a class="tcard reveal" href="tools/lumpsum-calculator.html" id="lumpsum">
+        <div class="cover" data-cover="lp-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 05 · Compounding</span>
+          <h3>Lumpsum Investment Calculator</h3>
+          <p>Project a one-time investment over the years — and see what the same money does in a plain fixed deposit.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+      <a class="tcard reveal" href="tools/cagr-calculator.html" id="cagr">
+        <div class="cover" data-cover="cg-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 06 · Growth</span>
+          <h3>CAGR Calculator</h3>
+          <p>Initial value, final value, years — get the true annualised return and the money multiple in one number.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+      <a class="tcard reveal" href="tools/target-stoploss-calculator.html" id="target-stoploss">
+        <div class="cover" data-cover="ts-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 07 · Trade Quality</span>
+          <h3>Target &amp; Stop-loss % Calculator</h3>
+          <p>Entry, target, stop — see both moves in percent and whether your risk:reward earns the trade.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+      <a class="tcard reveal" href="tools/breakeven-calculator.html" id="breakeven">
+        <div class="cover" data-cover="be-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 08 · Options</span>
+          <h3>Options Break-even Calculator</h3>
+          <p>Strike plus premium plus charges — the exact price the underlying must reach before your option makes money.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+      <a class="tcard reveal" href="tools/charges-calculator.html" id="charges">
+        <div class="cover" data-cover="ch-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 09 · Costs</span>
+          <h3>Brokerage &amp; Charges Calculator</h3>
+          <p>Brokerage, STT, exchange charges, GST and duty on any trade — see your net P&amp;L after everything.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+      <a class="tcard reveal" href="tools/trade-journal.html" id="trade-journal">
+        <div class="cover" data-cover="tj-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 10 · Discipline</span>
+          <h3>Trade Journal</h3>
+          <p>Log every trade with planned risk — win rate, R-multiples and your personal equity curve, saved privately.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+      <a class="tcard reveal" href="tools/watchlist-notes.html" id="watchlist">
+        <div class="cover" data-cover="wl-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 11 · Journaling</span>
+          <h3>Watchlist Notes</h3>
+          <p>Log every level with the reason you marked it — supports, resistances and breakouts, kept honest.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+      <a class="tcard reveal" href="tools/monthly-pnl-tracker.html" id="monthly-pnl">
+        <div class="cover" data-cover="mp-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 12 · Journaling</span>
+          <h3>Monthly P&amp;L Tracker</h3>
+          <p>Gross, charges, net — month by month, with your cumulative curve. Net is the only truth.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+      <a class="tcard reveal" href="tools/day-classifier.html" id="day-classifier">
+        <div class="cover" data-cover="dc-cover"></div>
+        <div class="tc-body">
+          <span class="pc-badge">Tool 13 · Day Classification</span>
+          <h3>Day Classifier — 3-Check Verdict</h3>
+          <p>Answer three checks from the article and get today's verdict: FAST, WAIT or NEVER. Trade the plan, not the mood.</p>
+          <span class="tc-cta">Open tool →</span>
+        </div>
+      </a>
+    
     </div>
   </section>
 
@@ -161,5 +252,54 @@
 </footer>
 
 <script src="js/app.js"></script>
+<script>
+/* hub mini-covers for tools whose cover functions live in their own pages */
+(function(){
+  const F = 'font-family="Manrope" font-weight="700"';
+  function frame(inner){return '<svg viewBox="0 0 560 320" width="100%" role="img" aria-label="Illustrative diagram"><rect x="14" y="16" width="532" height="288" rx="14" fill="#f6f7f4"/>' + inner + '</svg>';}
+  function candle(cx,y1,y2,bw,top,bot,col){return '<line x1="'+cx+'" x2="'+cx+'" y1="'+y1+'" y2="'+y2+'" stroke="'+col+'" stroke-width="1.6"/><rect x="'+(cx-bw/2)+'" y="'+top+'" width="'+bw+'" height="'+Math.max(2,bot-top)+'" rx="2" fill="'+col+'"/>';}
+  const covers = {
+    'fo-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Lots, not shares</text>'
+      + candle(120,70,220,18,110,190,'#0a7c42') + candle(180,90,240,18,130,210,'#b42318') + candle(240,60,200,18,100,170,'#0a7c42')
+      + '<rect x="300" y="110" width="180" height="70" rx="10" fill="#ffffff" stroke="#0a7c42" stroke-width="2"/><text x="390" y="140" text-anchor="middle" font-size="13" fill="#6d7a72" '+F+'>LOT SIZE</text><text x="390" y="163" text-anchor="middle" font-size="17" fill="#101b16" '+F+'>75 · 30 · 25</text>'),
+    'lp-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>One deposit, many years</text>'
+      + '<rect x="80" y="230" width="46" height="42" rx="5" fill="#9ccdb0"/><rect x="150" y="150" width="46" height="122" rx="5" fill="#0a7c42"/>'
+      + '<polyline points="110,215 180,130 260,100 340,80 440,65" fill="none" stroke="#101b16" stroke-width="2.4" stroke-linecap="round"/>'
+      + '<circle cx="440" cy="65" r="13" fill="#101b16"/><text x="440" y="70" text-anchor="middle" font-size="12" fill="#fff" font-family="Georgia">₹</text>'),
+    'cg-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Start → CAGR → End</text>'
+      + '<rect x="90" y="180" width="70" height="92" rx="6" fill="#9ccdb0"/><rect x="380" y="90" width="70" height="182" rx="6" fill="#0a7c42"/>'
+      + '<path d="M 165 170 Q 275 60 375 120" fill="none" stroke="#b42318" stroke-width="2.4"/><text x="275" y="88" text-anchor="middle" font-size="15" fill="#b42318" '+F+'>CAGR</text>'),
+    'ts-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Risk against reward</text>'
+      + '<line x1="60" x2="500" y1="110" y2="110" stroke="#0a7c42" stroke-width="2.4"/><text x="500" y="100" text-anchor="end" font-size="12.5" fill="#0a7c42" '+F+'>TARGET</text>'
+      + '<line x1="60" x2="500" y1="170" y2="170" stroke="#101b16" stroke-width="2.4"/><text x="500" y="160" text-anchor="end" font-size="12.5" fill="#101b16" '+F+'>ENTRY</text>'
+      + '<line x1="60" x2="500" y1="230" y2="230" stroke="#b42318" stroke-width="2.4" stroke-dasharray="8 7"/><text x="500" y="220" text-anchor="end" font-size="12.5" fill="#b42318" '+F+'>STOP</text>'
+      + '<text x="60" y="270" font-size="13" fill="#6d7a72" '+F+'>1 : 2 or better — or skip the trade</text>'),
+    'be-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Strike + Premium = Break-even</text>'
+      + '<rect x="80" y="150" width="200" height="60" rx="8" fill="#0a7c42"/><text x="180" y="187" text-anchor="middle" font-size="15" fill="#fff" '+F+'>STRIKE</text>'
+      + '<rect x="80" y="90" width="200" height="52" rx="8" fill="#9ccdb0"/><text x="180" y="123" text-anchor="middle" font-size="14" fill="#101b16" '+F+'>PREMIUM</text>'
+      + '<line x1="60" x2="500" y1="84" y2="84" stroke="#101b16" stroke-width="2.4"/><text x="500" y="74" text-anchor="end" font-size="12.5" fill="#101b16" '+F+'>BREAK-EVEN</text>'),
+    'ch-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Where the trade money goes</text>'
+      + '<rect x="80" y="120" width="90" height="100" rx="6" fill="#0a7c42"/><text x="125" y="178" text-anchor="middle" font-size="12" fill="#fff" '+F+'>GROSS</text>'
+      + '<rect x="180" y="120" width="70" height="100" rx="6" fill="#101b16"/><text x="215" y="178" text-anchor="middle" font-size="11" fill="#fff" '+F+'>BROKER</text>'
+      + '<rect x="260" y="120" width="70" height="100" rx="6" fill="#b42318"/><text x="295" y="178" text-anchor="middle" font-size="11" fill="#fff" '+F+'>STT</text>'
+      + '<rect x="340" y="120" width="60" height="100" rx="6" fill="#9ccdb0"/><text x="370" y="178" text-anchor="middle" font-size="11" fill="#101b16" '+F+'>GST</text>'
+      + '<rect x="410" y="120" width="70" height="100" rx="6" fill="#6d7a72"/><text x="445" y="178" text-anchor="middle" font-size="11" fill="#fff" '+F+'>NET</text>'),
+    'tj-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Every trade, written down</text>'
+      + '<rect x="60" y="80" width="180" height="26" rx="6" fill="#ffffff" stroke="#e7eae4"/><rect x="60" y="116" width="180" height="26" rx="6" fill="#ffffff" stroke="#e7eae4"/><rect x="60" y="152" width="180" height="26" rx="6" fill="#ffffff" stroke="#e7eae4"/>'
+      + '<polyline points="280,230 330,200 380,210 430,160 480,120" fill="none" stroke="#0a7c42" stroke-width="3" stroke-linecap="round"/>'
+      + '<text x="280" y="270" font-size="12.5" fill="#6d7a72" '+F+'>your equity curve</text>'),
+    'wl-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Levels with reasons</text>'
+      + '<line x1="60" x2="500" y1="120" y2="120" stroke="#0a7c42" stroke-width="2" stroke-dasharray="8 7"/><rect x="330" y="96" width="150" height="30" rx="7" fill="#0a7c42"/><text x="405" y="116" text-anchor="middle" font-size="11.5" fill="#fff" '+F+'>resistance · strong red</text>'
+      + '<line x1="60" x2="500" y1="200" y2="200" stroke="#b42318" stroke-width="2" stroke-dasharray="8 7"/><rect x="330" y="176" width="150" height="30" rx="7" fill="#b42318"/><text x="405" y="196" text-anchor="middle" font-size="11.5" fill="#fff" '+F+'>support · gap fill</text>'),
+    'mp-cover': (function(){let s='<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Month by month, net of costs</text>';const hs=[50,80,40,110,70,130,60,150,90,40,120,160];hs.forEach((h,i)=>{const up=i%3!==1;let x=60+i*37;s+='<rect x="'+x+'" y="'+(260-h)+'" width="24" height="'+h+'" rx="4" fill="'+(up?'#0a7c42':'#b42318')+'"/>';});return frame(s);})(),
+    'dc-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Three checks, one verdict</text>'
+      + [78,152,226].map((cy,i)=>'<circle cx="90" cy="'+cy+'" r="22" fill="#ffffff" stroke="#0a7c42" stroke-width="2"/><text x="90" y="'+(cy+6)+'" text-anchor="middle" font-size="16" fill="#0a7c42" font-family="Georgia">'+(i+1)+'</text><path d="M 130 '+cy+' H 290" stroke="#d5dacf" stroke-width="2"/>').join('')
+      + '<rect x="310" y="108" width="200" height="90" rx="12" fill="#ffffff" stroke="#101b16" stroke-width="2"/><text x="410" y="146" text-anchor="middle" font-size="17" fill="#101b16" '+F+'>FAST · WAIT</text><text x="410" y="172" text-anchor="middle" font-size="17" fill="#b42318" '+F+'>NEVER</text>')
+  };
+  document.querySelectorAll('[data-cover]').forEach(el => {
+    if (!el.querySelector('svg') && covers[el.dataset.cover]) el.innerHTML = covers[el.dataset.cover];
+  });
+})();
+</script>
 </body>
 </html>
