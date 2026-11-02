@@ -4,25 +4,48 @@
 <script>document.documentElement.classList.replace('no-js','js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tools — Dalal Desk</title>
-<meta name="description" content="Free browser-only tools for Indian stock market learners: position size calculator, portfolio tracker and SIP/compounding calculator.">
+<title>Free Stock Market Tools for Indian Traders — Risk, Portfolio, SIP | Dalal Desk</title>
+<meta name="description" content="Free browser-only tools for Indian stock market learners: position size calculator, portfolio tracker and SIP compounding calculator. No sign-up, no server, no tracking.">
+<meta name="keywords" content="stock market tools india, free trading calculators, position size calculator, portfolio tracker, sip calculator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jaissatish-web.github.io/INDEX/tools.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Stock Market Tools for Indian Traders — Dalal Desk">
+<meta property="og:description" content="Position sizing, portfolio tracking and compounding projections — free, private, in your browser.">
+<meta property="og:url" content="https://jaissatish-web.github.io/INDEX/tools.html">
+<meta property="og:site_name" content="Dalal Desk">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Dalal Desk Tools",
+  "url": "https://jaissatish-web.github.io/INDEX/tools.html",
+  "description": "Free browser-only stock market tools for Indian learners: position size calculator, portfolio tracker, SIP compounding calculator.",
+  "hasPart": [
+    { "@type": "WebApplication", "name": "Position Size Calculator", "url": "https://jaissatish-web.github.io/INDEX/tools/position-size-calculator.html" },
+    { "@type": "WebApplication", "name": "Portfolio Tracker", "url": "https://jaissatish-web.github.io/INDEX/tools/portfolio-tracker.html" },
+    { "@type": "WebApplication", "name": "SIP & Compounding Calculator", "url": "https://jaissatish-web.github.io/INDEX/tools/sip-calculator.html" }
+  ],
+  "publisher": { "@type": "Organization", "name": "Dalal Desk" }
+}
+</script>
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
-    <button class="menu-btn" aria-label="Toggle menu">☰</button>
+    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="blog.html">Blog</a>
       <a href="tools.html" class="active">Tools</a>
-      <a href="tools.html#portfolio" class="nav-cta">Track Portfolio</a>
+      <a href="blog/3-check-method.html" class="nav-cta">Start Learning</a>
     </nav>
   </div>
 </header>
@@ -32,93 +55,80 @@
     <div class="wrap-narrow">
       <div class="kicker">The Toolkit</div>
       <h1>Tools that protect you before they help you.</h1>
-      <p>Everything here runs entirely in your browser — no account, no server, no tracking. Your portfolio data is saved only on your own device.</p>
+      <p>Everything here runs entirely in your browser — no account, no server, no tracking. Your portfolio data is saved only on your own device. Each tool lives on its own page.</p>
     </div>
   </section>
 
-  <!-- ============ POSITION SIZE ============ -->
-  <section class="tool-section wrap" id="position-size">
-    <div class="ts-info">
-      <div class="ts-kicker">Tool 01 · Risk</div>
-      <h2>Position Size Calculator</h2>
-      <p>The one calculation that separates survivors from statistics. Enter your capital, the percent of it you're willing to risk, your entry and your stop-loss — get the exact quantity and the exact rupee loss if you're wrong.</p>
-      <p class="ts-note">Rule of thumb: most disciplined intraday traders risk 0.5%–1% of capital per trade. The tool computes the math; the discipline is yours.</p>
-    </div>
-    <div class="tool-panel">
-      <form class="field-grid" id="ps-calc">
-        <div class="field"><label for="ps-capital">Capital (₹)</label><input id="ps-capital" type="number" min="0" placeholder="100000"></div>
-        <div class="field"><label for="ps-risk">Risk per trade (%)</label><input id="ps-risk" type="number" min="0" max="100" step="0.25" placeholder="1"></div>
-        <div class="field"><label for="ps-entry">Entry price (₹)</label><input id="ps-entry" type="number" min="0" step="0.05" placeholder="23500"></div>
-        <div class="field"><label for="ps-stop">Stop-loss (₹)</label><input id="ps-stop" type="number" min="0" step="0.05" placeholder="23300"></div>
-      </form>
-      <div class="result-grid">
-        <div class="result-cell"><div class="r-label">Risk amount</div><div class="r-value" id="ps-r-amt">₹0</div></div>
-        <div class="result-cell hero-cell"><div class="r-label">Max quantity</div><div class="r-value" id="ps-qty">0</div></div>
-        <div class="result-cell"><div class="r-label">Position value</div><div class="r-value" id="ps-value">₹0</div></div>
-      </div>
-      <div class="result-grid">
-        <div class="result-cell neg"><div class="r-label">Loss if stopped out</div><div class="r-value" id="ps-loss">₹0</div></div>
-      </div>
-      <div class="calc-actions"><span class="calc-hint" id="ps-note">Type your numbers — results update live.</span></div>
+  <section class="wrap" style="padding-bottom:8px">
+    <div class="post-list">
+      <a class="post-card reveal" href="tools/position-size-calculator.html" id="position-size">
+        <div class="pc-body">
+          <span class="pc-badge">Tool 01 · Risk Management</span>
+          <h3>Position Size Calculator</h3>
+          <p>The one calculation that separates survivors from statistics. Enter capital, risk %, entry and stop-loss — get your exact quantity and the exact rupee loss you would take if stopped out.</p>
+          <div class="pc-meta"><span>Updates live as you type</span><span>·</span><span>Risk-first sizing logic</span></div>
+        </div>
+        <div class="pc-visual"><div class="cover" data-cover="stop-fence"></div></div>
+      </a>
+
+      <a class="post-card reveal" href="tools/portfolio-tracker.html" id="portfolio">
+        <div class="pc-body">
+          <span class="pc-badge">Tool 02 · Tracking</span>
+          <h3>Portfolio Tracker</h3>
+          <p>Add holdings, update market prices, and see live P&amp;L per stock and overall. Saved privately in your browser — refresh-proof, account-free.</p>
+          <div class="pc-meta"><span>LocalStorage only</span><span>·</span><span>No data ever leaves your device</span></div>
+        </div>
+        <div class="pc-visual"><div class="cover" data-cover="watch-wall"></div></div>
+      </a>
+
+      <a class="post-card reveal" href="tools/sip-calculator.html" id="sip">
+        <div class="pc-body">
+          <span class="pc-badge">Tool 03 · Patience</span>
+          <h3>SIP &amp; Compounding Calculator</h3>
+          <p>See what a monthly SIP becomes over the years. The single most convincing picture for a patient investor is this math.</p>
+          <div class="pc-meta"><span>Monthly compounding</span><span>·</span><span>Steady-return projection</span></div>
+        </div>
+        <div class="pc-visual"><div class="cover" data-cover="staircase"></div></div>
+      </a>
     </div>
   </section>
 
-  <!-- ============ PORTFOLIO ============ -->
-  <section class="tool-section wrap" id="portfolio">
-    <div class="ts-info">
-      <div class="ts-kicker">Tool 02 · Tracking</div>
-      <h2>Portfolio Tracker</h2>
-      <p>Add your holdings once. Update market prices with one click of a keyboard — per-stock and overall P&amp;L update instantly. Everything is stored in your browser's local storage: no login, no upload, nothing leaves your device.</p>
-      <p class="ts-note">Tip: enter market price manually from your broker app or NSE. Clearing your browser data clears the portfolio — export mentally or keep a broker screenshot as backup.</p>
-    </div>
-    <div class="tool-panel">
-      <form class="field-grid" id="pf-form">
-        <div class="field"><label for="pf-symbol">Symbol</label><input id="pf-symbol" type="text" placeholder="RELIANCE" autocomplete="off" style="text-transform:uppercase"></div>
-        <div class="field"><label for="pf-qty">Quantity</label><input id="pf-qty" type="number" min="0" step="1" placeholder="10"></div>
-        <div class="field"><label for="pf-avg">Avg buy price (₹)</label><input id="pf-avg" type="number" min="0" step="0.05" placeholder="2400"></div>
-        <div class="field"><label for="pf-mkt">Market price (₹)</label><input id="pf-mkt" type="number" min="0" step="0.05" placeholder="2480"></div>
-      </form>
-      <div class="calc-actions">
-        <button class="btn btn-primary" type="submit" form="pf-form" style="padding:10px 20px">+ Add holding</button>
-        <span class="calc-hint">Market price defaults to your buy price if left blank.</span>
+  <section class="block soft" style="margin-top:56px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="kicker">Why tools, not tips</div>
+          <h2>A tool teaches. A tip guesses.</h2>
+          <p>Every tool here exists because it answers a question beginners ask after losing money — and answers it before the loss happens.</p>
+        </div>
       </div>
-      <div class="portfolio-summary">
-        <div class="result-cell"><div class="r-label">Invested</div><div class="r-value" id="pf-invested">₹0</div></div>
-        <div class="result-cell"><div class="r-label">Current value</div><div class="r-value" id="pf-current">₹0</div></div>
-        <div class="result-cell"><div class="r-label">P&amp;L</div><div class="r-value" id="pf-pnl">₹0</div></div>
+      <div class="edu-list reveal">
+        <div class="edu-item">
+          <div class="edu-num">Risk first</div>
+          <h3>Size before entry</h3>
+          <p>Professionals decide the rupee loss first and let the market decide the profit. Amateurs do the reverse. Tool 01 exists to flip that order.</p>
+        </div>
+        <div class="edu-item">
+          <div class="edu-num">Privacy always</div>
+          <h3>Your data, your device</h3>
+          <p>No account, no analytics on your holdings, no uploads. The portfolio tracker stores everything in your own browser and nowhere else.</p>
+        </div>
+        <div class="edu-item">
+          <div class="edu-num">Free forever</div>
+          <h3>No locks, no courses</h3>
+          <p>Every calculator is free with no sign-up wall. If a tool stops being free, it stops being on this desk.</p>
+        </div>
       </div>
-      <div style="overflow-x:auto">
-        <table class="holdings-table" id="pf-table">
-          <thead><tr><th>Symbol</th><th>Qty</th><th>Avg</th><th>Market</th><th>Invested</th><th>Value</th><th>P&amp;L</th><th></th></tr></thead>
-          <tbody id="pf-body"></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SIP ============ -->
-  <section class="tool-section wrap" id="sip">
-    <div class="ts-info">
-      <div class="ts-kicker">Tool 03 · Patience</div>
-      <h2>SIP &amp; Compounding Calculator</h2>
-      <p>The quietest edge in the market is time. Set a monthly amount, an expected annual return and a horizon — see what consistency becomes. (Equity long-term averages historically land somewhere between 10–14%; the market does not promise any number.)</p>
-      <p class="ts-note">Projection assumes monthly compounding of a steady return. Real markets are lumpier — that's why the horizon matters more than the rate.</p>
-    </div>
-    <div class="tool-panel">
-      <form class="field-grid" id="sip-calc">
-        <div class="field"><label for="sip-monthly">Monthly SIP (₹)</label><input id="sip-monthly" type="number" min="0" placeholder="5000"></div>
-        <div class="field"><label for="sip-years">Years</label><input id="sip-years" type="number" min="0" max="60" step="1" placeholder="10"></div>
-        <div class="field"><label for="sip-rate">Expected return (% p.a.)</label><input id="sip-rate" type="number" min="0" max="40" step="0.5" placeholder="12"></div>
-      </form>
-      <div class="result-grid">
-        <div class="result-cell"><div class="r-label">You invest</div><div class="r-value" id="sip-invested">₹0</div></div>
-        <div class="result-cell hero-cell"><div class="r-label">Projected value</div><div class="r-value" id="sip-value">₹0</div></div>
-        <div class="result-cell pos"><div class="r-label">Compounding gain</div><div class="r-value" id="sip-gain">₹0</div></div>
-      </div>
-      <div class="calc-actions"><span class="calc-hint" id="sip-note">Type your numbers — results update live.</span></div>
     </div>
   </section>
 </main>
+
+<section class="footer-cta">
+  <div class="wrap fc-grid">
+    <div><h2>Learn candle-wise, starting today.</h2><p>One article. Two minutes of checks. A habit that protects every trade after it.</p></div>
+    <div class="fc-actions"><a class="btn btn-primary" href="blog/3-check-method.html">Read the first article</a><a class="btn btn-ghost" href="blog.html">The journal</a></div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -136,11 +146,11 @@
         </ul>
       </div>
       <div>
-        <h4>Principles</h4>
+        <h4>Tools</h4>
         <ul>
-          <li><a href="index.html">Education over tips</a></li>
-          <li><a href="index.html">Risk first, returns second</a></li>
-          <li><a href="index.html">Your data stays with you</a></li>
+          <li><a href="tools/position-size-calculator.html">Position Size Calculator</a></li>
+          <li><a href="tools/portfolio-tracker.html">Portfolio Tracker</a></li>
+          <li><a href="tools/sip-calculator.html">SIP &amp; Compounding Calculator</a></li>
         </ul>
       </div>
     </div>

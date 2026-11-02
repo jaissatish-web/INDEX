@@ -218,9 +218,117 @@ const QUIZ = [
   });
 })();
 
-/* ============================================================
-   TOOLS — shared helpers
-   ============================================================ */
+/* ---------- premium header: shadow on scroll ---------- */
+const headerEl = document.querySelector('.site-header');
+if (headerEl) {
+  const sync = () => headerEl.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', sync, { passive: true });
+  sync();
+}
+
+/* ---------- page covers (decorative illustrations, no data claims) ---------- */
+const COVER_FONT = 'font-family="Manrope,system-ui" font-weight="700"';
+function coverStopFence(el) {
+  if (!el) return;
+  // candles descend toward a hard stop line; shaded band = loss you accepted in advance
+  const data = [
+    {o:100,h:102,l:99,c:101},{o:101,h:103,l:100,c:102.5},{o:102.5,h:104,l:101,c:100.5},
+    {o:100.5,h:101.5,l:98,c:98.4},{o:98.4,h:100,l:96.8,c:99.5},{o:99.5,h:100.4,l:97,c:97.4},
+    {o:97.4,h:98.6,l:95.4,c:95.8},{o:95.8,h:97,l:94.4,c:94.8},{o:94.8,h:95.6,l:92.8,c:93},
+    {o:93,h:94.2,l:91.6,c:91.9},{o:91.9,h:92.6,l:90.4,c:90.7},{o:90.7,h:91.5,l:89.2,c:89.5},
+    {o:89.5,h:90.4,l:88.2,c:88.5},{o:88.5,h:89.3,l:87.4,c:87.6}
+  ];
+  const hi = 104, lo = 85, W = 560, H = 320, PAD = 26;
+  const stop = 87.6;
+  const y = v => PAD + (hi - v) / (hi - lo) * (H - 2 * PAD - 40);
+  const step = (W - 2 * PAD) / data.length, bw = step * 0.5;
+  let out = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Illustrative chart: candles approaching a stop-loss line">`;
+  out += `<rect x="18" y="${y(stop)}" width="${W - 36}" height="${H - y(stop) - 14}" fill="#fdeeea" rx="10"/>`;
+  out += `<line x1="18" x2="${W - 18}" y1="${y(stop)}" y2="${y(stop)}" stroke="#b42318" stroke-width="2" stroke-dasharray="8 7"/>`;
+  out += `<text x="${W - 22}" y="${y(stop) + 24}" text-anchor="end" font-size="13" fill="#b42318" ${COVER_FONT}>Your stop — the exact loss is decided BEFORE you enter</text>`;
+  data.forEach((d, i) => {
+    const cx = PAD + step * i + step / 2, up = d.c >= d.o, col = up ? '#0a7c42' : '#b42318';
+    const top = y(Math.max(d.o, d.c)), bot = y(Math.min(d.o, d.c));
+    out += `<g><line x1="${cx}" x2="${cx}" y1="${y(d.h)}" y2="${y(d.l)}" stroke="${col}" stroke-width="1.6"/>
+      <rect x="${cx - bw / 2}" y="${top}" width="${bw}" height="${Math.max(2.5, bot - top)}" rx="2" fill="${col}"/></g>`;
+  });
+  out += `<text x="24" y="34" font-size="15" fill="#101b16" ${COVER_FONT}>Risk fixed in rupees. Quantity is the answer.</text>`;
+  out += '</svg>';
+  el.innerHTML = out;
+}
+function coverWatchWall(el) {
+  if (!el) return;
+  const W = 560, H = 320, cols = 6, rows = 3, gw = 84, gh = 88, gx = 26, gy = 30;
+  let out = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Illustrative wall of small charts, one highlighted">`;
+  out += `<rect x="14" y="16" width="${W - 28}" height="${H - 32}" fill="#f6f7f4" rx="14"/>`;
+  let seed = 7;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const tile = (tx, ty, hot) => {
+    const r = 8, x = gx + tx * (gw + 8), y0 = gy + ty * (gh + 8);
+    out += `<rect x="${x}" y="${y0}" width="${gw}" height="${gh}" rx="${r}" fill="${hot ? '#0a7c42' : '#ffffff'}" stroke="${hot ? '#0a7c42' : '#e7eae4'}"/>`;
+    let px = x + 12, py = y0 + 30;
+    for (let k = 0; k < 3; k++) {
+      const up = rnd() > 0.45, col = hot ? '#ffffff' : (up ? '#0a7c42' : '#b42318');
+      const h = 8 + rnd() * 22, w = 9;
+      out += `<line x1="${px + w / 2}" x2="${px + w / 2}" y1="${py - 6}" y2="${py + h + 6}" stroke="${col}" stroke-width="1.3"/>`;
+      out += `<rect x="${px}" y="${py}" width="${w}" height="${h}" rx="1.5" fill="${col}"/>`;
+      px += w + 12; py += up ? -6 : 5;
+      if (py < y0 + 14) py = y0 + 14; if (py + h > y0 + gh - 14) py = y0 + gh - 14 - h;
+    }
+    out += `<text x="${x + 10}" y="${y0 + 18}" font-size="9" fill="${hot ? '#cfe7d8' : '#6d7a72'}" font-family="JetBrains Mono, monospace" font-weight="500">${['NIFTY', 'BANK', 'TCS', 'INFY', 'HDFC', 'SBIN', 'ITC', 'LT', 'RELI', 'AXIS', 'WIPRO', 'ONGC', 'BHARTI', 'M&amp;M', 'TATA', 'ASIAN', 'ULTRA', 'MARUTI'][ty * cols + tx] || 'NIFTY'}</text>`;
+  };
+  for (let r2 = 0; r2 < rows; r2++) for (let c = 0; c < cols; c++) tile(c, r2, r2 === 1 && c === 2);
+  out += '</svg>';
+  el.innerHTML = out;
+}
+function coverStaircase(el) {
+  if (!el) return;
+  const W = 560, H = 320, x0 = 40, yb = 272, bw = 30, gap = 12;
+  let out = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Illustrative staircase of growing bars with a compounding curve">`;
+  out += `<rect x="14" y="16" width="${W - 28}" height="${H - 32}" fill="#f6f7f4" rx="14"/>`;
+  const heights = [26, 34, 44, 56, 70, 86, 104, 124, 146, 170, 196, 224];
+  let pts = [];
+  heights.forEach((h, i) => {
+    const x = x0 + i * (bw + gap), up = i % 4 !== 3;
+    out += `<rect x="${x}" y="${yb - h}" width="${bw}" height="${h}" rx="5" fill="${i === heights.length - 1 ? '#0a7c42' : (up ? '#0a7c42' : '#9ccdb0')}"/>`;
+    pts.push(`${x + bw / 2},${yb - h - 22}`);
+  });
+  out += `<polyline points="${pts.join(' ')}" fill="none" stroke="#101b16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const lastX = x0 + 11 * (bw + gap) + bw / 2, lastY = yb - 224 - 22;
+  out += `<circle cx="${lastX}" cy="${lastY}" r="15" fill="#101b16"/><text x="${lastX}" y="${lastY + 5}" text-anchor="middle" font-size="14" fill="#ffffff" font-family="Georgia, serif">₹</text>`;
+  out += `<line x1="${x0 - 8}" x2="${W - 30}" y1="${yb}" y2="${yb}" stroke="#d5dacf" stroke-width="1.6"/>`;
+  out += `<text x="40" y="303" font-size="12.5" fill="#6d7a72" ${COVER_FONT}>month 1</text>`;
+  out += `<text x="${W - 34}" y="303" text-anchor="end" font-size="12.5" fill="#6d7a72" ${COVER_FONT}>month 120</text>`;
+  out += '</svg>';
+  el.innerHTML = out;
+}
+function coverThreeChecks(el) {
+  if (!el) return;
+  const W = 560, H = 320;
+  let out = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Diagram: three checks leading to FAST, WAIT or NEVER verdicts">`;
+  out += `<rect x="14" y="16" width="${W - 28}" height="${H - 32}" fill="#f6f7f4" rx="14"/>`;
+  const checks = [['1', 'Momentum', 62], ['2', 'Trade & OI', 62], ['3', 'Gap', 62]];
+  checks.forEach((c, i) => {
+    const cy = 78 + i * 74, cx = 96;
+    out += `<circle cx="${cx}" cy="${cy}" r="24" fill="#ffffff" stroke="#0a7c42" stroke-width="2"/>
+      <text x="${cx}" y="${cy + 6}" text-anchor="middle" font-size="17" fill="#0a7c42" font-family="Georgia, serif">${c[0]}</text>
+      <text x="${cx + 34}" y="${cy + 5}" font-size="14.5" fill="#101b16" ${COVER_FONT}>Trade &amp; OI</text>
+      <path d="M ${cx + 130} ${cy} H 300" stroke="#d5dacf" stroke-width="2" marker-end="url(#arrw)"/>`;
+  });
+  out += `<defs><marker id="arrw" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#d5dacf"/></marker></defs>`;
+  const verdicts = [['FAST', '#0a7c42', 'trade it', 78], ['WAIT', '#8a5a00', 'watch it', 152], ['NEVER', '#b42318', 'zero today', 226]];
+  verdicts.forEach(v => {
+    const cy = v[3];
+    out += `<rect x="316" y="${cy - 26}" width="196" height="52" rx="12" fill="#ffffff" stroke="${v[1]}" stroke-width="2"/>
+      <text x="336" y="${cy + 1}" font-size="15" fill="${v[1]}" ${COVER_FONT}>${v[0]}</text>
+      <text x="500" y="${cy + 1}" text-anchor="end" font-size="12.5" fill="#6d7a72" ${COVER_FONT}>${v[2]}</text>`;
+  });
+  out += `<text x="36" y="46" font-size="15" fill="#101b16" ${COVER_FONT}>Two minutes of checks. One clear verdict.</text>`;
+  out += '</svg>';
+  el.innerHTML = out;
+}
+const COVERS = { 'stop-fence': coverStopFence, 'watch-wall': coverWatchWall, 'staircase': coverStaircase, 'three-checks': coverThreeChecks };
+document.querySelectorAll('[data-cover]').forEach(el => (COVERS[el.dataset.cover] || (() => {}))(el));
 const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
 const num = (id) => parseFloat(document.getElementById(id)?.value) || 0;
 

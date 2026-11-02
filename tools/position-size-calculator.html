@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<script>document.documentElement.classList.replace('no-js','js')</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Position Size Calculator — Know Your Max Loss Before You Trade | Dalal Desk</title>
+<meta name="description" content="Free position size calculator for Indian stock market traders. Enter capital, risk %, entry and stop-loss — get your exact quantity and maximum rupee loss before you place the trade.">
+<meta name="keywords" content="position size calculator, stock quantity calculator, risk management calculator india, intraday position sizing, stop loss calculator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jaissatish-web.github.io/INDEX/tools/position-size-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Position Size Calculator — Know Your Max Loss Before You Trade">
+<meta property="og:description" content="Enter capital, risk %, entry and stop-loss — get your exact quantity and maximum rupee loss. Free, no sign-up, runs in your browser.">
+<meta property="og:url" content="https://jaissatish-web.github.io/INDEX/tools/position-size-calculator.html">
+<meta property="og:site_name" content="Dalal Desk">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Position Size Calculator — Know Your Max Loss Before You Trade">
+<meta name="twitter:description" content="The one calculation that separates survivors from statistics. Free browser tool for Indian traders.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Position Size Calculator — Dalal Desk",
+      "url": "https://jaissatish-web.github.io/INDEX/tools/position-size-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (browser-based)",
+      "description": "Free position size calculator for Indian stock market traders: enter capital, risk %, entry and stop-loss to get exact quantity and maximum loss.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+      "publisher": { "@type": "Organization", "name": "Dalal Desk" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jaissatish-web.github.io/INDEX/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://jaissatish-web.github.io/INDEX/tools.html" },
+        { "@type": "ListItem", "position": 3, "name": "Position Size Calculator" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much of my capital should I risk per trade?", "acceptedAnswer": { "@type": "Answer", "text": "Most disciplined intraday traders risk between 0.5% and 1% of capital per trade. The calculator shows the math; the discipline of choosing a small risk percentage is yours." } },
+        { "@type": "Question", "name": "What does position size mean?", "acceptedAnswer": { "@type": "Answer", "text": "Position size is the number of shares or lots you can take so that if your stop-loss is hit, you lose only the rupee amount you decided in advance — never more." } },
+        { "@type": "Question", "name": "Is this calculator free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free with no sign-up. All calculations run locally in your browser and no data is sent anywhere." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
+    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../tools.html" class="active">Tools</a>
+      <a href="../blog/3-check-method.html" class="nav-cta">Start Learning</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../tools.html">Tools</a> › <span>Position Size Calculator</span></nav>
+
+  <section class="tool-hero">
+    <div>
+      <div class="kicker">Tool 01 · Risk Management</div>
+      <h1>Know your maximum loss before you press buy.</h1>
+      <p class="lede">You cannot control whether the market trends today. You fully control how much one bad trade can cost. This calculator turns that control into a number — your exact quantity, and the exact rupees you would lose if stopped out.</p>
+      <div class="hero-actions">
+        <span data-market-status class="chip closed"><span class="dot"></span> Checking market…</span>
+      </div>
+    </div>
+    <div class="cover" data-cover="stop-fence"></div>
+  </section>
+
+  <section class="tool-panel" style="margin-top:36px" aria-label="Position size calculator">
+    <form class="field-grid" id="ps-calc">
+      <div class="field"><label for="ps-capital">Capital (₹)</label><input id="ps-capital" type="number" min="0" placeholder="100000"></div>
+      <div class="field"><label for="ps-risk">Risk per trade (%)</label><input id="ps-risk" type="number" min="0" max="100" step="0.25" placeholder="1"></div>
+      <div class="field"><label for="ps-entry">Entry price (₹)</label><input id="ps-entry" type="number" min="0" step="0.05" placeholder="23500"></div>
+      <div class="field"><label for="ps-stop">Stop-loss (₹)</label><input id="ps-stop" type="number" min="0" step="0.05" placeholder="23300"></div>
+    </form>
+    <div class="result-grid">
+      <div class="result-cell"><div class="r-label">Risk amount</div><div class="r-value" id="ps-r-amt">₹0</div></div>
+      <div class="result-cell hero-cell"><div class="r-label">Max quantity</div><div class="r-value" id="ps-qty">0</div></div>
+      <div class="result-cell"><div class="r-label">Position value</div><div class="r-value" id="ps-value">₹0</div></div>
+    </div>
+    <div class="result-grid">
+      <div class="result-cell neg"><div class="r-label">Loss if stopped out</div><div class="r-value" id="ps-loss">₹0</div></div>
+    </div>
+    <div class="calc-actions"><span class="calc-hint" id="ps-note">Type your numbers — results update live.</span></div>
+  </section>
+
+  <section class="faq">
+    <h2>Questions traders ask before sizing a position</h2>
+    <details><summary>How much of my capital should I risk per trade?</summary><p>Most disciplined intraday traders risk 0.5%–1% of capital per trade. The tool computes the math; the discipline is yours.</p></details>
+    <details><summary>What if my stop is very close — can I buy more?</summary><p>Mathematically yes, and that is the trap: a tight stop with a huge quantity gets killed by one wick beyond the stop. Respect the calculator's cap and your instrument's normal noise.</p></details>
+    <details><summary>Does this work for options and futures too?</summary><p>The same risk-first logic applies, but lot size and premium pricing change the math per instrument. Start with the cash/stock version here; a derivatives-specific calculator is on the roadmap.</p></details>
+  </section>
+
+  <section class="related-strip" aria-label="Related tools and reading">
+    <a class="related-card" href="portfolio-tracker.html"><div class="rc-k">Tool 02 · Tracking</div><h3>Portfolio Tracker</h3><p>Add holdings, update prices, see live P&amp;L — privately in your browser.</p></a>
+    <a class="related-card" href="sip-calculator.html"><div class="rc-k">Tool 03 · Patience</div><h3>SIP &amp; Compounding Calculator</h3><p>See what a monthly SIP becomes over the years.</p></a>
+    <a class="related-card" href="../blog/3-check-method.html"><div class="rc-k">Reading</div><h3>The 3-Check Method</h3><p>Classify the day before you touch the order button.</p></a>
+  </section>
+
+  <div style="height:56px"></div>
+</main>
+
+<section class="footer-cta">
+  <div class="wrap fc-grid">
+    <div><h2>Learn candle-wise, starting today.</h2><p>One article. Two minutes of checks. A habit that protects every trade after it.</p></div>
+    <div class="fc-actions"><a class="btn btn-primary" href="../blog/3-check-method.html">Read the first article</a><a class="btn btn-ghost" href="../tools.html">All tools</a></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
+        <p>Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../tools.html">All tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="position-size-calculator.html">Position Size Calculator</a></li>
+          <li><a href="portfolio-tracker.html">Portfolio Tracker</a></li>
+          <li><a href="sip-calculator.html">SIP &amp; Compounding Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer"><strong>Disclaimer:</strong> All content on Dalal Desk is for educational purposes only and does not constitute investment advice or stock recommendations. Calculators are illustrative tools, not financial advice. Trading in securities involves risk of loss. Please consult a SEBI-registered investment adviser before making financial decisions.</div>
+    <div class="footer-bottom"><span>© 2026 Dalal Desk</span><span>Made in India</span></div>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

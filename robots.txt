@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jaissatish-web.github.io/INDEX/sitemap.xml
