@@ -317,6 +317,17 @@ html.js .reveal.in{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
 
+/* tools hub: card grid */
+.tool-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tcard{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;
+  box-shadow:var(--shadow-sm);transition:.22s;display:flex;flex-direction:column}
+.tcard:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.tcard .cover{border:none;border-radius:0;box-shadow:none;flex:none}
+.tcard .tc-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tcard h3{font-size:18px;font-weight:800;letter-spacing:-.01em}
+.tcard p{font-size:14px;color:var(--muted);flex:1}
+.tcard .tc-cta{margin-top:10px;font-weight:800;font-size:14px;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+
 /* ---------- tool page covers ---------- */
 .cover{background:var(--bg-soft);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm)}
 .tool-hero{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;padding:56px 0 8px}
@@ -373,6 +384,7 @@ html.js .reveal.in{opacity:1;transform:none}
   .footer-grid{grid-template-columns:1fr 1fr}
   .tool-hero{grid-template-columns:1fr;gap:28px}
   .related-strip{grid-template-columns:1fr}
+  .tool-cards{grid-template-columns:1fr}
 }
 @media (max-width:680px){
   .nav{display:none;position:absolute;top:66px;left:0;right:0;background:#fff;
