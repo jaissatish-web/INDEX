@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 3-Check Method: Classify the Day Before You Trade — Dalal Desk</title>
+<meta name="description" content="Three quick checks — momentum, trade/OI and the gap — that classify every trading day as FAST or WAIT before you place a trade. Candle-wise education for Indian intraday traders.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
+    <button class="menu-btn" aria-label="Toggle menu">☰</button>
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../tools.html#position-size" class="nav-cta">Size Your Trade</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap-narrow article">
+  <div style="padding-top:48px">
+    <span class="article-kicker">Day Classification · Intraday</span>
+    <h1>The 3-Check Method: classify the day before you touch the order button</h1>
+    <p class="article-standfirst">Most intraday losses are not caused by a bad trade. They are caused by trading on a day that never should have been traded. Three checks — momentum, trade/OI, and the gap — take about two minutes and turn "what do I do?" into "is today even mine?"</p>
+    <div class="article-meta">
+      <span class="avatar">SJ</span>
+      <span><strong>Dalal Desk</strong> · Nov 2026 · 8 min read</span>
+      <span style="margin-left:auto"><a class="chip" href="#quiz"><span class="dot"></span> Quiz at the end</a></span>
+    </div>
+  </div>
+
+  <article class="prose">
+    <p class="dropcap">Every morning at 9:15, two kinds of traders log in. The first asks: <strong>"What should I buy?"</strong> The second asks: <strong>"What kind of day is today?"</strong> The first trader is already losing — not because their analysis is wrong, but because the question is. On a slow, choppy day, the best analysis in the world gets chopped to pieces. The second trader might do nothing all day, and that nothing is the trade.</p>
+    <p>The 3-Check Method is a two-minute ritual. Before any order, you run three checks. Each check has a simple answer. Put together, they classify today into one of two boxes: <strong class="tag-fast">QUICK</strong> — a day worth trading — or <strong class="tag-wait">WAIT</strong> — a day where the correct position is no position. One rare combination gets a third box: <strong class="tag-never">NEVER</strong>. Let's walk through each check candle by candle.</p>
+
+    <h2>Check 1 — Momentum: is today fast or slow?</h2>
+    <p>Open the chart of your instrument — Nifty, Bank Nifty, or your stock — and just watch the candles for the first several minutes. You are not predicting. You are measuring the <em>speed of disagreement</em> between buyers and sellers.</p>
+    <ul>
+      <li><strong>Fast momentum:</strong> candles are long-bodied, each candle closes decisively near its extreme, pullbacks are shallow and brief. Price is being pushed by one side with conviction.</li>
+      <li><strong>Slow momentum:</strong> candles are small, alternating colours, long wicks on both ends. Every push is answered by an equal push back. Nobody has control.</li>
+    </ul>
+
+    <div class="fig-pair">
+      <figure class="figure">
+        <div class="fig-title">Fast momentum — clean one-directional candles</div>
+        <div id="fig-fast"></div>
+        <figcaption>Long green bodies, shallow pullbacks. Trend-following trades get room to breathe. <em>Illustrative candles.</em></figcaption>
+      </figure>
+      <figure class="figure">
+        <div class="fig-title">Slow momentum — chop, wicks, no control</div>
+        <div id="fig-wait"></div>
+        <figcaption>Small alternating bodies with wicks both sides. Every breakout is immediately reversed. <em>Illustrative candles.</em></figcaption>
+      </figure>
+    </div>
+    <p class="matrix-note">Same market, same morning — but two entirely different jobs. The first chart rewards patience and trailing stops. The second punishes anyone who enters it.</p>
+
+    <h2>Check 2 — Trade &amp; OI: who is building, who is trapped?</h2>
+    <p>The chart tells you <em>what</em> price is doing. This check tells you <em>who</em> is behind it. Open Interest (OI) — the number of open contracts, visible on the option chain and on NSE's daily participant data — reveals whether the move has real builders behind it.</p>
+    <ul>
+      <li><strong>Positive OI with rising price:</strong> new positions are being built in the direction of the move. Real fuel.</li>
+      <li><strong>Negative OI with falling price:</strong> positions are being unwound. The move may be fast — but it is a exit ramp, not a highway.</li>
+      <li><strong>Range-bound OI:</strong> writers sitting at both ends, expecting a sideways day. Consistent with slow momentum.</li>
+    </ul>
+    <p>The chart and the OI picture can <strong>agree</strong> (both say up, or both say down), <strong>disagree</strong> (one neutral, one directional), or <strong>contradict</strong> (momentum fast up, but the positioning data says the move is being unwound). The quality of your day depends entirely on which of these you have.</p>
+
+    <h2>Check 3 — Gap: what did the opening tell you?</h2>
+    <p>The gap between yesterday's close and today's open is the market's overnight summary. It is not a signal to trade — it is a signal about <em>who is already trapped</em>.</p>
+    <ul>
+      <li><strong>Gap up:</strong> buyers who missed yesterday's move are now paying up to enter, and shorts from yesterday are already under water.</li>
+      <li><strong>Gap down:</strong> the mirror image — yesterday's longs are trapped above.</li>
+      <li><strong>Flat open:</strong> the market is neutral; expect the first 30–45 minutes to decide the day, and respect the morning range.</li>
+    </ul>
+    <p>A gap does not tell you the direction. It tells you where the emotional inventory is — and trapped traders are the fuel of the sharpest moves of the day.</p>
+
+    <h2>The decision matrix</h2>
+    <p>Run all three checks and place today in one box:</p>
+    <table class="matrix">
+      <thead><tr><th>Combination</th><th>What it means</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td>Chart agrees with trade/OI</td><td>Price and positioning tell the same story — trend has fuel behind it.</td><td><span class="tag-fast">FAST day</span> — trade the trend with trailing discipline.</td></tr>
+        <tr><td>They disagree (one neutral)</td><td>Signal exists but no confirmation. Moves will look great and fail.</td><td><span class="tag-wait">WAIT</span> — watch; trade only when proof appears.</td></tr>
+        <tr><td>Momentum opposite to OI</td><td>Fast price action against the positioning story — violent, unpredictable reversals.</td><td><span class="tag-never">NEVER</span> — today the correct trade is zero.</td></tr>
+      </tbody>
+    </table>
+    <p>Notice what this method really is: <strong>a permission system</strong>. You are not predicting where the market goes. You are deciding whether today deserves your money.</p>
+
+    <h2>The trap every beginner falls into</h2>
+    <p>Now the single most valuable candle picture in this entire article. A stock rises all morning — strong, confident green candles. OI data, however, shows <strong>negative buildup</strong>. Then one tall red candle appears.</p>
+    <figure class="figure">
+      <div class="fig-title">The trapped-buyer dump</div>
+      <div id="fig-trap"></div>
+      <figcaption>Rising green candles with negative OI buildup, followed by one sharp red candle. Late buyers are trapped at the top and their panic selling accelerates the fall. <em>Illustrative candles — the shape matters, not the price levels.</em></figcaption>
+    </figure>
+    <div class="callout danger">
+      <span class="c-label">The trap rule</span>
+      <strong>Negative OI + a sharp red candle after a strong rise = trapped buyers dumping.</strong> The rise was not built — it was unwound into strength. Trapped buyers sell into weakness, which makes the fall steeper, which triggers more selling. Do not buy "the dip" here. The dip is the product.
+    </div>
+
+    <h2>Sell on proof, not hope</h2>
+    <p>When you are short — or when you are deciding whether to be — the market will test you with small bounces. Amateurs exit on hope and re-enter on hope. Professionals wait for <em>proof</em>:</p>
+    <figure class="figure">
+      <div class="fig-title">Proof of resistance</div>
+      <div id="fig-proof"></div>
+      <figcaption>Price approaches a level built by yesterday's close zone. The level is respected almost exactly, strong red candles reject from it, and only then does the breakdown follow. <em>Illustrative candles.</em></figcaption>
+    </figure>
+    <div class="callout good">
+      <span class="c-label">The proof rule</span>
+      <strong>Where the market closes, sellers sit.</strong> A close zone from a previous session acts as resistance — and resistance is "real" only when price respects it precisely and strong red candles reject from it. One touch is curiosity. Two rejections with red bodies is proof.
+    </div>
+
+    <h2>Beginner rules that protect the account</h2>
+    <ul>
+      <li><strong>Avoid morning trades.</strong> The first 15–30 minutes are the noisiest — gaps, false breakouts, algorithmic orders. Let the day announce itself.</li>
+      <li><strong>WAIT days are trades too.</strong> Flat is a position. The commission on a skipped bad trade is zero.</li>
+      <li><strong>One bad classification costs one trade.</strong> No classification at all costs your month.</li>
+    </ul>
+
+    <div class="pull-quote">"The market doesn't reward prediction. It rewards the trader who knows which days not to show up for."</div>
+
+    <div class="quiz" id="quiz">
+      <h3>Check your understanding</h3>
+      <p class="q-sub">Three questions from the scenarios above. Answers appear instantly with explanations.</p>
+      <div id="quiz-root"></div>
+      <div class="quiz-score" id="quiz-score"></div>
+    </div>
+
+    <div class="callout" style="background:var(--amber-soft);border-color:#f0dfb8;margin-top:40px">
+      <span class="c-label" style="color:var(--amber)">Disclaimer</span>
+      This article is for education only and is not investment advice or a recommendation to trade. All charts are illustrative patterns, not live market data. Derivatives and intraday trading carry a high risk of loss. Consult a SEBI-registered investment adviser before making financial decisions.
+    </div>
+
+    <p style="margin-top:34px"><a href="../blog.html">← Back to all articles</a> &nbsp;·&nbsp; <a href="../tools.html#position-size">Open the Position Size Calculator →</a></p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
+        <p>Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../tools.html">Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Next up</h4>
+        <ul>
+          <li><a href="../tools.html#sip">SIP calculator</a></li>
+          <li><a href="../tools.html#portfolio">Portfolio tracker</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer"><strong>Disclaimer:</strong> All content on Dalal Desk is for educational purposes only and does not constitute investment advice or stock recommendations. Charts and examples are illustrative, not live market data. Trading in securities involves risk of loss. Please consult a SEBI-registered investment adviser before making financial decisions.</div>
+    <div class="footer-bottom"><span>© 2026 Dalal Desk</span><span>Made in India</span></div>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
