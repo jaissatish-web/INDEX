@@ -22,6 +22,17 @@ if (menuBtn) {
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 }
 
+/* back-to-top button */
+const toTop = document.createElement('button');
+toTop.id = 'to-top';
+toTop.setAttribute('aria-label', 'Back to top');
+toTop.textContent = '↑';
+document.body.appendChild(toTop);
+const ttSync = () => toTop.classList.toggle('show', window.scrollY > 700);
+window.addEventListener('scroll', ttSync, { passive: true });
+ttSync();
+toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
 /* ---------- reveal on scroll ---------- */
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
