@@ -71,6 +71,7 @@
         <figcaption>Small alternating bodies with wicks both sides. Every breakout is immediately reversed. <em>Illustrative candles.</em></figcaption>
       </figure>
     </div>
+<div class="infographic" id="ig-momentum"></div>
     <p class="matrix-note">Same market, same morning — but two entirely different jobs. The first chart rewards patience and trailing stops. The second punishes anyone who enters it.</p>
 
     <h2>Check 2 — Trade &amp; OI: who is building, who is trapped?</h2>
@@ -82,6 +83,7 @@
     </ul>
     <p>The chart and the OI picture can <strong>agree</strong> (both say up, or both say down), <strong>disagree</strong> (one neutral, one directional), or <strong>contradict</strong> (momentum fast up, but the positioning data says the move is being unwound). The quality of your day depends entirely on which of these you have.</p>
 
+<div class="infographic" id="ig-oi"></div>
     <h2>Check 3 — Gap: what did the opening tell you?</h2>
     <p>The gap between yesterday's close and today's open is the market's overnight summary. It is not a signal to trade — it is a signal about <em>who is already trapped</em>.</p>
     <ul>
@@ -91,6 +93,7 @@
     </ul>
     <p>A gap does not tell you the direction. It tells you where the emotional inventory is — and trapped traders are the fuel of the sharpest moves of the day.</p>
 
+<div class="infographic" id="ig-gap"></div>
     <h2>The decision matrix</h2>
     <p>Run all three checks and place today in one box:</p>
     <div style="overflow-x:auto"><table class="matrix">
@@ -103,6 +106,7 @@
     </table></div>
     <p>Notice what this method really is: <strong>a permission system</strong>. You are not predicting where the market goes. You are deciding whether today deserves your money.</p>
 
+<div class="infographic" id="ig-matrix"></div>
     <h2>The trap every beginner falls into</h2>
     <p>Now the single most valuable candle picture in this entire article. A stock rises all morning — strong, confident green candles. OI data, however, shows <strong>negative buildup</strong>. Then one tall red candle appears.</p>
     <figure class="figure">
@@ -240,5 +244,187 @@ function setArticleLang(l){
 }
 </script>
 <script src="../js/app.js"></script>
+<script>
+/* ============ Branded section infographics — colourful + downloadable ============ */
+(function(){
+const FONT="Manrope,'Segoe UI',sans-serif";
+const INK='#101b16',MUT='#57665e',FNT='#8a958e',GRN='#0a7c42',GRN2='#35c07c',RED='#b42318',AMB='#8a5a00',SOFT='#f6f7f4',LN='#e7eae4';
+const URLTXT='jaissatish-web.github.io/INDEX · Education only · Illustrative charts';
+
+function brand(y,w){
+ return `<rect x="0" y="${y}" width="${w}" height="50" fill="${SOFT}"/>
+ <circle cx="36" cy="${y+25}" r="14" fill="${GRN}"/>
+ <text x="36" y="${y+30}" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">\u20B9</text>
+ <text x="58" y="${y+30}" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">Dalal Desk</text>
+ <text x="${w-22}" y="${y+30}" text-anchor="end" font-family="${FONT}" font-size="11.5" fill="${FNT}">${URLTXT}</text>`;
+}
+function head(x,y,kick,title){
+ return `<text x="${x}" y="${y}" font-family="${FONT}" font-size="12" font-weight="800" fill="${GRN}" letter-spacing="2">${kick}</text>
+ <text x="${x}" y="${y+30}" font-family="${FONT}" font-size="23" font-weight="800" fill="${INK}">${title}</text>`;
+}
+function candle(x,topY,h,up,w){
+ w=w||20;const col=up?GRN2:RED;
+ return `<rect x="${x}" y="${topY}" width="${w}" height="${h}" rx="2" fill="${col}" opacity="${up?'.92':'1'}"/>`;
+}
+function wick(x,y1,y2,col){return `<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="${col}" stroke-width="2"/>`;}
+function panel(x,y,w,h,color){
+ return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="#fff" stroke="${LN}"/>
+ <rect x="${x}" y="${y}" width="${w}" height="4" rx="2" fill="${color}"/>`;
+}
+function chip(x,y,w,label,color){
+ return `<rect x="${x}" y="${y}" width="${w}" height="26" rx="13" fill="${color}"/>
+ <text x="${x+w/2}" y="${y+17.5}" text-anchor="middle" font-family="${FONT}" font-size="12" font-weight="800" fill="#fff" letter-spacing="1">${label}</text>`;
+}
+function svgWrap(id,w,h,inner,name){
+ const el=document.getElementById(id); if(!el) return;
+ el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${name}">${inner}</svg>
+ <div class="dl-row"><button class="dl-btn" data-name="${name}">\u2913 Download image</button></div>`;
+ el.querySelector('.dl-btn').addEventListener('click',()=>exportPNG(el.querySelector('svg'),w,h,name));
+}
+window.exportPNG=function(svg,baseW,baseH,name){
+ const c=svg.cloneNode(true);
+ const vb=c.getAttribute('viewBox')?c.getAttribute('viewBox').split(' ').map(Number):[0,0,baseW,baseH];
+ const w=vb[2],h=vb[3];
+ c.setAttribute('viewBox',`0 0 ${w} ${h}`);c.setAttribute('width',w);c.setAttribute('height',h);
+ c.setAttribute('xmlns','http://www.w3.org/2000/svg');
+ const xml=new XMLSerializer().serializeToString(c);
+ const img=new Image();
+ img.onload=function(){
+  const cv=document.createElement('canvas');cv.width=w*2;cv.height=h*2;
+  const ctx=cv.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.drawImage(img,0,0,cv.width,cv.height);
+  const a=document.createElement('a');a.download=name;a.href=cv.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove();
+ };
+ img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+};
+
+/* ---- IG 1: Momentum ---- */
+(function(){
+ let s='';
+ s+=head(28,40,'CHECK 1 \u00B7 MOMENTUM','Is today fast or slow?');
+ // FAST panel
+ s+=panel(28,84,368,236,GRN)+chip(48,104,64,'FAST',GRN);
+ s+=`<text x="124" y="121" font-family="${FONT}" font-size="13" font-weight="700" fill="${MUT}">one-directional conviction</text>`;
+ const fx=[80,136,192,248,304],fh=[80,72,90,82,74];
+ fx.forEach((x,i)=>{s+=wick(x+10,258-fh[i]-14,258+10,GRN2)+candle(x,258-fh[i],fh[i],true);});
+ s+=`<text x="48" y="290" font-family="${FONT}" font-size="12.5" font-weight="600" fill="${MUT}">Long candles \u00B7 shallow pullbacks \u00B7 closes at extremes</text>`;
+ // WAIT panel
+ s+=panel(404,84,368,236,AMB)+chip(424,104,64,'WAIT',AMB);
+ s+=`<text x="500" y="121" font-family="${FONT}" font-size="13" font-weight="700" fill="${MUT}">no one has control</text>`;
+ const wx=[456,512,568,624,680];
+ wx.forEach((x,i)=>{
+  const up=i%2===0,bh=26+((i*7)%12);
+  s+=wick(x+10,258,196,up?GRN2:RED)+wick(x+10,196,134,up?GRN2:RED)+candle(x,196-bh/2,bh,up,20);
+ });
+ s+=`<text x="424" y="290" font-family="${FONT}" font-size="12.5" font-weight="600" fill="${MUT}">Small alternating bodies \u00B7 long wicks \u00B7 chop</text>`;
+ s+=`<text x="28" y="352" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">The question is not "what should I buy?" \u2014 it is "which chart is this today?"</text>`;
+ s+=brand(376,800);
+ svgWrap('ig-momentum',800,428,s,'dalaldesk-3check-1-momentum');
+})();
+
+/* ---- IG 2: Trade & OI ---- */
+(function(){
+ let s='';
+ s+=head(28,40,'CHECK 2 \u00B7 TRADE & OI','Who is building, who is trapped?');
+ // P1
+ s+=panel(28,84,232,222,GRN);
+ s+=`<text x="48" y="118" font-family="${FONT}" font-size="15" font-weight="800" fill="${INK}">+OI with rising price</text>`;
+ [0,1,2,3].forEach(i=>{const h=34+i*20;s+=candle(64+i*44,208-h,32+i*6,true,24);});
+ s+=`<path d="M60,196 Q130,150 210,120" fill="none" stroke="${GRN}" stroke-width="3" stroke-dasharray="1 0"/>`;
+ s+=`<text x="48" y="266" font-family="${FONT}" font-size="11.5" font-weight="600" fill="${MUT}">New positions built with</text>`;
+ s+=`<text x="48" y="282" font-family="${FONT}" font-size="11.5" font-weight="600" fill="${MUT}">the move = real fuel.</text>`;
+ // P2
+ s+=panel(284,84,232,222,RED);
+ s+=`<text x="304" y="118" font-family="${FONT}" font-size="15" font-weight="800" fill="${INK}">OI unwinding \u00B7 falling</text>`;
+ [0,1,2,3].forEach(i=>{const h=88-i*20;s+=candle(320+i*44,208-h,h,false,24);});
+ s+=`<path d="M316,124 Q390,170 468,192" fill="none" stroke="${RED}" stroke-width="3"/>`;
+ s+=`<text x="304" y="266" font-family="${FONT}" font-size="11.5" font-weight="600" fill="${MUT}">Positions closing out =</text>`;
+ s+=`<text x="304" y="282" font-family="${FONT}" font-size="11.5" font-weight="600" fill="${MUT}">an exit ramp, not a highway.</text>`;
+ // P3
+ s+=panel(540,84,232,222,AMB);
+ s+=`<text x="560" y="118" font-family="${FONT}" font-size="15" font-weight="800" fill="${INK}">Range-bound OI</text>`;
+ s+=`<line x1="576" y1="190" x2="736" y2="190" stroke="${INK}" stroke-width="2" stroke-dasharray="7 5"/>`;
+ [0,1,2,3,4].forEach(i=>{const up=i%2===0;s+=candle(596+i*30,190-26,26+((i*5)%10),up,18);});
+ s+=`<text x="560" y="266" font-family="${FONT}" font-size="11.5" font-weight="600" fill="${MUT}">Writers at both ends —</text>`;
+ s+=`<text x="560" y="282" font-family="${FONT}" font-size="11.5" font-weight="600" fill="${MUT}">a sideways day is expected.</text>`;
+ s+=`<text x="28" y="346" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">The chart tells you WHAT. The OI picture tells you WHO.</text>`;
+ s+=brand(368,800);
+ svgWrap('ig-oi',800,420,s,'dalaldesk-3check-2-trade-oi');
+})();
+
+/* ---- IG 3: Gap ---- */
+(function(){
+ let s='';
+ s+=head(28,40,'CHECK 3 \u00B7 GAP','What did the opening tell you?');
+ function miniGap(x,y,mode){
+  let m='';
+  const prevY=y+120;
+  m+=`<line x1="${x+16}" y1="${prevY}" x2="${x+206}" y2="${prevY}" stroke="${FNT}" stroke-width="1.6" stroke-dasharray="6 4"/>`;
+  m+=`<text x="${x+16}" y="${prevY+16}" font-family="${FONT}" font-size="10" fill="${FNT}">yesterday's close</text>`;
+  if(mode==='up'){
+   m+=wick(x+60,y+28,y+116,GRN2)+candle(x+50,y+40,64,true,22);
+   m+=`<text x="${x+16}" y="${y+176}" font-family="${FONT}" font-size="12" font-weight="700" fill="${RED}">Shorts trapped \u00B7 buyers paying up</text>`;
+  }else if(mode==='down'){
+   m+=wick(x+60,y+34,y+122,RED)+candle(x+50,y+46,64,false,22);
+   m+=`<text x="${x+16}" y="${y+176}" font-family="${FONT}" font-size="12" font-weight="700" fill="${RED}">Longs trapped above</text>`;
+  }else{
+   m+=wick(x+140,y+70,y+132,GRN2)+candle(x+130,y+100,34,true,22);
+   m+=`<text x="${x+16}" y="${y+176}" font-family="${FONT}" font-size="12" font-weight="700" fill="${AMB}">Neutral \u2014 let the day announce itself</text>`;
+  }
+  return m;
+ }
+ s+=panel(28,84,232,210,GRN)+miniGap(28,96,'up');
+ s+=panel(284,84,232,210,RED)+miniGap(284,96,'down');
+ s+=panel(540,84,232,210,AMB)+miniGap(540,96,'flat');
+ s+=`<text x="28" y="334" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">A gap is not a signal to trade \u2014 it is a map of who is already trapped.</text>`;
+ s+=brand(356,800);
+ svgWrap('ig-gap',800,408,s,'dalaldesk-3check-3-gap');
+})();
+
+/* ---- IG 4: Decision matrix (the whole method) ---- */
+(function(){
+ let s='';
+ s+=head(28,40,'THE WHOLE METHOD','The 3-Check decision matrix');
+ const checks=[['1','Momentum','fast or slow?',150],['2','Trade & OI','building or trapped?',230],['3','Gap','who is trapped overnight?',310]];
+ checks.forEach(c=>{
+  s+=`<circle cx="58" cy="${c[3]}" r="22" fill="${INK}"/><text x="58" y="${c[3]+7}" text-anchor="middle" font-family="Georgia,serif" font-size="19" font-weight="700" fill="#fff">${c[0]}</text>`;
+  s+=`<text x="92" y="${c[3]-2}" font-family="${FONT}" font-size="15" font-weight="800" fill="${INK}">${c[1]}</text>`;
+  s+=`<text x="92" y="${c[3]+17}" font-family="${FONT}" font-size="12" fill="${MUT}">${c[2]}</text>`;
+ });
+ const cards=[
+  ['FAST','Chart agrees with Trade/OI','Trade the trend with trailing discipline.',GRN,140],
+  ['WAIT','They disagree \u2014 one is neutral','Watch. Trade only when proof appears.',AMB,220],
+  ['NEVER','Momentum opposite to OI','Today the correct trade is zero.',RED,300]];
+ cards.forEach(c=>{
+  const y=c[4];
+  s+=`<circle cx="256" cy="${y+22}" r="4" fill="${c[3]}"/>`;
+  s+=`<rect x="272" y="${y-14}" width="496" height="72" rx="14" fill="#fff" stroke="${c[3]}" stroke-width="1.6"/>`;
+  s+=`<rect x="274" y="${y-11}" width="7" height="66" rx="3.5" fill="${c[3]}"/>`;
+  s+=`<text x="298" y="${y+14}" font-family="${FONT}" font-size="17" font-weight="800" fill="${c[3]}">${c[0]}</text>`;
+  s+=`<text x="404" y="${y+14}" font-family="${FONT}" font-size="14.5" font-weight="700" fill="${INK}">${c[1]}</text>`;
+  s+=`<text x="298" y="${y+42}" font-family="${FONT}" font-size="13" fill="${MUT}">${c[2]}</text>`;
+ });
+ s+=`<text x="28" y="378" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">This is a permission system: you are not predicting \u2014 you are deciding whether today deserves your money.</text>`;
+ s+=brand(398,800);
+ svgWrap('ig-matrix',800,450,s,'dalaldesk-3check-decision-matrix');
+})();
+
+/* ---- Download buttons on the existing candle figures (brand baked into export) ---- */
+document.querySelectorAll('.prose .figure').forEach(function(fig,idx){
+ const svg=fig.querySelector('svg'); if(!svg) return;
+ const bar=document.createElement('div');bar.className='fig-dl';
+ const btn=document.createElement('button');btn.className='dl-btn';btn.textContent='\u2913 Download image';
+ btn.addEventListener('click',function(){
+  const vb=svg.getAttribute('viewBox')?svg.getAttribute('viewBox').split(' ').map(Number):null;
+  const w=vb?vb[2]:800,h=vb?vb[3]:340;
+  const c=svg.cloneNode(true);
+  c.setAttribute('viewBox',`0 0 ${w} ${h+50}`);
+  c.insertAdjacentHTML('beforeend',brand(h,w).replace(`y="${h}"`,`y="${h}"`).replace(/height="50"/,'height="50"'));
+  exportPNG(c,w,h+50,'dalaldesk-3check-fig-'+(idx+1)+'.png');
+ });
+ bar.appendChild(btn);fig.appendChild(bar);
+});
+})();
+</script>
 </body>
 </html>

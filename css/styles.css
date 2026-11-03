@@ -433,3 +433,13 @@ html.js .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
 }
+
+/* ---------- branded section infographics ---------- */
+.infographic{border:1px solid var(--line);border-radius:20px;padding:16px 16px 8px;margin:34px 0;background:#fff}
+.infographic svg{width:100%;height:auto;display:block}
+.dl-row{display:flex;justify-content:flex-end;padding:6px 4px 4px}
+.dl-btn{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);
+  background:#fff;border-radius:99px;padding:8px 16px;font-size:12.5px;font-weight:700;
+  color:var(--muted);cursor:pointer;transition:.15s;font-family:var(--font-ui)}
+.dl-btn:hover{border-color:var(--accent);color:var(--accent)}
+.fig-dl{display:flex;justify-content:flex-end;padding:2px 8px 10px}
