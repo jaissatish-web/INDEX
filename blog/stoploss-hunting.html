@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<script>document.documentElement.classList.replace('no-js','js')</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>Why Your Stoploss Keeps Getting Hit | Stoploss Hunting Explained — Dalal Desk</title>
+<meta name="description" content="Your stoploss is not a price — it is fuel. Learn stoploss hunting: where the crowd parks its stops, why fake breakouts are really stop hunts, and how to read it all in advance.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://jaissatish-web.github.io/INDEX/blog/stoploss-hunting.html">
+<meta property="og:title" content="Why Your Stoploss Keeps Getting Hit — Stoploss Hunting Explained">
+<meta property="og:description" content="The market cannot move without stoplosses. Learn the fuel map, the fake-breakout hunt, and the two-index rotation — candle by candle.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jaissatish-web.github.io/INDEX/blog/stoploss-hunting.html">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"Why Your Stoploss Keeps Getting Hit — Stoploss Hunting Explained","author":{"@type":"Organization","name":"Dalal Desk"},"publisher":{"@type":"Organization","name":"Dalal Desk"},"description":"Stoploss hunting explained with candle illustrations: where the crowd parks stops, why fake breakouts are stop hunts, and how the two indices rotate.","datePublished":"2026-11-03"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Why does price hit my stoploss and then reverse?","acceptedAnswer":{"@type":"Answer","text":"Because a stoploss cluster is liquidity. Large players need an opposite side to fill big positions, and predictable stop placement gives them that address. Price is driven to the cluster, stops fire, and then the real move begins."}},
+{"@type":"Question","name":"How do I know if a breakout is real or a stop hunt?","acceptedAnswer":{"@type":"Answer","text":"A real breakout closes above the level and holds. A stop hunt peeks above, closes back below, and reverses — it was only collecting the stops parked above resistance."}},
+{"@type":"Question","name":"Where should a stoploss go to avoid the obvious cluster?","acceptedAnswer":{"@type":"Answer","text":"Not just below the obvious support where everyone parks it. Place it by structure, size the position so a wick alone cannot remove you, and always know who is trapped before you enter."}}]}]}
+</script>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
+    <button class="menu-btn" aria-label="Toggle menu">☰</button>
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../tools.html#position-size" class="nav-cta">Size Your Trade</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap-narrow article">
+  <div style="padding-top:48px">
+    <span class="article-kicker">Stoploss Hunting · Price Action</span>
+    <h1>Why Your Stoploss Keeps Getting Hit — and How to Read the Hunt Before It Happens</h1>
+    <p class="article-standfirst">You place the stoploss below support. Price comes exactly there, takes it out, and then reverses in your direction. That is not bad luck. It is a system — and once you see the system, you stop being its fuel.</p>
+    <div class="article-meta">
+      <span class="avatar">SJ</span>
+      <span><strong>Dalal Desk</strong> · Nov 2026 · 9 min read</span>
+      <span style="margin-left:auto"><span data-market-status class="chip closed"><span class="dot"></span> Checking market…</span></span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="cover" style="margin-top:34px;border-radius:20px;overflow:hidden;border:1px solid var(--line)">
+    <svg viewBox="0 0 880 400" role="img" aria-label="Illustration: price breaks support into a stop cluster, then reverses" style="display:block;width:100%;height:auto">
+      <rect width="880" height="400" fill="#ffffff"/>
+      <g stroke="#eef1ec" stroke-width="1"><line x1="60" y1="70" x2="820" y2="70"/><line x1="60" y1="135" x2="820" y2="135"/><line x1="60" y1="200" x2="820" y2="200"/><line x1="60" y1="265" x2="820" y2="265"/></g>
+      <rect x="440" y="252" width="330" height="44" fill="#0a7c42" opacity=".07" rx="4"/>
+      <rect x="440" y="252" width="330" height="44" fill="none" stroke="#0a7c42" stroke-opacity=".25" stroke-width="1.2" rx="4"/>
+      <text x="435" y="314" font-family="Manrope" font-weight="800" font-size="12.5" fill="#0a7c42" letter-spacing="1.5">LIQUIDITY ZONE (THE STOPS)</text>
+      <line x1="70" y1="228" x2="806" y2="228" stroke="#0f1a15" stroke-width="2" stroke-dasharray="8 6"/>
+      <text x="70" y="252" font-family="Manrope" font-weight="800" font-size="12.5" fill="#0f1a15" letter-spacing="1.5">SUPPORT — WHERE EVERYONE HIDES THEIR SL</text>
+      <g stroke="#0f1a15" stroke-width="1.6">
+        <line x1="103" y1="122" x2="103" y2="204"/><rect x="90" y="136" width="26" height="52" rx="2" fill="#fff"/>
+        <line x1="143" y1="116" x2="143" y2="192"/><rect x="130" y="128" width="26" height="46" rx="2" fill="#0f1a15"/>
+        <line x1="183" y1="134" x2="183" y2="216"/><rect x="170" y="146" width="26" height="54" rx="2" fill="#fff"/>
+        <line x1="223" y1="150" x2="223" y2="224"/><rect x="210" y="162" width="26" height="44" rx="2" fill="#0f1a15"/>
+        <line x1="263" y1="160" x2="263" y2="236"/><rect x="250" y="172" width="26" height="48" rx="2" fill="#fff"/>
+        <line x1="303" y1="168" x2="303" y2="232"/><rect x="290" y="178" width="26" height="40" rx="2" fill="#0f1a15"/>
+        <line x1="343" y1="172" x2="343" y2="242"/><rect x="330" y="182" width="26" height="42" rx="2" fill="#fff"/>
+        <line x1="383" y1="176" x2="383" y2="244"/><rect x="370" y="186" width="26" height="40" rx="2" fill="#0f1a15"/>
+      </g>
+      <g stroke="#b42318" stroke-width="1.8">
+        <line x1="445" y1="204" x2="445" y2="300"/><rect x="430" y="216" width="30" height="66" rx="2" fill="#b42318"/>
+        <line x1="493" y1="240" x2="493" y2="330"/><rect x="478" y="250" width="30" height="62" rx="2" fill="#b42318"/>
+        <line x1="541" y1="278" x2="541" y2="362"/><rect x="526" y="288" width="30" height="54" rx="2" fill="#b42318"/>
+        <line x1="589" y1="292" x2="589" y2="382"/><rect x="574" y="310" width="30" height="36" rx="2" fill="#b42318"/>
+      </g>
+      <g stroke="#0a7c42" stroke-width="1.8">
+        <line x1="637" y1="266" x2="637" y2="370"/><rect x="622" y="278" width="30" height="70" rx="2" fill="#0a7c42"/>
+        <line x1="685" y1="214" x2="685" y2="312"/><rect x="670" y="226" width="30" height="68" rx="2" fill="#fff"/>
+        <line x1="733" y1="168" x2="733" y2="258"/><rect x="718" y="180" width="30" height="62" rx="2" fill="#0a7c42"/>
+      </g>
+      <path d="M552,352 Q600,416 662,330" fill="none" stroke="#0f1a15" stroke-width="2.4" stroke-dasharray="2 6" stroke-linecap="round"/>
+      <path d="M700,344 Q772,296 802,220" fill="none" stroke="#0a7c42" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M802,220 l-15,5 l7,14 z" fill="#0a7c42"/>
+      <text x="704" y="372" font-family="Fraunces" font-style="italic" font-size="16" fill="#0a7c42">…then the real move</text>
+      <rect x="60" y="30" width="286" height="38" rx="19" fill="#fff" stroke="#0f1a15" stroke-width="1.4"/>
+      <text x="80" y="55" font-family="Manrope" font-weight="800" font-size="13" fill="#0f1a15" letter-spacing="2">THE STOP HUNT, EXPLAINED</text>
+      <text x="60" y="390" font-family="Manrope" font-weight="500" font-size="11.5" fill="#98a29c">Illustrative · Education only · Not investment advice</text>
+    </svg>
+  </div>
+
+  <article class="prose">
+    <p class="dropcap">Every trader knows this scene. You buy near a support and keep the stoploss a little below it — with a "small buffer". The market falls straight into that buffer, hits your stop, and then turns and climbs without you. You blame luck. You blame the market. But this happens to lakhs of traders every single day in the same places — and the same places get hit every single day. That is not chance. That is design.</p>
+    <p>Here is the one line that changes how you see charts forever: <strong>the market cannot move without stoplosses.</strong> A big player who wants to take a large position needs someone on the other side to fill it. Yours and everyone else's stops — sitting predictably at the same levels — are exactly that other side. Where fresh stops are available, the market goes there. Where the stops are already finished, nothing much happens.</p>
+
+    <h2>First, the two habits that make stops predictable</h2>
+    <p>Two intentions run this market, and both are visible in your own head:</p>
+    <ul>
+      <li><strong>The buyer wants the bottom.</strong> After one index has already run up, the buyer thinks: "this one has gone too far — the other index is sitting near its support, more room left there." So the buy happens in the <em>other</em> index.</li>
+      <li><strong>The seller wants the top.</strong> He missed the last top, so he waits for the next one to short.</li>
+    </ul>
+    <p>Because thousands of people share these two habits, <strong>every level collects a cluster of stops around it</strong> — buy stops just below supports, sell stops just above resistances. Those clusters are the addresses the market visits.</p>
+
+    <div class="infographic" id="ig-fuel"></div>
+
+    <h2>The levels where the crowd parks its stops</h2>
+    <p>Stoploss hunting is not random. It happens at the levels every chart shows:</p>
+    <ul>
+      <li><strong>The opening candle of the day.</strong> Its low becomes the day's first support, its high the first resistance — the very first cluster of the session.</li>
+      <li><strong>Yesterday's high and low.</strong> The whole market watches these.</li>
+      <li><strong>Every visible support and resistance</strong> on the popular timeframes.</li>
+    </ul>
+    <p>None of this is secret. That is exactly the point — a level that everyone can see is a level where everyone's stops sit together. One pool, one address.</p>
+
+    <h2>The "breakout" that was only a hunt</h2>
+    <p>Now the most valuable candle picture in trading. Price rises to a resistance. Two candles poke above it — excitement everywhere, "breakout!" — but both <strong>close back below</strong>. Then price falls.</p>
+    <p>What really happened? Nothing was breaking out. The market pushed above the level <em>only to collect the sell stops parked there</em> — the stops of everyone who shorted earlier at the top. Once the fuel was taken, the push had no reason to continue, and price reversed. <strong>A wick above resistance is not a breakout. It is a collection drive.</strong> Only a close — held after the candle completes — tells you the move is real.</p>
+    <figure class="figure">
+      <div class="fig-title">The hunt above resistance</div>
+      <div id="fig-hunt"></div>
+      <figcaption>Two candles peek above the resistance and close back below it — the seller stops above were collected, then price reversed. <em>Illustrative candles.</em></figcaption>
+    </figure>
+
+    <h2>Two indices, one game</h2>
+    <p>Here is the part almost nobody teaches. Watch Nifty <em>and</em> Bank Nifty together and you will see money rotate: after one index runs hard, buyers move to the other index because it "looks cheaper" and sits near its support. Big players know this habit too. When they want to sell, they do it where <strong>fresh stops are still available</strong> — often in the other index, right where the crowd just built positions. The market reverses there, exactly because that is where the fuel is.</p>
+    <p>And the old trap repeats: <strong>buying the index that already looks weak</strong> "because it has more room" — after it has already fallen — is buying into a place where the stops below have often already been eaten. The crowd makes this mistake again and again. Do not be the crowd.</p>
+
+    <h2>The greed move and the retest</h2>
+    <p>After the stops are collected, the market often gives a small taste of the "real" direction — just enough to pull in the traders waiting for a retest. Those entries become the next cluster. One more collection. Then the actual move begins — the move that was never possible until the fuel was ready.</p>
+    <p>We learned this the hard way, with our own money: a day of repeated failed breakouts, the sentiment screaming "upside!", positions rebuilding at the same level again and again — and each rebuild was another pool for the hunt. That single day taught more than a month of winners.</p>
+
+    <div class="infographic" id="ig-cycle"></div>
+
+    <h2>What we actually do now</h2>
+    <ul>
+      <li><strong>Before entering, ask one question: who is trapped here?</strong> If you cannot answer where the stops are, you are not ready to trade.</li>
+      <li><strong>Breakout = close, not peek.</strong> A candle must close beyond the level and hold. Everything else is collection.</li>
+      <li><strong>Do not park the stop inside the obvious cluster.</strong> Place it by structure — and size the position so that a wick alone cannot remove you.</li>
+      <li><strong>Do not buy the "cheap" index after the strong one ran.</strong> Weak-looking does not mean ready. It often means the fuel below is already burnt.</li>
+      <li><strong>When the map is unclear, the trade is zero.</strong> A skipped trap costs nothing. An entered trap costs a month.</li>
+    </ul>
+
+    <div class="pull-quote">"The market doesn't move to where the analysis is. It moves to where the stops are."</div>
+
+    <h3>Check yourself</h3>
+    <details><summary>Q1. Price wicks above resistance and closes back below it. What actually happened?</summary><p>The sell stops parked above the resistance were collected. It was a stop hunt, not a breakout — expect reversal unless a candle closes and holds above the level.</p></details>
+    <details><summary>Q2. One index has already run up hard. Buyers are entering the other index "near its support". Who benefits from that?</summary><p>The player who wants to sell — the fresh positions in the other index come with fresh stops just below, and that is exactly the fuel a large seller needs.</p></details>
+    <details><summary>Q3. Price has already fallen far below a support. Can the market "hunt stops" there again?</summary><p>Mostly no — the stops below that support were already consumed on the way down. No fuel, no visit. The market goes where fresh stops are available.</p></details>
+
+    <div class="cheat">
+      <h3>📌 Today's cheat sheet</h3>
+      <ul>
+        <li><span class="k">LAW</span><span>The market cannot move without stoplosses. Fresh stops = fuel. No fresh stops = no move.</span></li>
+        <li><span class="k">MAP</span><span>Stops cluster just below supports, just above resistances, at the opening candle's high–low, and at yesterday's high–low.</span></li>
+        <li><span class="k">FAKE</span><span>A peek above resistance that closes back below is collection, not breakout. Read the close.</span></li>
+        <li><span class="k">ROTATE</span><span>After one index runs, the crowd buys the other "cheap" one — right where big players need fuel. Don't be the crowd.</span></li>
+        <li><span class="k">SL</span><span>Never park inside the obvious cluster. Structure-based stop, position sized for the wick.</span></li>
+        <li><span class="k">ASK</span><span>Before any entry: who is trapped here, and where are their stops?</span></li>
+      </ul>
+    </div>
+
+    <div class="callout" style="background:var(--amber-soft);border-color:#f0dfb8;margin-top:40px">
+      <span class="c-label" style="color:var(--amber)">Disclaimer</span>
+      This article is for education only and is not investment advice or a recommendation to trade. All charts are illustrative patterns, not live market data. Derivatives and intraday trading carry a high risk of loss. Consult a SEBI-registered investment adviser before making financial decisions.
+    </div>
+
+    <p style="margin-top:34px"><a href="../blog.html">← Back to all articles</a> &nbsp;·&nbsp; <a href="3-check-method.html">Read next: The 3-Check Method →</a></p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
+        <p>Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../tools.html">Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Next up</h4>
+        <ul>
+          <li><a href="3-check-method.html">The 3-Check Method</a></li>
+          <li><a href="../tools.html#trade-journal">Trade journal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer"><strong>Disclaimer:</strong> All content on Dalal Desk is for educational purposes only and does not constitute investment advice or stock recommendations. Charts and examples are illustrative, not live market data. Trading in securities involves risk of loss. Please consult a SEBI-registered investment adviser before making financial decisions.</div>
+    <div class="footer-bottom"><span>© 2026 Dalal Desk</span><span>Made in India</span></div>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+<script>
+/* ============ Article figures (renderCandles from app.js) ============ */
+renderCandles(document.getElementById('fig-hunt'), [
+  {o:100,h:101.2,l:98.8,c:100.8},{o:100.8,h:102.4,l:100,c:102},{o:102,h:103.5,l:101.4,c:103.2},
+  {o:103.2,h:104.6,l:103,c:103.6},{o:103.6,h:105.8,l:103.4,c:103.4},{o:103.4,h:104.2,l:101.6,c:102},
+  {o:102,h:102.4,l:100.2,c:100.6},{o:100.6,h:101.4,l:99.2,c:99.6},{o:99.6,h:101.4,l:99.3,c:101.2}
+], { width: 680, height: 240, line: false, delayStep: 55, level: 104.2, levelLabel: 'RESISTANCE' });
+
+/* ============ Branded infographics ============ */
+(function(){
+const FONT="Manrope,'Segoe UI',sans-serif";
+const INK='#101b16',MUT='#57665e',FNT='#8a958e',GRN='#0a7c42',GRN2='#35c07c',RED='#b42318',AMB='#8a5a00',SOFT='#f6f7f4',LN='#e7eae4';
+const URLTXT='jaissatish-web.github.io/INDEX · Education only · Illustrative charts';
+function brand(y,w){return `<rect x="0" y="${y}" width="${w}" height="50" fill="${SOFT}"/><circle cx="36" cy="${y+25}" r="14" fill="${GRN}"/><text x="36" y="${y+30}" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">₹</text><text x="58" y="${y+30}" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">Dalal Desk</text><text x="${w-22}" y="${y+30}" text-anchor="end" font-family="${FONT}" font-size="11.5" fill="${FNT}">${URLTXT}</text>`;}
+function head(x,y,kick,title){return `<text x="${x}" y="${y}" font-family="${FONT}" font-size="12" font-weight="800" fill="${GRN}" letter-spacing="2">${kick}</text><text x="${x}" y="${y+30}" font-family="${FONT}" font-size="23" font-weight="800" fill="${INK}">${title}</text>`;}
+function panel(x,y,w,h,color){return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="#fff" stroke="${LN}"/><rect x="${x}" y="${y}" width="${w}" height="4" rx="2" fill="${color}"/>`;}
+function candle(x,topY,h,up,w){w=w||20;const col=up?GRN2:RED;return `<rect x="${x}" y="${topY}" width="${w}" height="${h}" rx="2" fill="${col}" opacity="${up?'.92':'1'}"/>`;}
+function wick(x,y1,y2,col){return `<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="${col}" stroke-width="2"/>`;}
+function svgWrap(id,w,h,inner,name){
+ const el=document.getElementById(id); if(!el) return;
+ el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${name}">${inner}</svg><div class="dl-row"><button class="dl-btn">⬇ Download image</button></div>`;
+ el.querySelector('.dl-btn').addEventListener('click',()=>exportPNG(el.querySelector('svg'),w,h,name));
+}
+window.exportPNG=window.exportPNG||function(svg,baseW,baseH,name){
+ const c=svg.cloneNode(true);const vb=c.getAttribute('viewBox')?c.getAttribute('viewBox').split(' ').map(Number):[0,0,baseW,baseH];
+ const w=vb[2],h=vb[3];c.setAttribute('viewBox',`0 0 ${w} ${h}`);c.setAttribute('width',w);c.setAttribute('height',h);c.setAttribute('xmlns','http://www.w3.org/2000/svg');
+ const xml=new XMLSerializer().serializeToString(c);const img=new Image();
+ img.onload=function(){const cv=document.createElement('canvas');cv.width=w*2;cv.height=h*2;const ctx=cv.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,cv.width,cv.height);ctx.drawImage(img,0,0,cv.width,cv.height);const a=document.createElement('a');a.download=name;a.href=cv.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove();};
+ img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+};
+
+/* IG1 — THE FUEL MAP */
+(function(){
+ let s=head(28,40,'THE FUEL MAP','Where the crowd parks its stops');
+ const rows=[
+  ['Below every support','buy stops of "support buyers" — the biggest pool',RED],
+  ['Above every resistance','sell stops of "top sellers" — the classic hunt zone',AMB],
+  ['Opening candle low & high','the day\u2019s first support/resistance = first cluster',GRN],
+  ['Yesterday\u2019s high & low','the levels the whole market watches',GRN]];
+ rows.forEach((r,i)=>{
+  const y=96+i*62;
+  s+=`<rect x="28" y="${y}" width="744" height="52" rx="12" fill="#fff" stroke="${LN}"/><rect x="31" y="${y+6}" width="6" height="40" rx="3" fill="${r[2]}"/>`;
+  s+=`<text x="56" y="${y+22}" font-family="${FONT}" font-size="14.5" font-weight="800" fill="${INK}">${r[0]}</text>`;
+  s+=`<text x="56" y="${y+41}" font-family="${FONT}" font-size="12" fill="${MUT}">${r[1]}</text>`;
+ });
+ s+=`<text x="28" y="372" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">Everyone can see these levels — that is exactly why everyone\u2019s stops sit together there.</text>`;
+ s+=brand(386,800);
+ svgWrap('ig-fuel',800,438,s,'dalaldesk-stoploss-fuel-map');
+})();
+
+/* IG2 — THE HUNT CYCLE */
+(function(){
+ let s=head(28,40,'THE HUNT CYCLE','How a stop hunt plays out, step by step');
+ const steps=[
+  ['1','Crowd enters at the level','buyers at support, sellers at resistance — using the same visible levels',GRN],
+  ['2','Stops parked predictably','a small "buffer" below support / above resistance — all together',AMB],
+  ['3','Price is pushed to the cluster','not by accident — the push needs the opposite side to fill size',RED],
+  ['4','Stops fire = fuel','the wick beyond the level is the collection moment',RED],
+  ['5','The real move begins','once the fuel is taken, price finally goes where it was going',GRN]];
+ steps.forEach((st,i)=>{
+  const y=96+i*58;
+  s+=`<circle cx="52" cy="${y+24}" r="17" fill="${st[3]}"/><text x="52" y="${y+30}" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">${st[0]}</text>`;
+  s+=`<text x="84" y="${y+20}" font-family="${FONT}" font-size="14.5" font-weight="800" fill="${INK}">${st[1]}</text>`;
+  s+=`<text x="84" y="${y+40}" font-family="${FONT}" font-size="12" fill="${MUT}">${st[2]}</text>`;
+ });
+ s+=`<text x="28" y="404" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">Your stop is not the cost of trading. It is the raw material of the move.</text>`;
+ s+=brand(418,800);
+ svgWrap('ig-cycle',800,470,s,'dalaldesk-stoploss-hunt-cycle');
+})();
+
+/* download buttons on the article figures */
+document.querySelectorAll('.prose .figure').forEach(function(fig,idx){
+ const svg=fig.querySelector('svg'); if(!svg) return;
+ const bar=document.createElement('div');bar.className='fig-dl';
+ const btn=document.createElement('button');btn.className='dl-btn';btn.textContent='⬇ Download image';
+ btn.addEventListener('click',function(){
+  const vb=svg.getAttribute('viewBox')?svg.getAttribute('viewBox').split(' ').map(Number):null;
+  const w=vb?vb[2]:800,h=vb?vb[3]:240;
+  const c=svg.cloneNode(true);
+  c.setAttribute('viewBox',`0 0 ${w} ${h+50}`);
+  c.insertAdjacentHTML('beforeend',brand(h,w));
+  exportPNG(c,w,h+50,'dalaldesk-stoploss-fig-'+(idx+1)+'.png');
+ });
+ bar.appendChild(btn);fig.appendChild(bar);
+});
+})();
+</script>
+<script src="../js/autotranslate.js" defer></script>
+</body>
+</html>
