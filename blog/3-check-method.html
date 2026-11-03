@@ -30,6 +30,10 @@
 </header>
 
 <main class="wrap-narrow article">
+  <div class="lang-bar" role="group" aria-label="Language">
+    <button class="on" data-lang="en" onclick="setArticleLang('en')">English</button>
+    <button data-lang="hi" onclick="setArticleLang('hi')">हिन्दी</button>
+  </div>
   <div style="padding-top:48px">
     <span class="article-kicker">Day Classification · Intraday</span>
     <h1>The 3-Check Method: classify the day before you touch the order button</h1>
@@ -176,6 +180,65 @@
   </div>
 </footer>
 
+<script>
+/* ---- Article language system (EN default + full Hindi) ---- */
+const I18N=[
+[".article-kicker",`Day Classification · Intraday`],
+["main h1",`3-Check Method: order button छूने से पहले दिन को classify कीजिए`],
+[".article-standfirst",`ज़्यादातर intraday नुक़सान बुरे trade की वजह से नहीं होते। वे उस दिन trade करने की वजह से होते हैं जो कभी trade करने का दिन ही नहीं था। तीन checks — momentum, trade/OI और gap — लगभग दो मिनट लेते हैं और "मैं क्या करूँ?" को बदल देते हैं: "क्या आज का दिन मेरा है?"`],
+[".article-meta span:nth-child(2)",`<strong>Dalal Desk</strong> · नवंबर 2026 · 8 मिनट पढ़ें`],
+[".article-meta a.chip",`<span class="dot"></span> अंत में Quiz`],
+[".prose > p:nth-of-type(1)",`हर सुबह 9:15 बजे दो तरह के traders लॉग इन करते हैं। पहला पूछता है: <strong>"मैं क्या खरीदूँ?"</strong> दूसरा पूछता है: <strong>"आज का दिन कैसा है?"</strong> पहला trader तब तक हार चुका होता है — उसकी analysis गलत नहीं होती, उसका सवाल गलत होता है। धीमे, बेतरतीब दिन में दुनिया की सबसे अच्छी analysis भी कटाफटी में बदल जाती है। दूसरा trader पूरा दिन कुछ नहीं कर सकता — और वही "कुछ न करना" असली trade है।`],
+[".prose > p:nth-of-type(2)",`3-Check Method एक दो-मिनट की आदत है। किसी भी order से पहले तीन checks चलाइए। हर check का एक सरल जवाब होता है। तीनों मिलकर आज के दिन को दो डिब्बों में बाँट देते हैं: <strong class="tag-fast">FAST</strong> — trade करने लायक दिन, या <strong class="tag-wait">WAIT</strong> — जिस दिन सही position है "no position"। एक दुर्लभ combination तीसरा डिब्बा देता है: <strong class="tag-never">NEVER</strong>। आइए हर check को candle-by-candle समझें।`],
+[".prose > h2:nth-of-type(1)",`Check 1 — Momentum: आज तेज़ दिन है या धीमा?`],
+[".prose > p:nth-of-type(3)",`अपने instrument का chart खोलिए — Nifty, Bank Nifty या आपका stock — और पहले कुछ मिनट सिर्फ candles देखिए। आप भविष्यवाणी नहीं कर रहे हैं। आप खरीदारों और बेचने वालों के बीच असहमति की <em>गति</em> माप रहे हैं।`],
+[".prose > ul:nth-of-type(1)",`<li><strong>Fast momentum:</strong> candles लंबी, हर candle अपने चरम के पास decisively close करती है, pullbacks उथले और छोटे। एक तरफ पूरी ताकत से price धकेल रही है।</li><li><strong>Slow momentum:</strong> candles छोटी, रंग बारी-बारी से, दोनों सिरों पर लंबी wicks। हर push का जवाब बराबर push में मिलता है। किसी के पास control नहीं।</li>`],
+[".fig-pair figure:nth-of-type(1) .fig-title",`Fast momentum — एक दिशा में साफ़ candles`],
+[".fig-pair figure:nth-of-type(1) figcaption",`लंबी हरी bodies, उथले pullbacks। Trend के साथ trades को साँस लेने की जगह मिलती है। <em>Illustrative candles.</em>`],
+[".fig-pair figure:nth-of-type(2) .fig-title",`Slow momentum — उलझन, wicks, कोई control नहीं`],
+[".fig-pair figure:nth-of-type(2) figcaption",`छोटी बारी-बारी bodies, दोनों ओर wicks। हर breakout तुरंत reverse हो जाता है। <em>Illustrative candles.</em>`],
+[".prose > p.matrix-note",`वही मार्केट, वही सुबह — पर दो पूरी तरह अलग नौकरियाँ। पहला chart धैर्य और trailing stops को इनाम देता है। दूसरा जो भी उसमें घुसता है, उसे सज़ा देता है।`],
+[".prose > h2:nth-of-type(2)",`Check 2 — Trade &amp; OI: कौन position बना रहा है, कौन फँसा है?`],
+[".prose > p:nth-of-type(5)",`Chart बताता है price <em>क्या</em> कर रही है। यह check बताता है उसके पीछे <em>कौन</em> है। Open Interest (OI) — खुले contracts की संख्या, option chain और NSE के participant data में दिखती है — बताती है कि move के पीछे असली builders हैं या नहीं।`],
+[".prose > ul:nth-of-type(2)",`<li><strong>बढ़ती price के साथ positive OI:</strong> move की दिशा में नई positions बन रही हैं। असली fuel।</li><li><strong>गिरती price के साथ OI unwinding:</strong> OI में बदलाव negative है — positions बंद हो रही हैं। Move तेज़ हो सकता है — पर वह exit ramp है, highway नहीं।</li><li><strong>Range-bound OI:</strong> दोनों सिरों पर writers बैठे हैं, sideways दिन की उम्मीद। धीमे momentum के साथ मेल खाता है।</li>`],
+[".prose > p:nth-of-type(6)",`Chart और OI की तस्वीर एक-दूसरे से <strong>सहमत</strong> हो सकती है (दोनों up, या दोनों down), <strong>असहमत</strong> (एक neutral, एक directional), या <strong>विरोध</strong> में (momentum तेज़ up, पर positioning data कहे कि move खुल रहा है)। आपके दिन की quality पूरी तरह इसी पर टिकी है कि आपके पास इनमें से क्या है।`],
+[".prose > h2:nth-of-type(3)",`Check 3 — Gap: opening ने क्या बताया?`],
+[".prose > p:nth-of-type(7)",`कल के close और आज के open के बीच का gap मार्केट की रातभर की summary है। यह trade करने का संकेत नहीं — यह बताता है कि <em>कौन पहले से फँसा है</em>।`],
+[".prose > ul:nth-of-type(3)",`<li><strong>Gap up:</strong> कल का move चूकने वाले buyers अब ऊँचे भाव चुकाकर घुस रहे हैं, और कल के shorts पहले से पानी में हैं।</li><li><strong>Gap down:</strong> उल्टा चित्र — कल के longs ऊपर फँसे हुए हैं।</li><li><strong>Flat open:</strong> मार्केट neutral; पहले 30–45 मिनट दिन तय करेंगे, और morning range का सम्मान कीजिए।</li>`],
+[".prose > p:nth-of-type(8)",`Gap direction नहीं बताता। वह बताता है कि भावनात्मक inventory कहाँ बैठी है — और फँसे traders ही दिन के सबसे तेज़ moves का fuel होते हैं।`],
+[".prose > h2:nth-of-type(4)",`Decision matrix`],
+[".prose > p:nth-of-type(9)",`तीनों checks चलाइए और आज को एक डिब्बे में रखिए:`],
+[".prose > p:nth-of-type(10)",`ध्यान दीजिए यह method असल में क्या है: <strong>एक permission system</strong>। आप भविष्यवाणी नहीं करते कि मार्केट कहाँ जाएगा। आप तय करते हैं कि आज का दिन आपके पैसे का हकदार है या नहीं।`],
+[".prose > h2:nth-of-type(5)",`वह जाल जिसमें हर beginner गिरता है`],
+[".prose > p:nth-of-type(11)",`अब पूरे article की सबसे कीमती candle तस्वीर। एक stock पूरी सुबह ऊपर जाता है — मज़बूत, आत्मविश्वासी हरी candles। लेकिन OI data <strong>negative buildup</strong> दिखाता है। फिर एक लंबी लाल candle आती है।`],
+[".prose > figure:nth-of-type(1) .fig-title",`फँसे buyers की dumping`],
+[".prose > figure:nth-of-type(1) figcaption",`OI unwinding (negative बदलाव) पर बढ़ती हरी candles, फिर एक तेज़ लाल candle। Late buyers top पर फँसते हैं और उनकी panic selling गिरावट को और तेज़ कर देती है। <em>Illustrative candles — shape मायने रखती है, price levels नहीं।</em>`],
+[".callout.danger",`<span class="c-label">जाल का नियम</span> <strong>Negative OI + मज़बूत तेज़ी के बाद एक तेज़ लाल candle = फँसे buyers की dumping।</strong> तेज़ी बनी नहीं थी — ताकत में खोली गई थी। फँसे buyers कमज़ोरी में बेचते हैं, जिससे गिरावट और खड़ी होती है, जिससे और बिकवाली ट्रिगर होती है। यहाँ "dip" मत खरीदिए। Dip यहीं product है।`],
+[".prose > h2:nth-of-type(6)",`सबूत पर बेचिए, उम्मीद पर नहीं`],
+[".prose > p:nth-of-type(12)",`जब आप short हैं — या तय कर रहे हैं कि बनें या नहीं — मार्केट छोटे bounces से आपको परखेगा। शौकीन उम्मीद पर exit करते हैं और उम्मीद पर दोबारा घुसते हैं। Professionals <em>सबूत</em> का इंतज़ार करते हैं:`],
+[".prose > figure:nth-of-type(2) .fig-title",`Resistance का सबूत`],
+[".prose > figure:nth-of-type(2) figcaption",`Price कल के close zone से बने level के पास आती है। Level लगभग बिल्कुल सटीक respect होता है, मज़बूत लाल candles वहाँ से reject करती हैं, और तभी breakdown आता है। <em>Illustrative candles.</em>`],
+[".callout.good",`<span class="c-label">सबूत का नियम</span> <strong>जहाँ मार्केट close करता है, sellers वहीं बैठते हैं।</strong> पिछले session का close zone resistance बनता है — और resistance तभी "असली" है जब price उसका बिल्कुल सटीक सम्मान करे और मज़बूत लाल candles वहाँ से reject करें। एक touch जिज्ञासा है। लाल bodies के साथ दो rejections सबूत हैं।`],
+[".prose > h2:nth-of-type(7)",`Beginner नियम जो account बचाते हैं`],
+[".prose > ul:nth-of-type(4)",`<li><strong>Morning trades से बचें।</strong> पहले 15–30 मिनट सबसे शोर भरे होते हैं — gaps, झूठे breakouts, algorithmic orders। दिन को खुद का परिचय देने दीजिए।</li><li><strong>WAIT दिन भी trade हैं।</strong> Flat एक position है। छोड़े गए बुरे trade पर commission शून्य है।</li><li><strong>एक गलत classification की कीमत एक trade है।</strong> बिना classification के चलने की कीमत पूरा महीना है।</li>`],
+[".prose > .pull-quote",`"मार्केट भविष्यवाणी को इनाम नहीं देता। इनाम उस trader को मिलता है जिसे पता होता है किन दिनों में आना ही नहीं है।"`],
+[".quiz h3",`अपनी समझ जाँचिए`],
+[".quiz .q-sub",`ऊपर के scenarios से तीन सवाल। जवाब सफ़ाई के साथ तुरंत दिखते हैं।`],
+[".prose > div.callout[style] .c-label",`Disclaimer`],
+[".prose > div.callout[style]",`<span class="c-label" style="color:var(--amber)">Disclaimer</span> यह article केवल शिक्षा के लिए है — यह investment advice या trade की सिफ़ारिश नहीं है। सभी charts illustrative patterns हैं, live market data नहीं। Derivatives और intraday trading में भारी जोखिम है। वित्तीय निर्णय से पहले SEBI-registered investment adviser से सलाह लें।`]
+];
+let ALANG='en';
+const ISTORE=I18N.map(([sel])=>{const el=document.querySelector(sel);return el?el.innerHTML:null;});
+function setArticleLang(l){
+  ALANG=l;
+  I18N.forEach(([sel],i)=>{
+    const el=document.querySelector(sel);
+    if(!el) return;
+    el.innerHTML = (l==='hi' && I18N[i][1]) ? I18N[i][1] : (ISTORE[i]||el.innerHTML);
+  });
+  document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));
+}
+</script>
 <script src="../js/app.js"></script>
 </body>
 </html>
