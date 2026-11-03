@@ -9,7 +9,7 @@
   if (window.ddAT) return;
 
   const AUTO_LANGS = [
-    ['ta','தமிழ்'],['te','తెలుగు'],['bn','বাংলা'],['mr','मराठी'],['gu','ગુજરાતી'],
+    ['hi','हिन्दी'],['ta','தமிழ்'],['te','తెలుగు'],['bn','বাংলা'],['mr','मराठी'],['gu','ગુજરાતી'],
     ['kn','ಕನ್ನಡ'],['ml','മലയാളം'],['pa','ਪੰਜਾਬੀ'],['ur','اردو'],['or','ଓଡ଼ିଆ'],
     ['as','অসমীয়া'],['ne','नेपाली'],['si','සිංහල'],['ar','العربية'],['es','Español']
   ];
@@ -19,6 +19,7 @@
   let NODES = [];           // [{node, orig}]
   let current = localStorage.getItem('dd_at_lang') || 'en';
   let busy = false;
+  let lastWasCurated = false;
 
   /* ---------- target collection ---------- */
   function collect(){
@@ -175,10 +176,14 @@
       if (busy) return;
       current = l; localStorage.setItem('dd_at_lang', l);
       const cur = curated();
-      if (cur[l] && typeof cur[l].apply==='function'){ cur[l].apply(); renderList(); return; }
-      if (l==='en'){ restoreEn(); renderList(); return; }
-      collect();          // recollect in case DOM changed
-      await autoApply(l); // auto for everything else
+      if (cur[l] && typeof cur[l].apply==='function'){ lastWasCurated=true; cur[l].apply(); renderList(); return; }
+      // switching from a curated page-level translation to an auto language:
+      // reload so the engine starts from the original English DOM (boot applies target)
+      if (lastWasCurated){ location.reload(); return; }
+      if (!NODES.length) collect();
+      restoreEn();          // never mix languages — always restart from original English
+      if (l==='en'){ lastWasCurated=false; renderList(); return; }
+      await autoApply(l);
       renderList();
     },
     refresh(){ collect(); }
@@ -187,16 +192,11 @@
 
   /* ---------- boot ---------- */
   function boot(){
-    // curated hook for pages with a human translation dictionary
-    if (typeof window.setArticleLang === 'function'){
-      window.DD_CURATED = window.DD_CURATED || {};
-      window.DD_CURATED['hi'] = {label:'हिन्दी', apply:()=>window.setArticleLang('hi')};
-    }
     collect();
     renderList();
     if (current!=='en'){
       const cur=curated();
-      if (cur[current] && cur[current].apply){ cur[current].apply(); renderList(); }
+      if (cur[current] && cur[current].apply){ lastWasCurated=true; cur[current].apply(); renderList(); }
       else { ddAT.setLang(current); }
     }
   }
