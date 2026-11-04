@@ -95,6 +95,8 @@
     </svg>
   </div>
 
+  <div style="margin-top:30px" class="infographic" id="ig-summary"></div>
+
   <article class="prose">
     <p class="dropcap">Every trader knows this scene. You buy near a support and keep the stoploss a little below it — with a "small buffer". The market falls straight into that buffer, hits your stop, and then turns and climbs without you. You blame luck. You blame the market. But this happens to lakhs of traders every single day in the same places — and the same places get hit every single day. That is not chance. That is design.</p>
     <p>Here is the one line that changes how you see charts forever: <strong>the market cannot move without stoplosses.</strong> A big player who wants to take a large position needs someone on the other side to fill it. Yours and everyone else's stops — sitting predictably at the same levels — are exactly that other side. Where fresh stops are available, the market goes there. Where the stops are already finished, nothing much happens.</p>
@@ -271,6 +273,90 @@ window.exportPNG=window.exportPNG||function(svg,baseW,baseH,name){
  s+=`<text x="28" y="404" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">Your stop is not the cost of trading. It is the raw material of the move.</text>`;
  s+=brand(418,800);
  svgWrap('ig-cycle',800,470,s,'dalaldesk-stoploss-hunt-cycle');
+})();
+
+/* IG3 — THE WHOLE BLOG IN ONE PICTURE (summary poster) */
+(function(){
+ const W=800,H=1300;
+ let s=`<rect width="${W}" height="${H}" fill="#fff"/>`;
+ /* top brand strip */
+ s+=brand(0,W);
+ /* title */
+ s+=`<text x="40" y="104" font-family="${FONT}" font-size="12" font-weight="800" fill="${GRN}" letter-spacing="2">STOPLOSS HUNTING · THE FULL CONCEPT</text>`;
+ s+=`<text x="40" y="142" font-family="${FONT}" font-size="30" font-weight="800" fill="${INK}">Everything about the hunt, in one picture</text>`;
+ s+=`<text x="40" y="168" font-family="${FONT}" font-size="13.5" fill="${MUT}">Read this once — then every chart in front of you shows the fuel map.</text>`;
+ /* core law banner */
+ s+=`<rect x="40" y="192" width="720" height="86" rx="16" fill="${GRN}"/>`;
+ s+=`<text x="400" y="228" text-anchor="middle" font-family="${FONT}" font-size="19" font-weight="800" fill="#fff">The market cannot move without stoplosses.</text>`;
+ s+=`<text x="400" y="256" text-anchor="middle" font-family="${FONT}" font-size="13" fill="#d7f0e3">Fresh stops = fuel, and the market goes where the fuel is. No fresh stops = no move.</text>`;
+ /* two habits */
+ s+=head(40,320,'THE TWO HABITS','Buyers want the bottom · sellers want the top');
+ s+=`${panel(40,344,356,126,GRN)}`;
+ s+=`<text x="62" y="380" font-family="${FONT}" font-size="14.5" font-weight="800" fill="${INK}">THE BUYER</text>`;
+ s+=`<text x="62" y="404" font-family="${FONT}" font-size="12.5" fill="${MUT}">Wants the bottom. After one index runs up,</text>`;
+ s+=`<text x="62" y="422" font-family="${FONT}" font-size="12.5" fill="${MUT}">he buys the other \u2018cheap\u2019 index near its</text>`;
+ s+=`<text x="62" y="440" font-family="${FONT}" font-size="12.5" fill="${MUT}">support — thinking more room is left there.</text>`;
+ s+=`<text x="62" y="460" font-family="${FONT}" font-size="12.5" font-weight="800" fill="${INK}">Stops parked just below that support.</text>`;
+ s+=`${panel(404,344,356,126,AMB)}`;
+ s+=`<text x="426" y="380" font-family="${FONT}" font-size="14.5" font-weight="800" fill="${INK}">THE SELLER</text>`;
+ s+=`<text x="426" y="404" font-family="${FONT}" font-size="12.5" fill="${MUT}">Wants the top. He waits at the resistance</text>`;
+ s+=`<text x="426" y="422" font-family="${FONT}" font-size="12.5" fill="${MUT}">and shorts the level, then waits for it</text>`;
+ s+=`<text x="426" y="440" font-family="${FONT}" font-size="12.5" fill="${MUT}">to come back down to him.</text>`;
+ s+=`<text x="426" y="460" font-family="${FONT}" font-size="12.5" font-weight="800" fill="${INK}">Stops parked just above that resistance.</text>`;
+ s+=`<text x="400" y="506" text-anchor="middle" font-family="${FONT}" font-size="13.5" font-weight="800" fill="${INK}">↕ both habits park their stops at the same visible levels — in clusters</text>`;
+ /* fuel map */
+ s+=head(40,556,'THE FUEL MAP','Where the crowd\u2019s stops sit');
+ const rows=[['Below every support','buy stops of the \u201csupport buyers\u201d — the biggest pool',RED],['Above every resistance','sell stops of the \u201ctop sellers\u201d — the classic hunt zone',AMB],['Opening candle low & high','the day\u2019s first support & resistance = the first cluster',GRN],['Yesterday\u2019s high & low','the levels the whole market watches',GRN]];
+ rows.forEach((r,i)=>{
+  const y=580+i*58;
+  s+=`<rect x="40" y="${y}" width="720" height="48" rx="12" fill="#fff" stroke="${LN}"/><rect x="43" y="${y+6}" width="6" height="36" rx="3" fill="${r[2]}"/>`;
+  s+=`<text x="66" y="${y+21}" font-family="${FONT}" font-size="14" font-weight="800" fill="${INK}">${r[0]}</text>`;
+  s+=`<text x="66" y="${y+39}" font-family="${FONT}" font-size="12" fill="${MUT}">${r[1]}</text>`;
+ });
+ /* fake breakout */
+ s+=head(40,832,'THE FAKE BREAKOUT','A wick above the level is collection — not a breakout');
+ s+=`${panel(40,856,720,176,RED)}`;
+ s+=`<line x1="60" y1="936" x2="388" y2="936" stroke="${INK}" stroke-width="2" stroke-dasharray="8 6"/>`;
+ s+=`<text x="60" y="926" font-family="${FONT}" font-size="11" font-weight="800" fill="${INK}" letter-spacing="1.5">RESISTANCE</text>`;
+ [[64,980,38,'#fff'],[108,962,44,'#0f1a15'],[152,966,38,'#fff'],[196,948,46,'#0f1a15'],[240,958,38,'#fff']].forEach(c=>{const x=c[0],t=c[1],h=c[2],col=c[3]; s+=`<rect x="${x}" y="${t}" width="22" height="${h}" rx="2" fill="${col}"/>`;});
+ [[284,914,56],[328,920,50],[368,972,36]].forEach(c=>{
+  const x=c[0],t=c[1],h=c[2];
+  s+=`<line x1="${x+11}" y1="${t-8}" x2="${x+11}" y2="${t+h+8}" stroke="${RED}" stroke-width="2"/>`;
+  s+=`<rect x="${x}" y="${t}" width="22" height="${h}" rx="2" fill="${RED}"/>`;
+ });
+ s+=`<path d="M386,986 Q430,1004 470,976" fill="none" stroke="${INK}" stroke-width="2.2" stroke-dasharray="2 6" stroke-linecap="round"/>`;
+ s+=`<text x="430" y="924" font-family="${FONT}" font-size="15" font-weight="800" fill="${INK}">Two candles poke above resistance…</text>`;
+ s+=`<text x="430" y="944" font-family="${FONT}" font-size="15" font-weight="800" fill="${INK}">…both close back below, then price dumps.</text>`;
+ s+=`<text x="430" y="974" font-family="${FONT}" font-size="12.5" fill="${MUT}">The stops above were collected, and once the</text>`;
+ s+=`<text x="430" y="992" font-family="${FONT}" font-size="12.5" fill="${MUT}">fuel was taken there was no reason to continue.</text>`;
+ s+=`<text x="430" y="1016" font-family="${FONT}" font-size="12.5" font-weight="800" fill="${GRN}">✔ A CLOSE held above the level = a real breakout.</text>`;
+ /* two indices */
+ s+=head(40,1064,'TWO INDICES, ONE GAME','Money rotates — so the fuel moves with it');
+ const boxes=[['ONE INDEX RUNS HARD','The strong index has made its move.','Everyone\u2019s attention shifts to the other one.',GRN],['THE CROWD BUYS THE \u2018CHEAP\u2019 ONE','\u201cIt looks weak, it sits near support —','so much room left!\u201d Fresh positions build.',AMB],['THE TRAP FIRES THERE','Big players sell where fresh stops sit.','The \u2018weak\u2019 index reverses right there.',RED]];
+ boxes.forEach((b,i)=>{
+  const x=40+i*248;
+  s+=`${panel(x,1088,224,112,b[3])}`;
+ });
+ /* rebuild boxes with correct text placement */
+ boxes.forEach((b,i)=>{
+  const x=40+i*248;
+  s+=`<text x="${x+18}" y="1122" font-family="${FONT}" font-size="13.5" font-weight="800" fill="${INK}">${b[0]}</text>`;
+  s+=`<text x="${x+18}" y="1144" font-family="${FONT}" font-size="11.5" fill="${MUT}">${b[1]}</text>`;
+  s+=`<text x="${x+18}" y="1162" font-family="${FONT}" font-size="11.5" fill="${MUT}">${b[2]}</text>`;
+  s+=`<text x="${x+18}" y="1182" font-family="${FONT}" font-size="11.5" font-weight="800" fill="${b[3]}">${i<2?'→ next':''}</text>`;
+ });
+ /* checklist */
+ s+=head(40,1232,'BEFORE YOU CLICK BUY / SELL','Four questions that keep you off the menu');
+ const pills=[['Who is trapped here?','know the stops before you enter'],['Close, not peek','only a close proves it'],['SL by structure','never inside the cluster'],['No map, no trade','a skipped trap costs nothing']];
+ pills.forEach((p,i)=>{
+  const x=40+i*178;
+  s+=`<rect x="${x}" y="1256" width="164" height="52" rx="13" fill="${SOFT}" stroke="${LN}"/>`;
+  s+=`<text x="${x+14}" y="1280" font-family="${FONT}" font-size="12.5" font-weight="800" fill="${INK}">${p[0]}</text>`;
+  s+=`<text x="${x+14}" y="1298" font-family="${FONT}" font-size="10.5" fill="${MUT}">${p[1]}</text>`;
+ });
+ s+=`<text x="400" y="1346" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="16" font-weight="600" fill="${INK}">Your stoploss is not the cost of trading — it is the raw material of the move.</text>`;
+ s+=brand(1360,800);
+ svgWrap('ig-summary',W,1410,s,'dalaldesk-stoploss-hunting-full-summary');
 })();
 
 /* download buttons on the article figures */
