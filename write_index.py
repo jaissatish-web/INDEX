@@ -248,7 +248,7 @@ html_content = """<!DOCTYPE html>
 </html>"""
 
 import os
-os.chdir("/d/Hermes work/trading/INDEX-site")
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 print("index.html written successfully, size:", len(html_content), "chars")
