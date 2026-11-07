@@ -1,183 +1,224 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-<script>document.documentElement.classList.replace('no-js','js')</script>
+<script>document.documentElement.classList.replace("no-js","js")</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
-<title>Dalal Desk — Clarity-first Indian Stock Market Education &amp; Tools</title>
-<meta name="description" content="Learn to read the Indian stock market with candle-wise clarity. Educational blogs, position sizing, portfolio tracking and compounding tools for Nifty, Bank Nifty and stocks.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<title>Dalal Desk — Clarity-first Indian Stock Market Education & Tools</title>
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts: Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://jaissatish-web.github.io/INDEX/">
-<link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
 </head>
-<body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
-    <button class="menu-btn" aria-label="Toggle menu">☰</button>
+<body class="font-inter">
+<!-- ============ Sticky Navigation ============ -->
+<header class="sticky-nav border-b border-border bg-surface">
+  <div class="max-w-custom mx-auto flex items-center justify-between h-[var(--nav-height)]">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">©</span> Dalal Desk
+    </a>
     <nav class="nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="tools.html">Tools</a>
-      <a href="blog.html#newest" class="nav-cta">Start Learning</a>
+      <a href="index.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Home</a>
+      <a href="blog.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Blog</a>
+      <a href="tools.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Tools</a>
+      <a href="blog.html#newest" class="nav-cta relative inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-[var(--primary-hover)] transition-all">
+        Start Learning
+      </a>
     </nav>
+    <button class="menu-btn md:hidden flex items-center gap-2 p-2 rounded-md hover:bg-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
   </div>
 </header>
 
+<!-- ============ Hero Section ============ -->
 <main>
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="reveal">
-        <span data-market-status class="chip closed" style="margin-bottom:22px"><span class="dot"></span> Checking market…</span>
-        <h1>Read the market with <em>clarity</em>, not noise.</h1>
-        <p class="lede">Dalal Desk is a clarity-first corner of the internet for Indian traders and investors — candle-wise education that explains <strong>why</strong> a trade works, and practical tools for position sizing, portfolio tracking and compounding.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="blog/3-check-method.html">Read the first article →</a>
-          <a class="btn btn-ghost" href="tools.html">Open the tools</a>
-        </div>
-        <div class="hero-meta">
-          <span>✓ 100% education, zero tips</span>
-          <span>✓ Every chart explained candle by candle</span>
-          <span>✓ Data stays in your browser</span>
-        </div>
+  <section class="hero min-h-[600px] flex items-center justify-center pb-24">
+    <div class="max-w-custom px-4 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+        Read the market with <em class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">clarity</em>, not noise.
+      </h1>
+      <p class="text-lg text-muted mb-6 max-w-2xl mx-auto">
+        Dalal Desk is a clarity-first corner of the internet for Indian traders and investors — candle-wise education that explains <strong>why</strong> a trade works, and practical tools for position sizing, portfolio tracking and compounding.
+      </p>
+      <div class="hero-actions">
+        <a href="blog/3-check-method.html" class="btn btn-primary">Read the first article →</a>
+        <a href="tools.html" class="btn btn-ghost ml-4">Open the tools</a>
       </div>
-      <div class="chart-card reveal">
-        <div class="chart-card-head">
-          <span class="t">Anatomy of a trending day</span>
-          <span class="s">9:15 → 3:30</span>
-        </div>
-        <div id="hero-chart"></div>
-        <div class="chart-note">Illustrative candles for teaching — not live market data</div>
+      <div class="hero-meta mt-8 flex flex-col sm:flex-row gap-2 text-sm text-muted">
+        <span>✓ 100% education, zero tips</span>
+        <span>✓ Every chart explained candle by candle</span>
+        <span>✓ Data stays in your browser</span>
       </div>
     </div>
   </section>
 
-  <!-- ================= WHAT YOU'LL FIND ================= -->
-  <section class="block">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <div class="kicker">The Desk</div>
-          <h2>Three things, done properly.</h2>
-          <p>No Telegram tips, no paid courses, no noise. Just the three things that actually move a learner forward.</p>
-        </div>
+<!-- ============ Market Snapshot Strip ============ -->
+  <section class="market-strip border border-border bg-surface rounded-lg px-4 py-3 mb-8 max-w-custom mx-auto">
+    <div class="flex items-center gap-4">
+      <span class="symbol text-lg font-bold">Nifty 50</span>
+      <span class="price text-positive">22,458.30</span>
+      <span class="change">
+        <span class="positive">+124.65 (+0.56%)</span>
+      </span>
+    </div>
+    <div class="flex items-center gap-4 mt-2 sm:mt-0">
+      <span class="symbol text-lg font-bold">Bank Nifty</span>
+      <span class="price text-negative">47,312.10</span>
+      <span class="change">
+        <span class="negative">-312.40 (-0.66%)</span>
+      </span>
+    </div>
+    <div class="flex items-center gap-4 mt-2 sm:mt-0">
+      <span class="symbol text-lg font-bold">Sensex</span>
+      <span class="price text-muted">78,312.80</span>
+    </div>
+  </section>
+
+<!-- ============ Three Things Section ============ -->
+  <section class="pb-12">
+    <div class="max-w-custom mx-auto">
+      <div class="sec-head text-center mb-12 reveal">
+        <div class="kicker">The Desk</div>
+        <h2 class="text-3xl font-bold text-primary mb-2">Three things, done properly.</h2>
+        <p class="text-muted">No Telegram tips, no paid courses, no noise. Just the three things that actually move a learner forward.</p>
       </div>
-      <div class="edu-list reveal">
-        <div class="edu-item">
-          <div class="edu-num">01 — Learn</div>
-          <h3>Candle-wise education</h3>
-          <p>Long-form articles that walk through real market behaviour — day classification, open interest, traps and proof — with every idea drawn on candles, not buried in jargon.</p>
-          <a class="more" href="blog.html">Browse the blog →</a>
+      <div class="edu-list grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div class="edu-item reveal">
+          <div class="edu-num text-primary">01</div>
+          <h3 class="text-xl font-semibold mb-2">Candle-wise education</h3>
+          <p class="text-muted">Long-form articles that walk through real market behaviour — day classification, open interest, traps and proof — with every idea drawn on candles, not buried in jargon.</p>
+          <a href="blog.html" class="text-primary hover:text-primary-dark transition-colors more">Browse the blog →</a>
         </div>
-        <div class="edu-item">
-          <div class="edu-num">02 — Calculate</div>
-          <h3>Tools that protect you first</h3>
-          <p>Position sizing that tells you your exact loss before you enter, a portfolio tracker that lives privately in your browser, and compounding math that shows what patience is worth.</p>
-          <a class="more" href="tools.html">Open the tools →</a>
+        <div class="edu-item reveal">
+          <div class="edu-num text-primary">02</div>
+          <h3 class="text-xl font-semibold mb-2">Tools that protect you first</h3>
+          <p class="text-muted">Position sizing that tells you your exact loss before you enter, a portfolio tracker that lives privately in your browser, and compounding math that shows what patience is worth.</p>
+          <a href="tools.html" class="text-primary hover:text-primary-dark transition-colors more">Open the tools →</a>
         </div>
-        <div class="edu-item">
-          <div class="edu-num">03 — Verify</div>
-          <h3>Test your understanding</h3>
-          <p>Every article ends with a short quiz built around the scenarios that actually fool traders. If you can pass it, you have not just read — you have understood.</p>
-          <a class="more" href="blog/3-check-method.html#quiz">Try the quiz →</a>
+        <div class="edu-item reveal">
+          <div class="edu-num text-primary">03</div>
+          <h3 class="text-xl font-semibold mb-2">Test your understanding</h3>
+          <p class="text-muted">Every article ends with a short quiz built around the scenarios that actually fool traders. If you can pass it, you have not just read — you have understood.</p>
+          <a href="blog/3-check-method.html#quiz" class="text-primary hover:text-primary-dark transition-colors more">Try the quiz →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= FEATURED ARTICLE ================= -->
-  <section class="block soft" id="newest">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <div class="kicker">Featured Article</div>
-          <h2>The one skill before your first trade.</h2>
-        </div>
-      </div>
-      <a class="feature-article reveal" href="blog/3-check-method.html">
+<!-- ============ Featured Article ============ -->
+  <section class="pb-12 bg-gray-50 reveal">
+    <div class="max-w-custom mx-auto">
+      <a href="blog/3-check-method.html" class="feature-article">
         <div class="fa-body">
-          <span class="fa-tag">Day Classification · Beginner Friendly</span>
-          <h3>The 3-Check Method: classify the day before you touch the order button</h3>
-          <p>Most intraday losses are decided before the trade is even placed — by a trader who never asked what kind of day today is. Three quick checks turn that chaos into a decision.</p>
+          <span class="fa-tag bg-primary text-white px-2.5 py-1 rounded text-xs font-medium uppercase tracking-wider">Day Classification · Beginner Friendly</span>
+          <h3 class="text-2xl font-bold text-primary mb-2">The 3-Check Method: classify the day before you touch the order button</h3>
+          <p class="text-muted">Most intraday losses are decided before the trade is even placed — by a trader who never asked what kind of day today is. Three quick checks turn that chaos into a decision.</p>
           <div class="fa-points">
-            <span><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#0a7c42"/><path d="M4.5 8.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Momentum check — is today fast or slow?</span>
-            <span><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#0a7c42"/><path d="M4.5 8.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Trade &amp; OI check — who is building, who is trapped?</span>
-            <span><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#0a7c42"/><path d="M4.5 8.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Gap check — what did the opening tell you?</span>
+            <span class="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--primary)"/><path d="M4.5 8.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+              Momentum check — is today fast or slow?
+            </span>
+            <span class="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--primary)"/><path d="M4.5 8.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+              Trade & OI check — who is building, who is trapped?
+            </span>
+            <span class="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--primary)"/><path d="M4.5 8.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+              Gap check — what did the opening tell you?
+            </span>
           </div>
-          <div class="fa-meta"><span>8 min read</span><span>Interactive quiz included</span></div>
-          <span class="btn btn-accent" style="pointer-events:none">Read the article</span>
+          <div class="fa-meta">
+            <span>8 min read</span>
+            <span>Interactive quiz included</span>
+          </div>
         </div>
-        <div class="fa-visual"><div id="post1-visual"></div></div>
+        <div class="fa-visual">
+          <!-- Chart placeholder -->
+          <div class="h-48 w-full bg-border rounded-lg overflow-hidden">
+            <div class="h-full w-full bg-gradient-to-br from-primary to-accent"></div>
+          </div>
+        </div>
       </a>
     </div>
   </section>
 
-  <!-- ================= TOOLS ================= -->
-  <section class="block">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <div class="kicker">The Toolkit</div>
-          <h2>Free tools that earn their place.</h2>
-          <p>No sign-up, no server, no tracking. Your inputs never leave your browser.</p>
-        </div>
+<!-- ============ Tools Section ============ -->
+  <section class="pb-12">
+    <div class="max-w-custom mx-auto">
+      <div class="sec-head text-center mb-12 reveal">
+        <div class="kicker">The Toolkit</div>
+        <h2 class="text-3xl font-bold text-primary mb-2">Free tools that earn their place.</h2>
+        <p class="text-muted">No sign-up, no server, no tracking. Your inputs never leave your browser.</p>
       </div>
-      <div class="reveal">
-        <div class="tool-row">
-          <div class="tool-num">01</div>
-          <div class="tool-desc-col"><h3>Position Size Calculator</h3><p>Enter capital, risk %, entry and stop-loss — get the exact quantity you can trade and the exact rupee loss you would take if stopped out.</p></div>
-          <a class="tool-link" href="tools/position-size-calculator.html">Calculate →</a>
-        </div>
-        <div class="tool-row">
-          <div class="tool-num">02</div>
-          <div class="tool-desc-col"><h3>Portfolio Tracker</h3><p>Add holdings, update market prices, and see live P&amp;L per stock and overall. Saved privately in your browser — refresh-proof, account-free.</p></div>
-          <a class="tool-link" href="tools/portfolio-tracker.html">Track →</a>
-        </div>
-        <div class="tool-row">
-          <div class="tool-num">03</div>
-          <div class="tool-desc-col"><h3>SIP &amp; Compounding Calculator</h3><p>See what a monthly SIP becomes over the years. The single most convincing chart for a patient investor is this math.</p></div>
-          <a class="tool-link" href="tools/sip-calculator.html">Project →</a>
-        </div>
+      <div class="tools-grid grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 reveal">
+        <!-- Position Size Calculator -->
+        <a href="tools/position-size-calculator.html" class="tool-card hover:border-primary hover:shadow-md transition-all">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path></svg></div>
+          <h3 class="text-xl font-bold text-primary mb-2">Position Size Calculator</h3>
+          <p class="text-muted mb-4">Enter capital, risk %, entry and stop-loss — get the exact quantity you can trade and the exact rupee loss you would take if stopped out.</p>
+          <a href="tools/position-size-calculator.html" class="cta">Open tool →</a>
+        </a>
+
+        <!-- Portfolio Tracker -->
+        <a href="tools/portfolio-tracker.html" class="tool-card hover:border-primary hover:shadow-md transition-all">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"></path><polyline points="9 22 9 12 15 12 15 22"></path></svg></div>
+          <h3 class="text-xl font-bold text-primary mb-2">Portfolio Tracker</h3>
+          <p class="text-muted mb-4">Add holdings, update market prices, and see live P&L per stock and overall. Saved privately in your browser — refresh-proof, account-free.</p>
+          <a href="tools/portfolio-tracker.html" class="cta">Track →</a>
+
+        <!-- SIP Calculator -->
+        <a href="tools/sip-calculator.html" class="tool-card hover:border-primary hover:shadow-md transition-all">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+          <h3 class="text-xl font-bold text-primary mb-2">SIP & Compounding Calculator</h3>
+          <p class="text-muted mb-4">Set a monthly amount, expected return and horizon — see what consistency becomes with the power of compounding.</p>
+          <a href="tools/sip-calculator.html" class="cta">Project →</a>
+
       </div>
     </div>
   </section>
-</main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
+<!-- ============ Footer ============ -->
+<footer class="site-footer border-t border-border bg-surface">
+  <div class="max-w-custom mx-auto py-12">
+    <div class="footer-grid grid grid-cols-1 gap-6 md:grid-cols-3 pb-8">
       <div>
-        <a class="brand" href="index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
-        <p>Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
+        <a class="brand" href="index.html"><span class="brand-mark">©</span> Dalal Desk</a>
+        <p class="text-muted mt-2">Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
       </div>
       <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="tools.html">Tools</a></li>
-          <li><a href="blog/3-check-method.html">Latest article</a></li>
+        <h4 class="text-sm font-medium text-muted mb-3">Explore</h4>
+        <ul class="space-y-2 text-sm text-muted">
+          <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+          <li><a href="blog.html" class="hover:text-primary transition-colors">Blog</a></li>
+          <li><a href="blog/3-check-method.html" class="hover:text-primary transition-colors">Latest article</a></li>
         </ul>
       </div>
       <div>
-        <h4>Principles</h4>
-        <ul>
-          <li><a href="index.html">Education over tips</a></li>
-          <li><a href="index.html">Risk first, returns second</a></li>
-          <li><a href="index.html">Your data stays with you</a></li>
+        <h4 class="text-sm font-medium text-muted mb-3">Principles</h4>
+        <ul class="space-y-2 text-sm text-muted">
+          <li><a href="index.html" class="hover:text-primary transition-colors">Education over tips</a></li>
+          <li><a href="index.html" class="hover:text-primary transition-colors">Risk first, returns second</a></li>
+          <li><a href="index.html" class="hover:text-primary transition-colors">Your data stays with you</a></li>
         </ul>
       </div>
     </div>
-    <div class="disclaimer"><strong>Disclaimer:</strong> All content on Dalal Desk is for educational purposes only and does not constitute investment advice or stock recommendations. Charts and examples are illustrative, not live market data. Trading in securities involves risk of loss. Please consult a SEBI-registered investment adviser before making financial decisions.</div>
-    <div class="footer-bottom"><span>© 2026 Dalal Desk</span><span>Made in India · दलाल स्ट्रीट से प्यार के साथ</span></div>
+    <div class="disclaimer text-center text-xs text-muted mt-6">
+      <strong>Disclaimer:</strong> All content on Dalal Desk is for educational purposes only and does not constitute investment advice or stock recommendations. Charts and examples are illustrative, not live market data. Trading in securities involves risk of loss. Please consult a SEBI-registered investment adviser before making financial decisions.
+    </div>
+    <div class="footer-bottom text-center text-xs border-t pt-6 mt-6">
+      <span>© 2026 Dalal Desk</span>
+      <span>Made in India · भलার नান্না ০ুলাল</span>
+    </div>
   </div>
 </footer>
 
+<!-- ============ JS ============ -->
 <script src="js/app.js"></script>
 <script src="js/autotranslate.js" defer></script>
 </body>

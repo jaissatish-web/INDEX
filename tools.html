@@ -5,63 +5,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
-<title>Free Stock Market Tools for Indian Traders — Risk, Portfolio, SIP | Dalal Desk</title>
-<meta name="description" content="Free browser-only tools for Indian stock market learners: position size calculator, portfolio tracker and SIP compounding calculator. No sign-up, no server, no tracking.">
-<meta name="keywords" content="stock market tools india, free trading calculators, position size calculator, portfolio tracker, sip calculator">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://jaissatish-web.github.io/INDEX/tools.html">
+<title>Free Stock Market Tools for Indian Traders — Dalal Desk</title>
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts: Inter + JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free Stock Market Tools for Indian Traders — Dalal Desk">
 <meta property="og:description" content="Position sizing, portfolio tracking and compounding projections — free, private, in your browser.">
 <meta property="og:url" content="https://jaissatish-web.github.io/INDEX/tools.html">
 <meta property="og:site_name" content="Dalal Desk">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Dalal Desk Tools",
-  "url": "https://jaissatish-web.github.io/INDEX/tools.html",
-  "description": "Free browser-only stock market tools for Indian learners: position size calculator, portfolio tracker, SIP compounding calculator.",
-  "hasPart": [
-    { "@type": "WebApplication", "name": "Position Size Calculator", "url": "https://jaissatish-web.github.io/INDEX/tools/position-size-calculator.html" },
-    { "@type": "WebApplication", "name": "Portfolio Tracker", "url": "https://jaissatish-web.github.io/INDEX/tools/portfolio-tracker.html" },
-    { "@type": "WebApplication", "name": "SIP & Compounding Calculator", "url": "https://jaissatish-web.github.io/INDEX/tools/sip-calculator.html" }
-  ],
-  "publisher": { "@type": "Organization", "name": "Dalal Desk" }
-}
-</script>
 </head>
-<body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
-    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+<body class="font-inter">
+<!-- ============ Sticky Navigation ============ -->
+<header class="sticky-nav border-b border-border bg-surface">
+  <div class="max-w-custom mx-auto flex items-center justify-between h-[var(--nav-height)]">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">₹</span> Dalal Desk
+    </a>
     <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="tools.html" class="active">Tools</a>
-      <a href="blog/3-check-method.html" class="nav-cta">Start Learning</a>
+      <a href="index.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Home</a>
+      <a href="blog.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Blog</a>
+      <a href="tools.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors active">Tools</a>
+      <a href="blog/3-check-method.html" class="nav-cta relative inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-[var(--primary-hover)] transition-all">
+        Start Learning
+      </a>
     </nav>
   </div>
 </header>
 
-<main>
-  <section class="page-head">
-    <div class="wrap-narrow">
-      <div class="kicker">The Toolkit</div>
-      <h1>Tools that protect you before they help you.</h1>
-      <p>Everything here runs entirely in your browser — no account, no server, no tracking. Your portfolio data is saved only on your own device. Each tool lives on its own page.</p>
-    </div>
-  </section>
+<!-- ============ Page Header ============ -->
+<section class="page-head border-b border-border bg-surface/50">
+  <div class="max-w-custom px-4 py-6">
+    <div class="kicker">The Toolkit</div>
+    <h1 class="text-3xl font-bold text-primary">Tools that protect you before they help you.</h1>
+    <p>Everything here runs entirely in your browser — no account, no server, no tracking. Your portfolio data is saved only on your own device. Each tool lives on its own page.</p>
+  </div>
+</section>
 
-  <section class="wrap" style="padding-bottom:8px">
+<!-- ============ Tool Cards ============ -->
+<section class="pb-2">
+  <div class="max-w-custom mx-auto">
     <div class="tool-cards">
+      <!-- Position Size Calculator -->
       <a class="tcard reveal" href="tools/position-size-calculator.html" id="position-size">
         <div class="cover" data-cover="stop-fence"></div>
         <div class="tc-body">
@@ -71,35 +61,37 @@
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
-
+      <!-- Portfolio Tracker -->
       <a class="tcard reveal" href="tools/portfolio-tracker.html" id="portfolio">
         <div class="cover" data-cover="watch-wall"></div>
         <div class="tc-body">
           <span class="pc-badge">Tool 02 · Tracking</span>
           <h3>Portfolio Tracker</h3>
-          <p>Add holdings, update market prices, and see live P&amp;L per stock and overall — saved privately in your browser, account-free.</p>
+          <p>Add holdings, update market prices, and see live P&L per stock and overall — saved privately in your browser, account-free.</p>
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
-
+      <!-- SIP Calculator -->
       <a class="tcard reveal" href="tools/sip-calculator.html" id="sip">
         <div class="cover" data-cover="staircase"></div>
         <div class="tc-body">
           <span class="pc-badge">Tool 03 · Patience</span>
-          <h3>SIP &amp; Compounding Calculator</h3>
+          <h3>SIP & Compounding Calculator</h3>
           <p>Set a monthly amount, expected return and horizon — see what consistency becomes with the power of compounding.</p>
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- F&O Position Size -->
       <a class="tcard reveal" href="tools/fo-position-size.html" id="fo-position-size">
         <div class="cover" data-cover="fo-cover"></div>
         <div class="tc-body">
-          <span class="pc-badge">Tool 04 · F&amp;O Risk</span>
-          <h3>F&amp;O Position Size Calculator</h3>
+          <span class="pc-badge">Tool 04 · F&O Risk</span>
+          <h3>F&O Position Size Calculator</h3>
           <p>Size your option trades in lots, not shares — capital, risk %, premium entry and stop decide how many lots you may take.</p>
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- Lumpsum Calculator -->
       <a class="tcard reveal" href="tools/lumpsum-calculator.html" id="lumpsum">
         <div class="cover" data-cover="lp-cover"></div>
         <div class="tc-body">
@@ -109,6 +101,7 @@
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- CAGR Calculator -->
       <a class="tcard reveal" href="tools/cagr-calculator.html" id="cagr">
         <div class="cover" data-cover="cg-cover"></div>
         <div class="tc-body">
@@ -118,15 +111,17 @@
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- Target Stoploss -->
       <a class="tcard reveal" href="tools/target-stoploss-calculator.html" id="target-stoploss">
         <div class="cover" data-cover="ts-cover"></div>
         <div class="tc-body">
           <span class="pc-badge">Tool 07 · Trade Quality</span>
-          <h3>Target &amp; Stop-loss % Calculator</h3>
+          <h3>Target & Stop-loss % Calculator</h3>
           <p>Entry, target, stop — see both moves in percent and whether your risk:reward earns the trade.</p>
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- Break-even Calculator -->
       <a class="tcard reveal" href="tools/breakeven-calculator.html" id="breakeven">
         <div class="cover" data-cover="be-cover"></div>
         <div class="tc-body">
@@ -136,15 +131,17 @@
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- Charges Calculator -->
       <a class="tcard reveal" href="tools/charges-calculator.html" id="charges">
         <div class="cover" data-cover="ch-cover"></div>
         <div class="tc-body">
           <span class="pc-badge">Tool 09 · Costs</span>
-          <h3>Brokerage &amp; Charges Calculator</h3>
-          <p>Brokerage, STT, exchange charges, GST and duty on any trade — see your net P&amp;L after everything.</p>
+          <h3>Brokerage & Charges Calculator</h3>
+          <p>Brokerage, STT, exchange charges, GST and duty on any trade — see your net P&L after everything.</p>
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- Trade Journal -->
       <a class="tcard reveal" href="tools/trade-journal.html" id="trade-journal">
         <div class="cover" data-cover="tj-cover"></div>
         <div class="tc-body">
@@ -154,6 +151,7 @@
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- Watchlist Notes -->
       <a class="tcard reveal" href="tools/watchlist-notes.html" id="watchlist">
         <div class="cover" data-cover="wl-cover"></div>
         <div class="tc-body">
@@ -163,15 +161,17 @@
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- Monthly P&L Tracker -->
       <a class="tcard reveal" href="tools/monthly-pnl-tracker.html" id="monthly-pnl">
         <div class="cover" data-cover="mp-cover"></div>
         <div class="tc-body">
           <span class="pc-badge">Tool 12 · Journaling</span>
-          <h3>Monthly P&amp;L Tracker</h3>
+          <h3>Monthly P&L Tracker</h3>
           <p>Gross, charges, net — month by month, with your cumulative curve. Net is the only truth.</p>
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
+      <!-- Day Classifier -->
       <a class="tcard reveal" href="tools/day-classifier.html" id="day-classifier">
         <div class="cover" data-cover="dc-cover"></div>
         <div class="tc-body">
@@ -181,70 +181,36 @@
           <span class="tc-cta">Open tool →</span>
         </div>
       </a>
-    
     </div>
-  </section>
-
-  <section class="block soft" style="margin-top:56px">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div>
-          <div class="kicker">Why tools, not tips</div>
-          <h2>A tool teaches. A tip guesses.</h2>
-          <p>Every tool here exists because it answers a question beginners ask after losing money — and answers it before the loss happens.</p>
-        </div>
-      </div>
-      <div class="edu-list reveal">
-        <div class="edu-item">
-          <div class="edu-num">Risk first</div>
-          <h3>Size before entry</h3>
-          <p>Professionals decide the rupee loss first and let the market decide the profit. Amateurs do the reverse. Tool 01 exists to flip that order.</p>
-        </div>
-        <div class="edu-item">
-          <div class="edu-num">Privacy always</div>
-          <h3>Your data, your device</h3>
-          <p>No account, no analytics on your holdings, no uploads. The portfolio tracker stores everything in your own browser and nowhere else.</p>
-        </div>
-        <div class="edu-item">
-          <div class="edu-num">Free forever</div>
-          <h3>No locks, no courses</h3>
-          <p>Every calculator is free with no sign-up wall. If a tool stops being free, it stops being on this desk.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<section class="footer-cta">
-  <div class="wrap fc-grid">
-    <div><h2>Learn candle-wise, starting today.</h2><p>One article. Two minutes of checks. A habit that protects every trade after it.</p></div>
-    <div class="fc-actions"><a class="btn btn-primary" href="blog/3-check-method.html">Read the first article</a><a class="btn btn-ghost" href="blog.html">The journal</a></div>
   </div>
 </section>
 
+<!-- ============ CTA Section ============ -->
+<section class="block soft" style="margin-top:56px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Why tools, not tips</div>
+      <h2>A tool teaches. A tip guesses.</h2>
+    </div>
+    <div class="edu-list reveal">
+      <div class="edu-item"><div class="edu-num">Risk first</div><h3>Size before entry</h3><p>Professionals decide the rupee loss first and let the market decide the profit. Amateurs do the reverse. Tool 01 exists to flip that order.</p></div>
+      <div class="edu-item"><div class="edu-num">Privacy always</div><h3>Your data, your device</h3><p>No account, no analytics on your holdings, no uploads. The portfolio tracker stores everything in your own browser and nowhere else.</p></div>
+      <div class="edu-item"><div class="edu-num">Free forever</div><h3>No locks, no courses</h3><p>Every calculator is free with no sign-up wall. If a tool stops being free, it stops being on this desk.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="wrap fc-grid"><div><h2>Learn candle-wise, starting today.</h2><p>One article. Two minutes of checks. A habit that protects every trade after it.</p></div><div class="fc-actions"><a class="btn btn-primary" href="blog/3-check-method.html">Read the first article</a><a class="btn btn-ghost" href="blog.html">The journal</a></div></div>
+</section>
+
+<!-- ============ Footer ============ -->
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div>
-        <a class="brand" href="index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
-        <p>Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="blog/3-check-method.html">Latest article</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Tools</h4>
-        <ul>
-          <li><a href="tools/position-size-calculator.html">Position Size Calculator</a></li>
-          <li><a href="tools/portfolio-tracker.html">Portfolio Tracker</a></li>
-          <li><a href="tools/sip-calculator.html">SIP &amp; Compounding Calculator</a></li>
-        </ul>
-      </div>
+      <div><a class="brand" href="index.html"><span class="brand-mark">₹</span> Dalal Desk</a><p>Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p></div>
+      <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li><a href="blog/3-check-method.html">Latest article</a></li></ul></div>
+      <div><h4>Tools</h4><ul><li><a href="tools/position-size-calculator.html">Position Size Calculator</a></li><li><a href="tools/portfolio-tracker.html">Portfolio Tracker</a></li><li><a href="tools/sip-calculator.html">SIP & Compounding Calculator</a></li></ul></div>
     </div>
     <div class="disclaimer"><strong>Disclaimer:</strong> All content on Dalal Desk is for educational purposes only and does not constitute investment advice or stock recommendations. Calculators are illustrative tools, not financial advice. Trading in securities involves risk of loss. Please consult a SEBI-registered investment adviser before making financial decisions.</div>
     <div class="footer-bottom"><span>© 2026 Dalal Desk</span><span>Made in India</span></div>
@@ -252,55 +218,6 @@
 </footer>
 
 <script src="js/app.js"></script>
-<script>
-/* hub mini-covers for tools whose cover functions live in their own pages */
-(function(){
-  const F = 'font-family="Manrope" font-weight="700"';
-  function frame(inner){return '<svg viewBox="0 0 560 320" width="100%" role="img" aria-label="Illustrative diagram"><rect x="14" y="16" width="532" height="288" rx="14" fill="#f6f7f4"/>' + inner + '</svg>';}
-  function candle(cx,y1,y2,bw,top,bot,col){return '<line x1="'+cx+'" x2="'+cx+'" y1="'+y1+'" y2="'+y2+'" stroke="'+col+'" stroke-width="1.6"/><rect x="'+(cx-bw/2)+'" y="'+top+'" width="'+bw+'" height="'+Math.max(2,bot-top)+'" rx="2" fill="'+col+'"/>';}
-  const covers = {
-    'fo-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Lots, not shares</text>'
-      + candle(120,70,220,18,110,190,'#0a7c42') + candle(180,90,240,18,130,210,'#b42318') + candle(240,60,200,18,100,170,'#0a7c42')
-      + '<rect x="300" y="110" width="180" height="70" rx="10" fill="#ffffff" stroke="#0a7c42" stroke-width="2"/><text x="390" y="140" text-anchor="middle" font-size="13" fill="#6d7a72" '+F+'>LOT SIZE</text><text x="390" y="163" text-anchor="middle" font-size="17" fill="#101b16" '+F+'>65 · 60 · 30</text>'),
-    'lp-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>One deposit, many years</text>'
-      + '<rect x="80" y="230" width="46" height="42" rx="5" fill="#9ccdb0"/><rect x="150" y="150" width="46" height="122" rx="5" fill="#0a7c42"/>'
-      + '<polyline points="110,215 180,130 260,100 340,80 440,65" fill="none" stroke="#101b16" stroke-width="2.4" stroke-linecap="round"/>'
-      + '<circle cx="440" cy="65" r="13" fill="#101b16"/><text x="440" y="70" text-anchor="middle" font-size="12" fill="#fff" font-family="Georgia">₹</text>'),
-    'cg-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Start → CAGR → End</text>'
-      + '<rect x="90" y="180" width="70" height="92" rx="6" fill="#9ccdb0"/><rect x="380" y="90" width="70" height="182" rx="6" fill="#0a7c42"/>'
-      + '<path d="M 165 170 Q 275 60 375 120" fill="none" stroke="#b42318" stroke-width="2.4"/><text x="275" y="88" text-anchor="middle" font-size="15" fill="#b42318" '+F+'>CAGR</text>'),
-    'ts-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Risk against reward</text>'
-      + '<line x1="60" x2="500" y1="110" y2="110" stroke="#0a7c42" stroke-width="2.4"/><text x="500" y="100" text-anchor="end" font-size="12.5" fill="#0a7c42" '+F+'>TARGET</text>'
-      + '<line x1="60" x2="500" y1="170" y2="170" stroke="#101b16" stroke-width="2.4"/><text x="500" y="160" text-anchor="end" font-size="12.5" fill="#101b16" '+F+'>ENTRY</text>'
-      + '<line x1="60" x2="500" y1="230" y2="230" stroke="#b42318" stroke-width="2.4" stroke-dasharray="8 7"/><text x="500" y="220" text-anchor="end" font-size="12.5" fill="#b42318" '+F+'>STOP</text>'
-      + '<text x="60" y="270" font-size="13" fill="#6d7a72" '+F+'>1 : 2 or better — or skip the trade</text>'),
-    'be-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Strike + Premium = Break-even</text>'
-      + '<rect x="80" y="150" width="200" height="60" rx="8" fill="#0a7c42"/><text x="180" y="187" text-anchor="middle" font-size="15" fill="#fff" '+F+'>STRIKE</text>'
-      + '<rect x="80" y="90" width="200" height="52" rx="8" fill="#9ccdb0"/><text x="180" y="123" text-anchor="middle" font-size="14" fill="#101b16" '+F+'>PREMIUM</text>'
-      + '<line x1="60" x2="500" y1="84" y2="84" stroke="#101b16" stroke-width="2.4"/><text x="500" y="74" text-anchor="end" font-size="12.5" fill="#101b16" '+F+'>BREAK-EVEN</text>'),
-    'ch-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Where the trade money goes</text>'
-      + '<rect x="80" y="120" width="90" height="100" rx="6" fill="#0a7c42"/><text x="125" y="178" text-anchor="middle" font-size="12" fill="#fff" '+F+'>GROSS</text>'
-      + '<rect x="180" y="120" width="70" height="100" rx="6" fill="#101b16"/><text x="215" y="178" text-anchor="middle" font-size="11" fill="#fff" '+F+'>BROKER</text>'
-      + '<rect x="260" y="120" width="70" height="100" rx="6" fill="#b42318"/><text x="295" y="178" text-anchor="middle" font-size="11" fill="#fff" '+F+'>STT</text>'
-      + '<rect x="340" y="120" width="60" height="100" rx="6" fill="#9ccdb0"/><text x="370" y="178" text-anchor="middle" font-size="11" fill="#101b16" '+F+'>GST</text>'
-      + '<rect x="410" y="120" width="70" height="100" rx="6" fill="#6d7a72"/><text x="445" y="178" text-anchor="middle" font-size="11" fill="#fff" '+F+'>NET</text>'),
-    'tj-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Every trade, written down</text>'
-      + '<rect x="60" y="80" width="180" height="26" rx="6" fill="#ffffff" stroke="#e7eae4"/><rect x="60" y="116" width="180" height="26" rx="6" fill="#ffffff" stroke="#e7eae4"/><rect x="60" y="152" width="180" height="26" rx="6" fill="#ffffff" stroke="#e7eae4"/>'
-      + '<polyline points="280,230 330,200 380,210 430,160 480,120" fill="none" stroke="#0a7c42" stroke-width="3" stroke-linecap="round"/>'
-      + '<text x="280" y="270" font-size="12.5" fill="#6d7a72" '+F+'>your equity curve</text>'),
-    'wl-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Levels with reasons</text>'
-      + '<line x1="60" x2="500" y1="120" y2="120" stroke="#0a7c42" stroke-width="2" stroke-dasharray="8 7"/><rect x="330" y="96" width="150" height="30" rx="7" fill="#0a7c42"/><text x="405" y="116" text-anchor="middle" font-size="11.5" fill="#fff" '+F+'>resistance · strong red</text>'
-      + '<line x1="60" x2="500" y1="200" y2="200" stroke="#b42318" stroke-width="2" stroke-dasharray="8 7"/><rect x="330" y="176" width="150" height="30" rx="7" fill="#b42318"/><text x="405" y="196" text-anchor="middle" font-size="11.5" fill="#fff" '+F+'>support · gap fill</text>'),
-    'mp-cover': (function(){let s='<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Month by month, net of costs</text>';const hs=[50,80,40,110,70,130,60,150,90,40,120,160];hs.forEach((h,i)=>{const up=i%3!==1;let x=60+i*37;s+='<rect x="'+x+'" y="'+(260-h)+'" width="24" height="'+h+'" rx="4" fill="'+(up?'#0a7c42':'#b42318')+'"/>';});return frame(s);})(),
-    'dc-cover': frame('<text x="36" y="50" font-size="15" fill="#101b16" '+F+'>Three checks, one verdict</text>'
-      + [78,152,226].map((cy,i)=>'<circle cx="90" cy="'+cy+'" r="22" fill="#ffffff" stroke="#0a7c42" stroke-width="2"/><text x="90" y="'+(cy+6)+'" text-anchor="middle" font-size="16" fill="#0a7c42" font-family="Georgia">'+(i+1)+'</text><path d="M 130 '+cy+' H 290" stroke="#d5dacf" stroke-width="2"/>').join('')
-      + '<rect x="310" y="108" width="200" height="90" rx="12" fill="#ffffff" stroke="#101b16" stroke-width="2"/><text x="410" y="146" text-anchor="middle" font-size="17" fill="#101b16" '+F+'>FAST · WAIT</text><text x="410" y="172" text-anchor="middle" font-size="17" fill="#b42318" '+F+'>NEVER</text>')
-  };
-  document.querySelectorAll('[data-cover]').forEach(el => {
-    if (!el.querySelector('svg') && covers[el.dataset.cover]) el.innerHTML = covers[el.dataset.cover];
-  });
-})();
-</script>
 <script src="js/autotranslate.js" defer></script>
 </body>
 </html>

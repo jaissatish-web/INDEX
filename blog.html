@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-<script>document.documentElement.classList.replace('no-js','js')</script>
+<script>document.documentElement.classList.replace("no-js","js")</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
 <title>Blog — Dalal Desk</title>
-<meta name="description" content="Candle-wise educational articles on the Indian stock market: day classification, open interest, traps, risk and trading psychology.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts: Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://jaissatish-web.github.io/INDEX/blog.html">
-<link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
 </head>
-<body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
-    <button class="menu-btn" aria-label="Toggle menu">☰</button>
+<body class="font-inter">
+<!-- ============ Sticky Navigation ============ -->
+<header class="sticky-nav border-b border-border bg-surface">
+  <div class="max-w-custom mx-auto flex items-center justify-between h-[var(--nav-height)]">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">©</span> Dalal Desk
+    </a>
     <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="blog.html" class="active">Blog</a>
-      <a href="tools.html">Tools</a>
-      <a href="blog/3-check-method.html" class="nav-cta">Start Learning</a>
+      <a href="index.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Home</a>
+      <a href="blog.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors active">Blog</a>
+      <a href="tools.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Tools</a>
+      <a href="blog/3-check-method.html" class="nav-cta relative inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-[var(--primary-hover)] transition-all">
+        Start Learning
     </nav>
   </div>
 </header>
 
-<main>
-  <section class="page-head">
-    <div class="wrap-narrow">
-      <div class="kicker">The Journal</div>
-      <h1>Candle-wise lessons for the Indian market.</h1>
-      <p>Every article is written to be read with a chart open: short, structural, and honest about what is hard. New posts are added as they are earned — quality over calendar.</p>
-    </div>
-  </section>
+<!-- ============ Journal Header ============ -->
+<section class="page-head border-b border-border bg-surface/50">
+  <div class="max-w-custom px-4 py-6">
+    <div class="kicker">The Journal</div>
+    <h1 class="text-3xl font-bold text-primary mb-1">Candle-wise lessons for the Indian market.</h1>
+    <p class="text-muted">Every article is written to be read with a chart open: short, structural, and honest about what is hard. New posts are added as they are earned — quality over calendar.</p>
+  </div>
+</section>
 
-  <section class="wrap" style="padding-bottom:76px">
+<!-- ============ Blog Post Grid ============ -->
+<section class="pb-12">
+  <div class="max-w-custom mx-auto">
     <div class="post-list">
+      <!-- Newest Post -->
       <a class="post-card reveal" href="blog/stoploss-hunting.html" id="newest">
         <div class="pc-body">
           <span class="pc-badge">Published · Stoploss Hunting</span>
@@ -50,6 +56,7 @@
         <div class="pc-visual"><div id="post2-visual"></div></div>
       </a>
 
+      <!-- 3-Check Method Post -->
       <a class="post-card reveal" href="blog/3-check-method.html">
         <div class="pc-body">
           <span class="pc-badge">Published · Day Classification</span>
@@ -60,6 +67,7 @@
         <div class="pc-visual"><div id="post1-visual"></div></div>
       </a>
 
+      <!-- Coming Soon -->
       <div class="post-card soon reveal">
         <div class="pc-body">
           <span class="pc-badge upcoming">Coming Soon · Risk</span>
@@ -67,17 +75,16 @@
           <p>You cannot control whether Nifty trends today. You fully control how much you can lose on one trade. That asymmetry is where every serious account starts.</p>
           <div class="pc-meta"><span>Planned</span></div>
         </div>
-        <div class="pc-visual"></div>
       </div>
     </div>
   </section>
-</main>
 
+<!-- ============ Footer ============ -->
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
+        <a class="brand" href="index.html"><span class="brand-mark">©</span> Dalal Desk</a>
         <p>Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
       </div>
       <div>
