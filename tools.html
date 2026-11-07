@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-<script>document.documentElement.classList.replace('no-js','js')</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
-<title>Free Stock Market Tools for Indian Traders — Dalal Desk</title>
-<!-- Tailwind CSS via CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- Google Fonts: Inter + JetBrains Mono -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Free Stock Market Tools for Indian Traders — Dalal Desk">
-<meta property="og:description" content="Position sizing, portfolio tracking and compounding projections — free, private, in your browser.">
-<meta property="og:url" content="https://jaissatish-web.github.io/INDEX/tools.html">
-<meta property="og:site_name" content="Dalal Desk">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Stock Market Tools for Indian Traders — Dalal Desk</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --radius-card:12px;
+      --radius-button:6px;
+      --shadow-card:0 2px 8px rgba(0,0,0,.05);
+    }
+    .font-inter{font-family:"Inter",system-ui,sans-serif!important;}
+    .font-mono{font-family:"JetBrains Mono",ui-monospace,monospace!important;}
+    .letter-tight{letter-spacing:-0.02em!important;}
+  </style>
 </head>
 <body class="font-inter">
+
 <!-- ============ Sticky Navigation ============ -->
-<header class="sticky-nav border-b border-border bg-surface">
-  <div class="max-w-custom mx-auto flex items-center justify-between h-[var(--nav-height)]">
+<header class="sticky-nav border-b border-[var(--border)] bg-white">
+  <div class="max-w-custom mx-auto flex items-center justify-between h-[80px]">
     <a class="brand" href="index.html">
       <span class="brand-mark">₹</span> Dalal Desk
     </a>
     <nav class="nav">
-      <a href="index.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Home</a>
-      <a href="blog.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Blog</a>
-      <a href="tools.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors active">Tools</a>
-      <a href="blog/3-check-method.html" class="nav-cta relative inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-[var(--primary-hover)] transition-all">
+      <a href="index.html" class="relative px-3 py-2 rounded-md text-muted hover:text-[var(--brand-primary)] transition-colors">Home</a>
+      <a href="blog.html" class="relative px-3 py-2 rounded-md text-muted hover:text-[var(--brand-primary)] transition-colors">Blog</a>
+      <a href="tools.html" class="relative px-3 py-2 rounded-md text-muted hover:text-[var(--brand-primary)] transition-colors active">Tools</a>
+      <a href="blog/3-check-method.html" class="nav-cta relative inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-white bg-[var(--brand-primary)] hover:bg-[var(--brand-primary)/90] transition-all">
         Start Learning
       </a>
     </nav>
@@ -39,7 +41,7 @@
 </header>
 
 <!-- ============ Page Header ============ -->
-<section class="page-head border-b border-border bg-surface/50">
+<section class="page-head border-b border-[var(--border)] bg-white/50">
   <div class="max-w-custom px-4 py-6">
     <div class="kicker">The Toolkit</div>
     <h1 class="text-3xl font-bold text-primary">Tools that protect you before they help you.</h1>

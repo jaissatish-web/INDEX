@@ -1,225 +1,248 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-<script>document.documentElement.classList.replace("no-js","js")</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
-<title>Dalal Desk — Clarity-first Indian Stock Market Education & Tools</title>
-<!-- Tailwind CSS via CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- Google Fonts: Inter -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dalal Desk - Clarity-first Indian Stock Market Education</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --radius-card:12px;
+      --radius-button:6px;
+      --shadow-card:0 2px 8px rgba(0,0,0,.05);
+    }
+    .font-inter{font-family:"Inter",system-ui,sans-serif!important;}
+    .font-mono{font-family:"JetBrains Mono",ui-monospace,monospace!important;}
+    .letter-tight{letter-spacing:-0.02em!important;}
+  </style>
 </head>
 <body class="font-inter">
-<!-- ============ Sticky Navigation ============ -->
-<header class="sticky-nav border-b border-border bg-surface">
-  <div class="max-w-custom mx-auto flex items-center justify-between h-[var(--nav-height)]">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">©</span> Dalal Desk
-    </a>
-    <nav class="nav">
-      <a href="index.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Home</a>
-      <a href="blog.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Blog</a>
-      <a href="tools.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Tools</a>
-      <a href="blog.html#newest" class="nav-cta relative inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-[var(--primary-hover)] transition-all">
-        Start Learning
-      </a>
-    </nav>
-    <button class="menu-btn md:hidden flex items-center gap-2 p-2 rounded-md hover:bg-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label="Toggle menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-    </button>
-  </div>
-</header>
-
 <!-- ============ Hero Section ============ -->
-<main>
-  <section class="hero min-h-[600px] flex items-center justify-center pb-24">
-    <div class="max-w-custom px-4 text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-        Read the market with <em class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">clarity</em>, not noise.
-      </h1>
-      <p class="text-lg text-muted mb-6 max-w-2xl mx-auto">
-        Dalal Desk is a clarity-first corner of the internet for Indian traders and investors — candle-wise education that explains <strong>why</strong> a trade works, and practical tools for position sizing, portfolio tracking and compounding.
-      </p>
-      <div class="hero-actions">
-        <a href="blog/3-check-method.html" class="btn btn-primary">Read the first article →</a>
-        <a href="tools.html" class="btn btn-ghost ml-4">Open the tools</a>
+<section class="min-h-[600px] bg-white py-24 px-4 md:py-32">
+  <div class="max-w-custom mx-auto">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight mb-4 letter-tight">
+          Master the Indian Market. Clearly.
+        </h1>
+        <p class="text-lg text-[var(--text-muted)] leading-relaxed mb-6 max-w-xl">
+          Candle-wise education that explains <strong>why</strong> a trade works, and practical tools for position sizing, portfolio tracking and compounding.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button class="btn-primary">Start Learning</button>
+          <button class="btn-secondary">Explore Tools</button>
+        </div>
       </div>
-      <div class="hero-meta mt-8 flex flex-col sm:flex-row gap-2 text-sm text-muted">
-        <span>✓ 100% education, zero tips</span>
-        <span>✓ Every chart explained candle by candle</span>
-        <span>✓ Data stays in your browser</span>
+      <div class="lg:hidden hidden">
+        <p class="text-[var(--text-muted)] text-center">
+          Full experience best viewed on desktop or tablet
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- ============ Market Snapshot Strip ============ -->
-  <section class="market-strip border border-border bg-surface rounded-lg px-4 py-3 mb-8 max-w-custom mx-auto">
-    <div class="flex items-center gap-4">
-      <span class="symbol text-lg font-bold">Nifty 50</span>
-      <span class="price text-positive">22,458.30</span>
-      <span class="change">
-        <span class="positive">+124.65 (+0.56%)</span>
-      </span>
-    </div>
-    <div class="flex items-center gap-4 mt-2 sm:mt-0">
-      <span class="symbol text-lg font-bold">Bank Nifty</span>
-      <span class="price text-negative">47,312.10</span>
-      <span class="change">
-        <span class="negative">-312.40 (-0.66%)</span>
-      </span>
-    </div>
-    <div class="flex items-center gap-4 mt-2 sm:mt-0">
-      <span class="symbol text-lg font-bold">Sensex</span>
-      <span class="price text-muted">78,312.80</span>
-    </div>
-  </section>
-
-<!-- ============ Three Things Section ============ -->
-  <section class="pb-12">
-    <div class="max-w-custom mx-auto">
-      <div class="sec-head text-center mb-12 reveal">
-        <div class="kicker">The Desk</div>
-        <h2 class="text-3xl font-bold text-primary mb-2">Three things, done properly.</h2>
-        <p class="text-muted">No Telegram tips, no paid courses, no noise. Just the three things that actually move a learner forward.</p>
-      </div>
-      <div class="edu-list grid grid-cols-1 gap-4 md:grid-cols-3">
-        <div class="edu-item reveal">
-          <div class="edu-num text-primary">01</div>
-          <h3 class="text-xl font-semibold mb-2">Candle-wise education</h3>
-          <p class="text-muted">Long-form articles that walk through real market behaviour — day classification, open interest, traps and proof — with every idea drawn on candles, not buried in jargon.</p>
-          <a href="blog.html" class="text-primary hover:text-primary-dark transition-colors more">Browse the blog →</a>
-        </div>
-        <div class="edu-item reveal">
-          <div class="edu-num text-primary">02</div>
-          <h3 class="text-xl font-semibold mb-2">Tools that protect you first</h3>
-          <p class="text-muted">Position sizing that tells you your exact loss before you enter, a portfolio tracker that lives privately in your browser, and compounding math that shows what patience is worth.</p>
-          <a href="tools.html" class="text-primary hover:text-primary-dark transition-colors more">Open the tools →</a>
-        </div>
-        <div class="edu-item reveal">
-          <div class="edu-num text-primary">03</div>
-          <h3 class="text-xl font-semibold mb-2">Test your understanding</h3>
-          <p class="text-muted">Every article ends with a short quiz built around the scenarios that actually fool traders. If you can pass it, you have not just read — you have understood.</p>
-          <a href="blog/3-check-method.html#quiz" class="text-primary hover:text-primary-dark transition-colors more">Try the quiz →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- ============ Featured Article ============ -->
-  <section class="pb-12 bg-gray-50 reveal">
-    <div class="max-w-custom mx-auto">
-      <a href="blog/3-check-method.html" class="feature-article">
-        <div class="fa-body">
-          <span class="fa-tag bg-primary text-white px-2.5 py-1 rounded text-xs font-medium uppercase tracking-wider">Day Classification · Beginner Friendly</span>
-          <h3 class="text-2xl font-bold text-primary mb-2">The 3-Check Method: classify the day before you touch the order button</h3>
-          <p class="text-muted">Most intraday losses are decided before the trade is even placed — by a trader who never asked what kind of day today is. Three quick checks turn that chaos into a decision.</p>
-          <div class="fa-points">
-            <span class="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--primary)"/><path d="M4.5 8.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
-              Momentum check — is today fast or slow?
-            </span>
-            <span class="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--primary)"/><path d="M4.5 8.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
-              Trade & OI check — who is building, who is trapped?
-            </span>
-            <span class="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="var(--primary)"/><path d="M4.5 8.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
-              Gap check — what did the opening tell you?
-            </span>
-          </div>
-          <div class="fa-meta">
-            <span>8 min read</span>
-            <span>Interactive quiz included</span>
+<section class="border-t border-[var(--border)] bg-white py-4">
+  <div class="max-w-custom mx-auto px-4">
+    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center py-4">
+      <!-- Nifty 50 -->
+      <div class="market-item w-full sm:w-33">
+        <div class="market-name">Nifty 50</div>
+        <div class="flex items-center gap-2">
+          <span class="market-symbol">#Nifty</span>
+          <span class="market-value mono text-[var(--text-primary)]">22,458.30</span>
+          <div class="market-change positive">
+            <span>+124.65</span>
+            <span class="text-[var(--positive)]">(+0.56%)</span>
           </div>
         </div>
-        <div class="fa-visual">
-          <!-- Chart placeholder -->
-          <div class="h-48 w-full bg-border rounded-lg overflow-hidden">
-            <div class="h-full w-full bg-gradient-to-br from-primary to-accent"></div>
+        <div class="mt-2 h-2 w-full bg-green-100 rounded-full overflow-hidden">
+          <div class="h-full w-1/2 bg-green-500"></div>
+        </div>
+      </div>
+      <!-- Bank Nifty -->
+      <div class="market-item w-full sm:w-33">
+        <div class="market-name">Bank Nifty</div>
+        <div class="flex items-center gap-2">
+          <span class="market-symbol">#BankNifty</span>
+          <span class="market-value mono text-[var(--text-primary)]">47,312.10</span>
+          <div class="market-change negative">
+            <-312.40</div>
+            <span class="text-[var(--negative)]">(-0.66%)</span>
           </div>
         </div>
-      </a>
-    </div>
-  </section>
-
-<!-- ============ Tools Section ============ -->
-  <section class="pb-12">
-    <div class="max-w-custom mx-auto">
-      <div class="sec-head text-center mb-12 reveal">
-        <div class="kicker">The Toolkit</div>
-        <h2 class="text-3xl font-bold text-primary mb-2">Free tools that earn their place.</h2>
-        <p class="text-muted">No sign-up, no server, no tracking. Your inputs never leave your browser.</p>
+        <div class="mt-2 h-2 w-full bg-red-100 rounded-full overflow-hidden">
+          <div class="h-full w-1/3 bg-red-500"></div>
+        </div>
       </div>
-      <div class="tools-grid grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 reveal">
-        <!-- Position Size Calculator -->
-        <a href="tools/position-size-calculator.html" class="tool-card hover:border-primary hover:shadow-md transition-all">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path></svg></div>
-          <h3 class="text-xl font-bold text-primary mb-2">Position Size Calculator</h3>
-          <p class="text-muted mb-4">Enter capital, risk %, entry and stop-loss — get the exact quantity you can trade and the exact rupee loss you would take if stopped out.</p>
-          <a href="tools/position-size-calculator.html" class="cta">Open tool →</a>
+      <!-- Sensex -->
+      <div class="market-item w-full sm:w-33">
+        <div class="market-name">Sensex</div>
+        <div class="flex items-center gap-2">
+          <span class="market-symbol">#Sensex</span>
+          <span class="market-value mono text-[var(--text-primary)]">78,312.80</span>
+          <div class="market-change positive">
+            <span>+231.70</span>
+            <span class="text-[var(--positive)]">(+0.30%)</span>
+          </div>
+        </div>
+        <div class="mt-2 h-2 w-full bg-green-100 rounded-full overflow-hidden">
+          <div class="h-full w-1/4 bg-green-500"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Three Things Grid ============ -->
+<section class="py-80 bg-white">
+  <div class="max-w-custom mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="card h-full flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-[var(--radius-card)] bg-[var(--brand-primary)] flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-2">Candle-wise Education</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed">Long-form articles that walk through real market behaviour — day classification, open interest, traps and proof — with every idea drawn on candles, not buried in jargon.</p>
+        </div>
+        <a href="blog.html" class="text-[var(--brand-primary)] text-sm font-medium mt-2 flex items-center gap-1">
+          Learn More <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
         </a>
-
-        <!-- Portfolio Tracker -->
-        <a href="tools/portfolio-tracker.html" class="tool-card hover:border-primary hover:shadow-md transition-all">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"></path><polyline points="9 22 9 12 15 12 15 22"></path></svg></div>
-          <h3 class="text-xl font-bold text-primary mb-2">Portfolio Tracker</h3>
-          <p class="text-muted mb-4">Add holdings, update market prices, and see live P&L per stock and overall. Saved privately in your browser — refresh-proof, account-free.</p>
-          <a href="tools/portfolio-tracker.html" class="cta">Track →</a>
-
-        <!-- SIP Calculator -->
-        <a href="tools/sip-calculator.html" class="tool-card hover:border-primary hover:shadow-md transition-all">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
-          <h3 class="text-xl font-bold text-primary mb-2">SIP & Compounding Calculator</h3>
-          <p class="text-muted mb-4">Set a monthly amount, expected return and horizon — see what consistency becomes with the power of compounding.</p>
-          <a href="tools/sip-calculator.html" class="cta">Project →</a>
-
+      </div>
+      <!-- Card 2 -->
+      <div class="card h-full flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-[var(--radius-card)] bg-[var(--positive)] flex items-center justify-center mb-3 text-[var(--card-background)]">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-2">Tools that Protect</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed">Position sizing that tells you your exact loss before you enter, a portfolio tracker that lives privately in your browser, and compounding math that shows what patience is worth.</p>
+        </div>
+        <a href="tools.html" class="text-[var(--brand-primary)] text-sm font-medium mt-2 flex items-center gap-1">
+          Explore <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+      <!-- Card 3 -->
+      <div class="card h-full flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-[var(--radius-card)] bg-[var(--border)] flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-2">Test Your Understanding</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed">Every article ends with a short quiz built around the scenarios that actually fool traders. If you can pass it, you have not just read — you have understood.</p>
+        </div>
+        <a href="blog/3-check-method.html#quiz" class="text-[var(--brand-primary)] text-sm font-medium mt-2 flex items-center gap-1">
+          Try Quiz <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- ============ Blog & Tool Previews ============ -->
+<section class="py-80">
+  <div class="max-w-custom mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Blog Post 1 -->
+      <div class="border rounded-[var(--radius-card)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+        <div class="h-48 w-full bg-[var(--border)]"></div>
+        <div class="p-4">
+          <span class="inline-block rounded-full bg-[var(--brand-primary)] text-xs font-bold text-white px-2 py-1 mr-2">#Education</span>
+          <h3 class="text-[var(--text-primary)] text-lg font-bold mt-2 line-clamp-2">The 3-Check Method: classify the day before you touch the order button</h3>
+          <p class="text-[var(--text-muted)] text-sm mt-2 line-clamp-2">Three checks — momentum, trade/OI, and the gap — that tell you whether today is a FAST day worth trading or a WAIT day worth watching.</p>
+          <a href="blog/3-check-method.html" class="text-[var(--brand-primary)] text-sm font-medium mt-2 block">Read More</a>
+        </div>
+      </div>
+      <!-- Blog Post 2 -->
+      <div class="border rounded-[var(--radius-card)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+        <div class="h-48 w-full bg-[var(--border)]"></div>
+        <div class="p-4">
+          <span class="inline-block rounded-full bg-[var(--positive)] text-xs font-bold text-[var(--card-background)] px-2 py-1 mr-2">#Beginner</span>
+          <h3 class="text-[var(--text-primary)] text-lg font-bold mt-2 line-clamp-2">Why your stoploss keeps getting hit — and how to read the hunt</h3>
+          <p class="text-[var(--text-muted)] text-sm mt-2 line-clamp-2">The market cannot move without stoplosses. Where the crowd parks them, why fake breakouts are really stop hunts, and how the two indices rotate.</p>
+          <a href="blog/stoploss-hunting.html" class="text-[var(--brand-primary)] text-sm font-medium mt-2 block">Read More</a>
+        </div>
+      </div>
+      <!-- Blog Post 3 -->
+      <div class="border rounded-[var(--radius-card)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+        <div class="h-48 w-full bg-[var(--border)]"></div>
+        <div class="p-4">
+          <span class="inline-block rounded-full bg-[var(--negative)] text-xs font-bold text-[var(--card-background)] px-2 py-1 mr-2">#Risk</span>
+          <h3 class="text-[var(--text-primary)] text-lg font-bold mt-2 line-clamp-2">Position sizing is the only edge beginners control</h3>
+          <p class="text-[var(--text-muted)] text-sm mt-2 line-clamp-2">You cannot control whether Nifty trends today. You fully control how much you can lose on one trade. That asymmetry is where every serious account starts.</p>
+          <a href="#" class="text-[var(--brand-primary)] text-sm font-medium mt-2 block">Read More</a>
+        </div>
+      </div>
+      <!-- Tool 1 Preview -->
+      <div class="border rounded-[var(--radius-card)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+        <div class="h-48 w-full bg-[var(--border)]"></div>
+        <div class="p-4">
+          <h3 class="text-[var(--text-primary)] text-lg font-bold mb-2">Position Size Calculator</h3>
+          <p class="text-[var(--text-muted)] text-sm">Enter capital, risk %, entry and stop-loss — get your exact quantity and rupee loss if stopped out.</p>
+          <a href="tools/position-size-calculator.html" class="text-[var(--brand-primary)] text-sm font-medium mt-2 block">Open Tool</a>
+        </div>
+      </div>
+      <!-- Tool 2 Preview -->
+      <div class="border rounded-[var(--radius-card)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+        <div class="h-48 w-full bg-[var(--border)]"></div>
+        <div class="p-4">
+          <h3 class="text-[var(--text-primary)] text-lg font-bold mb-2">Portfolio Tracker</h3>
+          <p class="text-[var(--text-muted)] text-sm">Add holdings, update market prices, and see live P&L per stock and overall — saved privately in your browser.</p>
+          <a href="tools/portfolio-tracker.html" class="text-[var(--brand-primary)] text-sm font-medium mt-2 block">Open Tool</a>
+        </div>
+      </div>
+      <!-- Tool 3 Preview -->
+      <div class="border rounded-[var(--radius-card)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+        <div class="h-48 w-full bg-[var(--border)]"></div>
+        <div class="p-4">
+          <h3 class="text-[var(--text-primary)] text-lg font-bold mb-2">SIP & Compounding Calculator</h3>
+          <p class="text-[var(--text-muted)] text-sm">Set a monthly amount, expected return and horizon — see what consistency becomes with the power of compounding.</p>
+          <a href="tools/sip-calculator.html" class="text-[var(--brand-primary)] text-sm font-medium mt-2 block">Open Tool</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ Footer ============ -->
-<footer class="site-footer border-t border-border bg-surface">
-  <div class="max-w-custom mx-auto py-12">
-    <div class="footer-grid grid grid-cols-1 gap-6 md:grid-cols-3 pb-8">
+<footer class="bg-[var(--border)] py-8">
+  <div class="max-w-custom mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
-        <a class="brand" href="index.html"><span class="brand-mark">©</span> Dalal Desk</a>
-        <p class="text-muted mt-2">Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
+        <h4 class="font-bold text-[var(--text-primary)] mb-3">Dalal Desk</h4>
+        <p class="text-[var(--text-muted)]">Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
       </div>
       <div>
-        <h4 class="text-sm font-medium text-muted mb-3">Explore</h4>
-        <ul class="space-y-2 text-sm text-muted">
-          <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
-          <li><a href="blog.html" class="hover:text-primary transition-colors">Blog</a></li>
-          <li><a href="blog/3-check-method.html" class="hover:text-primary transition-colors">Latest article</a></li>
+        <h4 class="font-bold text-[var(--text-primary)] mb-3">Explore</h4>
+        <ul class="space-y-2 text-[var(--text-muted)]">
+          <li><a href="index.html" class="hover:text-[var(--brand-primary)] transition-colors">Home</a></li>
+          <li><a href="blog.html" class="hover:text-[var(--brand-primary)] transition-colors">Blog</a></li>
+          <li><a href="tools.html" class="hover:text-[var(--brand-primary)] transition-colors">Tools</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-sm font-medium text-muted mb-3">Principles</h4>
-        <ul class="space-y-2 text-sm text-muted">
-          <li><a href="index.html" class="hover:text-primary transition-colors">Education over tips</a></li>
-          <li><a href="index.html" class="hover:text-primary transition-colors">Risk first, returns second</a></li>
-          <li><a href="index.html" class="hover:text-primary transition-colors">Your data stays with you</a></li>
+        <h4 class="font-bold text-[var(--text-primary)] mb-3">Principles</h4>
+        <ul class="space-y-2 text-[var(--text-muted)]">
+          <li><a href="#" class="hover:text-[var(--brand-primary)] transition-colors">Education over tips</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-primary)] transition-colors">Risk first, returns second</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-primary)] transition-colors">Your data stays with you</a></li>
         </ul>
       </div>
     </div>
-    <div class="disclaimer text-center text-xs text-muted mt-6">
-      <strong>Disclaimer:</strong> All content on Dalal Desk is for educational purposes only and does not constitute investment advice or stock recommendations. Charts and examples are illustrative, not live market data. Trading in securities involves risk of loss. Please consult a SEBI-registered investment adviser before making financial decisions.
-    </div>
-    <div class="footer-bottom text-center text-xs border-t pt-6 mt-6">
-      <span>© 2026 Dalal Desk</span>
-      <span>Made in India · भलার नান্না ০ুলাল</span>
+    <div class="mt-8 pt-8 border-t border-[var(--border)] text-center">
+      <p class="text-[var(--text-muted)] text-sm">© 2026 Dalal Desk · Made in India</p>
     </div>
   </div>
 </footer>
 
-<!-- ============ JS ============ -->
 <script src="js/app.js"></script>
-<script src="js/autotranslate.js" defer></script>
 </body>
 </html>

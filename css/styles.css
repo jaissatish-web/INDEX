@@ -1,28 +1,30 @@
 /* ============================================================
-   DALAL DESK - Premium Light-First Fintech Design
-   Tailwind CDN + Custom CSS
-   Design Direction: "Quiet Workbench, Bright Data"
+   DALAL DESK - "Zerodha/Groww Clarity" Premium Light Redesign
+   Design System: Mandatory Tokens (NO DEVIATIONS)
+   Tailwind CSS via CDN + Custom CSS
    ============================================================ */
 
-/* ---------- Design Tokens (matching spec exactly) ---------- */
+/* ---------- Design Tokens (MANDATORY - NO DEVIATIONS) ---------- */
 :root{
   --background:#FFFFFF;
-  --surface:#FFFFFF;
-  --border:#E2E8F0;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.05);
-  --shadow-md:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px rgba(0,0,0,.06);
-  --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
-  --primary:#4F46E5;        /* Deep Indigo - primary brand */
-  --primary-hover:#4338CA;
-  --foreground:#0F172A;     /* Text primary - near-black */
-  --muted:#64748B;          /* Text secondary - muted slate */
-  --positive:#059669;       /* Emerald - gains / % up */
-  --negative:#DC2626;       /* Red - losses / % down */
-  --accent:#F59E0B;         /* Amber - badges/CTAs */
-  --radius:0.4rem;         /* rounded-sm */
-  --radius-lg:0.5rem;      /* rounded-xl */
+  --text-primary:#2d343c;
+  --text-muted:#7c7c7c;
+  --brand-primary:#5076EE;
+  --border:#F0F0F0;
+  --card-background:#FFFFFF;
+  --positive:#63AD0E;
+  --negative:#FF003C;
+  --radius-card:12px;
+  --radius-button:6px;
+  --shadow-card:0 2px 8px rgba(0,0,0,.05);
   --max-width:1200px;
-  --nav-height:72px;
+  --section-padding:80px;
+  --font-inter:"Inter",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --font-weight-bold:700;
+  --letter-spacing-tight:-0.02em;
+  --font-size-body:15px;
+  --line-height-body:1.5;
 }
 
 /* ---------- Tailwind Base Configuration ---------- */
@@ -30,422 +32,215 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---------- Custom Overrides ---------- */
+/* ---------- Custom CSS Overrides ---------- */
 
-/* Font Families - Inter for UI, JetBrains Mono for numeric */
-@font-face{
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400 800;
-  src: local('Inter'), local('Inter Fallback'), url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-}
-@font-face{
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 500 700;
-  src: local('JetBrains Mono'), local('JetBrains Mono Fallback'), url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap');
-}
-
-/* Prevent JetBrains Mono from being used as fallback for UI text */
-*, *::before, *::after{
+/* Body - light, clean, trustworthy default */
+body{
+  font-family: var(--font-inter);
+  background-color: var(--background);
+  color: var(--text-primary);
+  line-height: var(--line-height-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
-/* Body - light-first design */
-body{
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  background-color: var(--background);
-  color: var(--foreground);
-  line-height: 1.6;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
+/* Max width container */
+.max-w-custom{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* ---------- Global Utility Adjustments ---------- */
 
-/* Custom max-width container */
-.max-w-custom{
-  max-width: var(--max-width);
+/* Heading styling - Inter, tight letter-spacing */
+h1, h2, h3, h4, h5, h6{
+  font-family: var(--font-inter);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
-/* ---------- Header/Navigation ---------- */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  height: var(--nav-height);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+/* Body text - exact specs */
+.body-text{
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--text-primary);
 }
 
-.brand{
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: -0.02em;
-  color: var(--primary);
-}
-
-.brand .brand-mark{
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-/* Navigation links */
-.nav a{
-  color: var(--muted);
-  font-weight: 500;
-  transition: color .2s ease;
-  position: relative;
-}
-
-.nav a:hover{
-  color: var(--primary);
-}
-
-.nav a::after{
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: width .2s ease;
-}
-
-.nav a:hover::after{
-  width: 100%;
-}
-
-/* CTA button in nav */
-.nav-cta{
-  background: var(--primary);
+/* ---------- Buttons ---------- */
+.btn-primary{
+  background: var(--brand-primary);
   color: #FFFFFF;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: var(--radius);
-  transition: background .2s ease;
-}
-
-.nav-cta:hover{
-  background: var(--primary-hover);
-}
-
-/* ---------- Hero Section ---------- */
-.hero{
-  padding: 160px 0 120px;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  background: var(--surface);
-}
-
-.hero h1{
-  font-size: clamp(3rem, 6vw, 4rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--foreground);
-  margin-bottom: 1rem;
-}
-
-.hero h1 span{
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero p{
-  font-size: 1.25rem;
-  color: var(--muted);
-  max-width: 48ch;
-  margin-bottom: 2rem;
-}
-
-.hero .btn-primary{
-  background: var(--primary);
-  color: #FFFFFF;
-  padding: 14px 28px;
-  border-radius: var(--radius-lg);
-  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-button);
+  font-weight: var(--font-weight-bold);
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: all .2s ease;
   border: none;
+  cursor: pointer;
+  transition: background .2s ease, transform .1s ease;
+  display: inline-block;
 }
 
-.hero .btn-primary:hover{
-  background: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+.btn-primary:hover{
+  background: #356EDD;
+  transform: translateY(-1px);
 }
 
-.hero .btn-ghost{
+.btn-primary:focus-visible{
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+.btn-secondary{
   background: transparent;
-  color: var(--muted);
-  padding: 14px 28px;
-  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: var(--radius-button);
   font-weight: 600;
   font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   border: 1px solid var(--border);
+  cursor: pointer;
   transition: all .2s ease;
+  display: inline-block;
 }
 
-.hero .btn-ghost:hover{
-  border-color: var(--primary);
-  color: var(--primary);
+.btn-secondary:hover{
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
 }
 
-/* ---------- Featured Cards (Blog Section) ---------- */
-.featured-card{
-  background: var(--surface);
+.btn-secondary:focus-visible{
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* ---------- Cards ---------- */
+.card{
+  background: var(--card-background);
+  border-radius: var(--radius-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
   padding: 1.5rem;
   transition: all .2s ease;
 }
 
-.featured-card:hover{
-  border-color: var(--primary);
+.card:hover{
+  border-color: var(--brand-primary);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 
-.kicker{
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 4px 10px;
-  background: var(--primary);
-  color: #FFFFFF;
-  font-size: 0.625rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-radius: 9999px;
-  margin-bottom: 0.75rem;
+/ ---------- Text Colors ---------- */
+.text-primary{
+  color: var(--text-primary) !important;
 }
 
-/* ---------- Blog Grid ---------- */
-.blog-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+.text-muted{
+  color: var(--text-muted) !important;
 }
 
-.blog-card{
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: all .2s ease;
+.text-brand{
+  color: var(--brand-primary) !important;
 }
 
-.blog-card:hover{
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+.text-positive{
+  color: var(--positive) !important;
 }
 
-.blog-card .badge{
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 4px 8px;
-  background: var(--primary);
-  color: #FFFFFF;
-  font-size: 0.625rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+.text-negative{
+  color: var(--negative) !important;
 }
 
-.blog-card h3{
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--foreground);
-  margin-bottom: 0.5rem;
-}
-
-.blog-card p{
-  color: var(--muted);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.blog-card .meta{
-  display: flex;
-  gap: 0.75rem;
-  color: var(--muted);
-  font-size: 0.75rem;
-  margin-top: 0.75rem;
-}
-
-.blog-card .meta span{
-  font-family: 'JetBrains Mono', monospace;
-}
-
-/* ---------- Tools Section ---------- */
-.tools-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.tool-card{
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  text-align: center;
-  transition: all .3s ease;
-}
-
-.tool-card:hover{
-  border-color: var(--primary);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.tool-card .icon{
-  width: 48px;
-  height: 48px;
-  background: var(--primary);
-  border-radius: calc(var(--radius) * 2);
-  display: grid;
-  place-items: center;
-  margin: 0 auto 1.5rem;
-  color: #FFFFFF;
-}
-
-.tool-card h3{
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--foreground);
-  margin-bottom: 0.5rem;
-}
-
-.tool-card p{
-  color: var(--muted);
-  font-size: 0.875rem;
-  margin-bottom: 1.5rem;
-}
-
-.tool-card .cta{
-  background: var(--primary);
-  color: #FFFFFF;
-  padding: 10px 20px;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 0.875rem;
-  transition: background .2s ease;
-  display: inline-block;
-}
-
-.tool-card .cta:hover{
-  background: var(--primary-hover);
+/* ---------- Monospace for Numeric Data ---------- */
+.mono{
+  font-family: var(--font-mono);
 }
 
 /* ---------- Market Snapshot Strip ---------- */
 .market-strip{
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1rem 1.5rem;
-  margin: 2rem 0;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.market-item{
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem 0;
 }
 
-.market-strip .symbol{
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 700;
-  color: var(--foreground);
-  font-size: 1.5rem;
+.market-name{
+  font-family: var(--font-inter);
+  font-weight: 500;
+  color: var(--text-primary);
 }
 
-.market-strip .price{
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--positive);
+.market-symbol{
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.market-value{
+  font-family: var(--font-mono);
+  color: var(--text-primary);
   font-size: 1.25rem;
-  margin-left: 0.5rem;
 }
 
-.market-strip .change{
+.market-change{
   display: flex;
   align-items: center;
   gap: 0.25rem;
 }
 
-.market-strip .positive{
+.market-change.positive{
   color: var(--positive);
 }
 
-.market-strip .negative{
+.market-change.negative{
   color: var(--negative);
-}
-
-/* ---------- Sticky Navigation ---------- */
-.sticky-nav{
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
 }
 
 /* ---------- Responsive Adjustments ---------- */
 @media (max-width: 1024px){
   .max-w-custom{
     max-width: 96%;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 }
 
 @media (max-width: 768px){
-  .hero{
-    padding: 120px 0 80px;
+  .section{
+    padding: var(--section-padding) 0;
   }
-
-  .hero h1{
-    font-size: clamp(2rem, 5vw, 3rem);
+  
+  .h1{
+    font-size: clamp(1.875rem, 5vw, 2.25rem);
   }
-
-  .nav-cta{
-    display: none;
+  
+  .h2{
+    font-size: clamp(1.5rem, 4.5vw, 1.875rem);
+  }
+  
+  .body-text{
+    font-size: 1rem;
+    line-height: 1.4;
   }
 }
 
 @media (max-width: 480px){
-  .hero{
-    padding: 80px 0 60px;
+  .max-w-custom{
+    padding: 0 1rem;
   }
-
-  .hero p{
-    font-size: 1rem;
-  }
-
-  .kicker{
-    font-size: 0.5rem;
-    padding: 3px 8px;
+  
+  .h1{
+    font-size: clamp(1.5rem, 6vw, 1.875rem);
   }
 }

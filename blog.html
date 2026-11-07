@@ -1,112 +1,130 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-<script>document.documentElement.classList.replace("no-js","js")</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
-<title>Blog — Dalal Desk</title>
-<!-- Tailwind CSS via CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- Google Fonts: Inter -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a7c42'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Dalal Desk</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --radius-card:12px;
+      --radius-button:6px;
+      --shadow-card:0 2px 8px rgba(0,0,0,.05);
+    }
+    .font-inter{font-family:"Inter",system-ui,sans-serif!important;}
+    .font-mono{font-family:"JetBrains Mono",ui-monospace,monospace!important;}
+    .letter-tight{letter-spacing:-0.02em!important;}
+  </style>
 </head>
 <body class="font-inter">
+
 <!-- ============ Sticky Navigation ============ -->
-<header class="sticky-nav border-b border-border bg-surface">
-  <div class="max-w-custom mx-auto flex items-center justify-between h-[var(--nav-height)]">
+<header class="sticky-nav border-b border-[var(--border)] bg-white">
+  <div class="max-w-custom mx-auto flex items-center justify-between h-[80px]">
     <a class="brand" href="index.html">
-      <span class="brand-mark">©</span> Dalal Desk
+      <span class="brand-mark">₹</span> Dalal Desk
     </a>
     <nav class="nav">
-      <a href="index.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Home</a>
-      <a href="blog.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors active">Blog</a>
-      <a href="tools.html" class="relative px-3 py-2 rounded-md text-muted hover:text-primary transition-colors">Tools</a>
-      <a href="blog/3-check-method.html" class="nav-cta relative inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-[var(--primary-hover)] transition-all">
+      <a href="index.html" class="relative px-3 py-2 rounded-md text-muted hover:text-[var(--brand-primary)] transition-colors">Home</a>
+      <a href="blog.html" class="relative px-3 py-2 rounded-md text-muted hover:text-[var(--brand-primary)] transition-colors active">Blog</a>
+      <a href="tools.html" class="relative px-3 py-2 rounded-md text-muted hover:text-[var(--brand-primary)] transition-colors">Tools</a>
+      <a href="blog/3-check-method.html" class="nav-cta relative inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-white bg-[var(--brand-primary)] hover:bg-[var(--brand-primary)/90] transition-all">
         Start Learning
+      </a>
     </nav>
   </div>
 </header>
 
 <!-- ============ Journal Header ============ -->
-<section class="page-head border-b border-border bg-surface/50">
+<section class="page-head border-b border-[var(--border)] bg-white/50">
   <div class="max-w-custom px-4 py-6">
     <div class="kicker">The Journal</div>
-    <h1 class="text-3xl font-bold text-primary mb-1">Candle-wise lessons for the Indian market.</h1>
-    <p class="text-muted">Every article is written to be read with a chart open: short, structural, and honest about what is hard. New posts are added as they are earned — quality over calendar.</p>
+    <h1 class="text-3xl font-bold text-[var(--text-primary)] mb-1">Candle-wise lessons for the Indian market.</h1>
+    <p class="text-[var(--text-muted)]">Every article is written to be read with a chart open: short, structural, and honest about what is hard. New posts are added as they are earned — quality over calendar.</p>
   </div>
 </section>
 
 <!-- ============ Blog Post Grid ============ -->
-<section class="pb-12">
+<section class="py-80">
   <div class="max-w-custom mx-auto">
-    <div class="post-list">
-      <!-- Newest Post -->
-      <a class="post-card reveal" href="blog/stoploss-hunting.html" id="newest">
-        <div class="pc-body">
-          <span class="pc-badge">Published · Stoploss Hunting</span>
-          <h3>Why your stoploss keeps getting hit — and how to read the hunt</h3>
-          <p>The market cannot move without stoplosses. Where the crowd parks them, why fake breakouts are really stop hunts, and how the two indices rotate — with branded infographics you can download and share.</p>
-          <div class="pc-meta"><span>Nov 2026</span><span>·</span><span>9 min read</span><span>·</span><span>Beginner friendly</span></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Post 1 -->
+      <a href="blog/stoploss-hunting.html" class="border rounded-[var(--radius-card)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+        <div class="h-48 w-full bg-[var(--border)]"></div>
+        <div class="p-4">
+          <span class="inline-block rounded-full bg-[var(--brand-primary)] text-xs font-bold text-white px-2 py-1 mr-2">#Stoploss</span>
+          <h3 class="text-[var(--text-primary)] text-lg font-bold mt-2 line-clamp-2">Why your stoploss keeps getting hit — and how to read the hunt</h3>
+          <p class="text-[var(--text-muted)] text-sm mt-2 line-clamp-2">The market cannot move without stoplosses. Where the crowd parks them, why fake breakouts are really stop hunts, and how the two indices rotate — with branded infographics you can download and share.</p>
+          <div class="mt-2 text-[var(--text-muted)] text-xs line-clamp-1">
+            <span>Nov 2026</span><span>·</span><span>9 min read</span><span>·</span><span>Beginner friendly</span>
+          </div>
         </div>
-        <div class="pc-visual"><div id="post2-visual"></div></div>
       </a>
-
-      <!-- 3-Check Method Post -->
-      <a class="post-card reveal" href="blog/3-check-method.html">
-        <div class="pc-body">
-          <span class="pc-badge">Published · Day Classification</span>
-          <h3>The 3-Check Method: classify the day before you touch the order button</h3>
-          <p>Three checks — momentum, trade/OI, and the gap — that tell you whether today is a FAST day worth trading or a WAIT day worth watching. Includes the trapped-buyer trap and the "sell on proof" rule, plus an interactive quiz.</p>
-          <div class="pc-meta"><span>Nov 2026</span><span>·</span><span>8 min read</span><span>·</span><span>Beginner friendly</span></div>
+      <!-- Post 2 -->
+      <a href="blog/3-check-method.html" class="border rounded-[var(--radius-card)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+        <div class="h-48 w-full bg-[var(--border)]"></div>
+        <div class="p-4">
+          <span class="inline-block rounded-full bg-[var(--positive)] text-xs font-bold text-[var(--card-background)] px-2 py-1 mr-2">#Education</span>
+          <h3 class="text-[var(--text-primary)] text-lg font-bold mt-2 line-clamp-2">The 3-Check Method: classify the day before you touch the order button</h3>
+          <p class="text-[var(--text-muted)] text-sm mt-2 line-clamp-2">Three checks — momentum, trade/OI, and the gap — that tell you whether today is a FAST day worth trading or a WAIT day worth watching. Includes the trapped-buyer trap and the "sell on proof" rule, plus an interactive quiz.</p>
+          <div class="mt-2 text-[var(--text-muted)] text-xs line-clamp-1">
+            <span>Nov 2026</span><span>·</span><span>8 min read</span><span>·</span><span>Beginner friendly</span>
+          </div>
         </div>
-        <div class="pc-visual"><div id="post1-visual"></div></div>
       </a>
-
-      <!-- Coming Soon -->
-      <div class="post-card soon reveal">
-        <div class="pc-body">
-          <span class="pc-badge upcoming">Coming Soon · Risk</span>
-          <h3>Why position sizing is the only edge beginners control</h3>
-          <p>You cannot control whether Nifty trends today. You fully control how much you can lose on one trade. That asymmetry is where every serious account starts.</p>
-          <div class="pc-meta"><span>Planned</span></div>
+      <!-- Post 3 -->
+      <div class="border rounded-[var(--radius-card)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+        <div class="h-48 w-full bg-[var(--border)]"></div>
+        <div class="p-4">
+          <span class="inline-block rounded-full bg-[var(--negative)] text-xs font-bold text-[var(--card-background)] px-2 py-1 mr-2">#Risk</span>
+          <h3 class="text-[var(--text-primary)] text-lg font-bold mt-2 line-clamp-2">Position sizing is the only edge beginners control</h3>
+          <p class="text-[var(--text-muted)] text-sm mt-2 line-clamp-2">You cannot control whether Nifty trends today. You fully control how much you can lose on one trade. That asymmetry is where every serious account starts.</p>
+          <div class="mt-2 text-[var(--text-muted)] text-xs line-clamp-1">
+            <span>Planned</span>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- ============ Footer ============ -->
 <footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
+  <div class="max-w-custom mx-auto py-8">
+    <div class="footer-grid grid grid-cols-1 md:grid-cols-3 gap-6 py-6">
       <div>
-        <a class="brand" href="index.html"><span class="brand-mark">©</span> Dalal Desk</a>
-        <p>Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
+        <a class="brand" href="index.html"><span class="brand-mark">₹</span> Dalal Desk</a>
+        <p class="text-[var(--text-muted)]">Clarity-first education and tools for the Indian stock market. Built for learners, by a learner.</p>
       </div>
       <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="tools.html">Tools</a></li>
-          <li><a href="blog/stoploss-hunting.html">Stoploss hunting</a></li>
-          <li><a href="blog/3-check-method.html">The 3-Check Method</a></li>
+        <h4 class="font-bold text-[var(--text-primary)] mb-3">Explore</h4>
+        <ul class="space-y-2 text-[var(--text-muted)]">
+          <li><a href="index.html" class="hover:text-[var(--brand-primary)] transition-colors">Home</a></li>
+          <li><a href="tools.html" class="hover:text-[var(--brand-primary)] transition-colors">Tools</a></li>
+          <li><a href="blog/stoploss-hunting.html" class="hover:text-[var(--brand-primary)] transition-colors">Stoploss hunting</a></li>
+          <li><a href="blog/3-check-method.html" class="hover:text-[var(--brand-primary)] transition-colors">The 3-Check Method</a></li>
         </ul>
       </div>
       <div>
-        <h4>Principles</h4>
-        <ul>
-          <li><a href="index.html">Education over tips</a></li>
-          <li><a href="index.html">Risk first, returns second</a></li>
-          <li><a href="index.html">Your data stays with you</a></li>
+        <h4 class="font-bold text-[var(--text-primary)] mb-3">Principles</h4>
+        <ul class="space-y-2 text-[var(--text-muted)]">
+          <li><a href="index.html" class="hover:text-[var(--brand-primary)] transition-colors">Education over tips</a></li>
+          <li><a href="index.html" class="hover:text-[var(--brand-primary)] transition-colors">Risk first, returns second</a></li>
+          <li><a href="index.html" class="hover:text-[var(--brand-primary)] transition-colors">Your data stays with you</a></li>
         </ul>
       </div>
     </div>
-    <div class="disclaimer"><strong>Disclaimer:</strong> All content on Dalal Desk is for educational purposes only and does not constitute investment advice or stock recommendations. Charts and examples are illustrative, not live market data. Trading in securities involves risk of loss. Please consult a SEBI-registered investment adviser before making financial decisions.</div>
-    <div class="footer-bottom"><span>© 2026 Dalal Desk</span><span>Made in India</span></div>
+    <div class="disclaimer text-center text-xs text-[var(--text-muted)] mt-4">
+      <strong>Disclaimer:</strong> All content on Dalal Desk is for educational purposes only and does not constitute investment advice or stock recommendations. Charts and examples are illustrative, not live market data. Trading in securities involves risk of loss. Please consult a SEBI-registered investment adviser before making financial decisions.
+    </div>
+    <div class="footer-bottom text-center text-xs border-t pt-4">
+      <span>© 2026 Dalal Desk</span><span>Made in India</span>
+    </div>
   </div>
 </footer>
 
